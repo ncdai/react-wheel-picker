@@ -41,6 +41,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
   infinite: infiniteProp = false,
   visibleCount: countProp = 20,
   dragSensitivity: dragSensitivityProp = 3,
+  optionItemHeight: optionHeightProp = 30,
   classNames,
 }) => {
   const [value = optionsProp[0]?.value ?? "", setValue] = useControllableState({
@@ -68,7 +69,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     return result;
   }, [countProp, optionsProp, infiniteProp]);
 
-  const itemHeight = 30;
+  const itemHeight = optionHeightProp;
   const halfItemHeight = itemHeight * 0.5;
   const itemAngle = 360 / countProp;
   const radius = itemHeight / Math.tan((itemAngle * Math.PI) / 180);
@@ -106,6 +107,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
       <li
         key={index}
         className={classNames?.optionItem}
+        data-slot="option-item"
         data-rwp-option
         data-index={index}
         style={{
@@ -144,6 +146,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
 
     return items;
   }, [
+    itemHeight,
     halfItemHeight,
     infiniteProp,
     itemAngle,
@@ -157,8 +160,9 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     const renderItem = (item: WheelPickerOption, key: React.Key) => (
       <li
         key={key}
-        data-slot="highlight-item"
         className={classNames?.highlightItem}
+        data-slot="highlight-item"
+        data-rwp-highlight-item
         style={{ height: itemHeight }}
       >
         {item.label}
@@ -176,7 +180,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     }
 
     return items;
-  }, [classNames?.highlightItem, infiniteProp, options]);
+  }, [classNames?.highlightItem, itemHeight, infiniteProp, options]);
 
   const normalizeScroll = (scroll: number) =>
     ((scroll % options.length) + options.length) % options.length;
@@ -554,9 +558,10 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
       <div
         className={classNames?.highlightWrapper}
         data-rwp-highlight-wrapper
+        data-slot="highlight-wrapper"
         style={{
           height: itemHeight,
-          lineHeight: itemHeight + "px",
+          lineHeight: `${itemHeight}px`,
         }}
       >
         <ul

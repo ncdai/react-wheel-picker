@@ -246,25 +246,26 @@ You can find usage examples in the **Examples** section at: https://chanhdai.com
 
 Props for the `WheelPickerWrapper` component:
 
-| Prop        | Type              | Default    | Description                |
-| ----------- | ----------------- | ---------- | -------------------------- |
-| `className` | `string`          | -          | CSS class name for wrapper |
-| `children`  | `React.ReactNode` | (required) | `WheelPicker` components   |
+| Prop        | Type        | Default    | Description                |
+| ----------- | ----------- | ---------- | -------------------------- |
+| `className` | `string`    | -          | CSS class name for wrapper |
+| `children`  | `ReactNode` | (required) | `WheelPicker` components   |
 
 ### WheelPicker
 
 Props for the `WheelPicker` component:
 
-| Prop              | Type                      | Default    | Description                                                    |
-| ----------------- | ------------------------- | ---------- | -------------------------------------------------------------- |
-| `options`         | `WheelPickerOption[]`     | (required) | Array of options to display in the wheel                       |
-| `value`           | `string`                  | -          | Current value of the picker (controlled mode)                  |
-| `defaultValue`    | `string`                  | -          | Default value of the picker (uncontrolled mode)                |
-| `onValueChange`   | `(value: string) => void` | -          | Callback fired when the selected value changes                 |
-| `infinite`        | `boolean`                 | `false`    | Enable infinite scrolling                                      |
-| `visibleCount`    | `number`                  | `20`       | Number of options visible on the wheel (must be multiple of 4) |
-| `dragSensitivity` | `number`                  | `3`        | Sensitivity of the drag interaction (higher = more sensitive)  |
-| `classNames`      | `WheelPickerClassNames`   | -          | Custom class names for styling                                 |
+| Prop               | Type                      | Default    | Description                                                    |
+| ------------------ | ------------------------- | ---------- | -------------------------------------------------------------- |
+| `options`          | `WheelPickerOption[]`     | (required) | Array of options to display in the wheel                       |
+| `value`            | `string`                  | -          | Current value of the picker (controlled mode)                  |
+| `defaultValue`     | `string`                  | -          | Default value of the picker (uncontrolled mode)                |
+| `onValueChange`    | `(value: string) => void` | -          | Callback fired when the selected value changes                 |
+| `infinite`         | `boolean`                 | `false`    | Enable infinite scrolling                                      |
+| `visibleCount`     | `number`                  | `20`       | Number of options visible on the wheel (must be multiple of 4) |
+| `dragSensitivity`  | `number`                  | `3`        | Sensitivity of the drag interaction (higher = more sensitive)  |
+| `optionItemHeight` | `number`                  | `30`       | Height (in pixels) of each item in the picker list             |
+| `classNames`       | `WheelPickerClassNames`   | -          | Custom class names for styling                                 |
 
 ### Types
 
@@ -272,8 +273,8 @@ Props for the `WheelPicker` component:
 type WheelPickerOption = {
   /** Value that will be returned when this option is selected */
   value: string;
-  /** Text label displayed for this option */
-  label: string;
+  /** The content displayed for this option */
+  label: ReactNode;
 };
 ```
 

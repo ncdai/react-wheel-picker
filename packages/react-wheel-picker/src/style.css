@@ -1,20 +1,19 @@
 [data-rwp-wrapper] {
-  display: flex;
   position: relative;
+  overflow: hidden;
+  display: flex;
   width: 100%;
   align-items: stretch;
   justify-content: space-between;
-  overflow: hidden;
   perspective: 2000px;
   user-select: none;
 }
 
 [data-rwp] {
   position: relative;
-  flex: 1;
   overflow: hidden;
+  flex: 1;
   cursor: ns-resize;
-  text-align: center;
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,
@@ -26,12 +25,12 @@
 
 [data-rwp-highlight-wrapper] {
   position: absolute;
+  overflow: hidden;
   top: 50%;
   width: 100%;
+  transform: translateY(-50%);
   font-size: 1rem;
   font-weight: 500;
-  overflow: hidden;
-  transform: translateY(-50%);
 }
 
 [data-rwp-highlight-list] {
@@ -41,14 +40,13 @@
 }
 
 [data-rwp-options] {
-  display: block;
   position: absolute;
   top: 50%;
   left: 0;
+  display: block;
   width: 100%;
   height: 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   -webkit-font-smoothing: subpixel-antialiased;
   will-change: transform;
   backface-visibility: hidden;
@@ -64,4 +62,11 @@
   -webkit-font-smoothing: subpixel-antialiased;
   will-change: visibility;
   font-size: 0.875rem;
+}
+
+[data-rwp-option],
+[data-rwp-highlight-item] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,5 +1,15 @@
 # @ncdai/react-wheel-picker
 
+## 1.0.12
+
+### Patch Changes
+
+- 31df052: feat(WheelPicker): add optionItemHeight prop for customizable item height
+
+  fix(WheelPicker): update label type to ReactNode for more flexibility
+
+  style(WheelPicker): improve CSS for better alignment and centering
+
 ## 1.0.11
 
 ### Patch Changes

@@ -1,11 +1,13 @@
+import type { ReactNode } from "react";
+
 /**
  * Represents a single option in the wheel picker
  */
 export type WheelPickerOption = {
   /** The value that will be returned when this option is selected */
   value: string;
-  /** The text label displayed for this option */
-  label: string;
+  /** The content displayed for this option */
+  label: ReactNode;
 };
 
 /**
@@ -39,6 +41,8 @@ export type WheelPickerProps = {
   visibleCount?: number;
   /** Sensitivity of the drag interaction (higher = more sensitive) */
   dragSensitivity?: number;
+  /** Height (in pixels) of each item in the picker list */
+  optionItemHeight?: number;
   /** Custom class names for styling different parts of the wheel */
   classNames?: WheelPickerClassNames;
 };
@@ -50,5 +54,5 @@ export type WheelPickerWrapperProps = {
   /** Additional CSS class name for the wrapper */
   className?: string;
   /** Child elements to be rendered inside the wrapper */
-  children: React.ReactNode;
+  children: ReactNode;
 };

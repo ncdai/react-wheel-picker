@@ -4,7 +4,7 @@ import { CheckIcon, CopyIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 const INSTALLATION_COMMAND = `npx shadcn@latest add https://chanhdai.com/r/wheel-picker.json`;
 

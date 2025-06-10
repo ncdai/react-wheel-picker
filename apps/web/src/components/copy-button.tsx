@@ -3,7 +3,7 @@
 import { CheckIcon, CopyIcon } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 
 import { Button } from "./ui/button";
 

@@ -17,9 +17,9 @@ import {
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Code, Heading } from "@/components/ui/typography";
-import { cn } from "@/lib/cn";
 import { rehypeNpmCommand } from "@/lib/rehype-npm-command";
 import { codeImport } from "@/lib/remark-code-import";
+import { cn } from "@/lib/utils";
 import type { NpmCommands } from "@/types/unist";
 
 import { CodeBlockCommand } from "./code-block-command";

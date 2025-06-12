@@ -13,7 +13,7 @@
   position: relative;
   overflow: hidden;
   flex: 1;
-  cursor: ns-resize;
+  cursor: default;
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,

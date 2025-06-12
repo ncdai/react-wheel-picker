@@ -85,15 +85,18 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
   const scrollRef = useRef(0);
   const moveId = useRef(0);
   const dragingRef = useRef(false);
-  const lastWheelRef = useRef(0);
+  const lastWheelTimeRef = useRef(0);
 
   const touchDataRef = useRef<{
     startY: number;
     yList: [number, number][];
     touchScroll?: number;
+    isClick?: boolean;
   }>({
     startY: 0,
     yList: [],
+    touchScroll: 0,
+    isClick: true,
   });
 
   const dragControllerRef = useRef<AbortController | null>(null);
@@ -182,6 +185,23 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     return items;
   }, [classNames?.highlightItem, itemHeight, infiniteProp, options]);
 
+  const wheelSegmentPositions = useMemo(() => {
+    let positionAlongWheel = 0;
+    const degToRad = Math.PI / 180;
+
+    const segmentRanges: [number, number][] = [];
+
+    for (let i = quarterCount - 1; i >= -quarterCount + 1; --i) {
+      const angle = i * itemAngle;
+      const segmentLength = itemHeight * Math.cos(angle * degToRad);
+      const start = positionAlongWheel;
+      positionAlongWheel += segmentLength;
+      segmentRanges.push([start, positionAlongWheel]);
+    }
+
+    return segmentRanges;
+  }, [itemAngle, itemHeight, quarterCount]);
+
   const normalizeScroll = (scroll: number) =>
     ((scroll % options.length) + options.length) % options.length;
 
@@ -267,12 +287,64 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     selectByScroll(index);
   };
 
+  const scrollByStep = (step: number) => {
+    const startScroll = scrollRef.current;
+    let endScroll = startScroll + step;
+
+    if (infiniteProp) {
+      endScroll = Math.round(endScroll);
+    } else {
+      endScroll = clamp(Math.round(endScroll), 0, options.length - 1);
+    }
+
+    const distance = Math.abs(endScroll - startScroll);
+    if (distance === 0) return;
+
+    const duration = Math.sqrt(distance / 5);
+
+    cancelAnimation();
+    animateScroll(startScroll, endScroll, duration, () => {
+      selectByScroll(scrollRef.current);
+    });
+  };
+
+  const handleWheelItemClick = (clientY: number) => {
+    const container = containerRef.current;
+    if (!container) {
+      console.error("Container reference is not set.");
+      return;
+    }
+
+    const { top } = container.getBoundingClientRect();
+    const clickOffsetY = clientY - top;
+
+    const clickedSegmentIndex = wheelSegmentPositions.findIndex(
+      ([start, end]) => clickOffsetY >= start && clickOffsetY <= end
+    );
+
+    if (clickedSegmentIndex === -1) {
+      console.error("No item found for click position:", clickOffsetY);
+      return;
+    }
+
+    const stepsToScroll = (quarterCount - clickedSegmentIndex - 1) * -1;
+    scrollByStep(stepsToScroll);
+  };
+
   const updateScrollDuringDrag = (e: MouseEvent | TouchEvent) => {
     try {
       const currentY =
         (e instanceof MouseEvent ? e.clientY : e.touches?.[0]?.clientY) || 0;
 
       const touchData = touchDataRef.current;
+
+      // If this is the first move after mousedown, check if it's a drag
+      if (touchData.isClick) {
+        const dragThreshold = 5; // pixels
+        if (Math.abs(currentY - touchData.startY) > dragThreshold) {
+          touchData.isClick = false;
+        }
+      }
 
       // Record current Y position with timestamp
       touchData.yList.push([currentY, Date.now()]);
@@ -351,6 +423,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
       touchData.startY = startY;
       touchData.yList = [[startY, Date.now()]];
       touchData.touchScroll = scrollRef.current;
+      touchData.isClick = true;
 
       // Stop any ongoing scroll animation
       cancelAnimation();
@@ -426,6 +499,13 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
       dragControllerRef.current = null;
 
       const touchData = touchDataRef.current;
+
+      // If it was a click (no significant movement), handle it as a click
+      if (touchData.isClick) {
+        handleWheelItemClick(touchData.startY);
+        return;
+      }
+
       const yList = touchData.yList;
       let velocity = 0;
 
@@ -481,31 +561,14 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     event.preventDefault();
 
     const now = Date.now();
-    if (now - lastWheelRef.current < 100) return;
+    if (now - lastWheelTimeRef.current < 100) return;
 
     const direction = Math.sign(event.deltaY);
     if (!direction) return;
 
-    lastWheelRef.current = now;
+    lastWheelTimeRef.current = now;
 
-    const startScroll = scrollRef.current;
-    let endScroll = startScroll + direction;
-
-    if (infiniteProp) {
-      endScroll = Math.round(endScroll);
-    } else {
-      endScroll = clamp(Math.round(endScroll), 0, options.length - 1);
-    }
-
-    const distance = Math.abs(endScroll - startScroll);
-    if (distance === 0) return;
-
-    const duration = Math.sqrt(distance / 5);
-
-    cancelAnimation();
-    animateScroll(startScroll, endScroll, duration, () => {
-      selectByScroll(scrollRef.current);
-    });
+    scrollByStep(direction);
   };
 
   const handleWheelEvent = useCallback(

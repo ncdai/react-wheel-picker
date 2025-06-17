@@ -32,9 +32,6 @@ importers:
       '@ncdai/react-wheel-picker':
         specifier: workspace:*
         version: link:../../packages/react-wheel-picker
-      '@radix-ui/react-slot':
-        specifier: 1.2.2
-        version: 1.2.2(@types/react@19.1.4)(react@19.1.0)
       '@vercel/analytics':
         specifier: ^1.5.0
         version: 1.5.0(next@15.3.2(@babel/core@7.27.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)

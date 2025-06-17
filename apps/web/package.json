@@ -16,7 +16,6 @@
     "@bprogress/next": "^3.2.12",
     "@hookform/resolvers": "5.0.1",
     "@ncdai/react-wheel-picker": "workspace:*",
-    "@radix-ui/react-slot": "1.2.2",
     "@vercel/analytics": "^1.5.0",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",

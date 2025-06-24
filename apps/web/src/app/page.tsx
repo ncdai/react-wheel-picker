@@ -6,6 +6,7 @@ import {
   PointerIcon,
   TriangleDashedIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { MultiPickerDemo } from "@/components/examples/multi-picker-demo";
@@ -36,6 +37,50 @@ const featuredItems = [
   {
     icon: Icons.shadcn,
     title: "Easy installation via shadcn CLI",
+  },
+];
+
+type Praise = {
+  id: string;
+  avatar: string;
+  name: string;
+  description: string;
+  content: string;
+  refLink: string;
+};
+
+const praise: Praise[] = [
+  {
+    id: "jordwalke",
+    avatar: "/images/avatars/jordwalke.webp",
+    name: "jordwalke",
+    description: "Creator of React",
+    content: "Also, cool wheel picker!",
+    refLink: "https://x.com/jordwalke/status/1937166049868439854",
+  },
+  {
+    id: "steventey",
+    avatar: "/images/avatars/steventey.webp",
+    name: "Steven Tey",
+    description: "Founder of dub.co",
+    content: "whoa, this is really dope – needs to get added to @shadcn UI 👀",
+    refLink: "https://x.com/steventey/status/1936934909370830924",
+  },
+  {
+    id: "serhii_be",
+    avatar: "/images/avatars/serhii_be.webp",
+    name: "Serhii Bedrytskyi",
+    description: "Creator of uipub.com",
+    content: "Nice component",
+    refLink: "https://x.com/serhii_be/status/1933583827600904485",
+  },
+  {
+    id: "theorcdev",
+    name: "OrcDev",
+    description: "Creator of 8bitcn/ui",
+    avatar: "/images/avatars/theorcdev.webp",
+    content: "Looks nice!",
+    refLink: "https://x.com/theorcdev/status/1934586473040543885",
   },
 ];
 
@@ -93,6 +138,12 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="mb-12 grid gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
+        {praise.map((item) => (
+          <PraiseCard key={item.id} {...item} />
+        ))}
+      </div>
     </div>
   );
 }
@@ -132,5 +183,61 @@ function FeaturedItem({
         )}
       </p>
     </div>
+  );
+}
+
+function PraiseCard({ avatar, name, description, content, refLink }: Praise) {
+  return (
+    <a
+      className="block"
+      href={refLink}
+      target="_blank"
+      rel="noopener"
+      title={`See post by ${name}`}
+    >
+      <div className="flex h-full flex-col gap-4 rounded-md border p-4 shadow-xs transition-colors hover:bg-accent/30">
+        <div className="grow">
+          <p>{content}</p>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <Image
+            className="shrink-0 rounded-full"
+            src={avatar}
+            alt={name}
+            width={32}
+            height={32}
+            unoptimized
+            aria-hidden
+          />
+
+          <div className="flex flex-col gap-1.5">
+            <span className="flex items-center gap-1 text-sm leading-none font-semibold">
+              {name}
+              <VerifiedIcon className="size-[1em] text-[#1d9bf0]" aria-hidden />
+            </span>
+            <span className="text-xs leading-none text-muted-foreground">
+              {description}
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  );
+}
+
+function VerifiedIcon(props: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M24 12a4.454 4.454 0 0 0-2.564-3.91 4.437 4.437 0 0 0-.948-4.578 4.436 4.436 0 0 0-4.577-.948A4.44 4.44 0 0 0 12 0a4.423 4.423 0 0 0-3.9 2.564 4.434 4.434 0 0 0-2.43-.178 4.425 4.425 0 0 0-2.158 1.126 4.42 4.42 0 0 0-1.12 2.156 4.42 4.42 0 0 0 .183 2.421A4.456 4.456 0 0 0 0 12a4.465 4.465 0 0 0 2.576 3.91 4.433 4.433 0 0 0 .936 4.577 4.459 4.459 0 0 0 4.577.95A4.454 4.454 0 0 0 12 24a4.439 4.439 0 0 0 3.91-2.563 4.26 4.26 0 0 0 5.526-5.526A4.453 4.453 0 0 0 24 12Zm-13.709 4.917-4.38-4.378 1.652-1.663 2.646 2.646L15.83 7.4l1.72 1.591-7.258 7.926Z"
+      />
+    </svg>
   );
 }

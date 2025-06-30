@@ -1,5 +1,11 @@
 # @ncdai/react-wheel-picker
 
+## 1.0.14
+
+### Patch Changes
+
+- 27f5df9: fix: sync selected value position when options change dynamically
+
 ## 1.0.13
 
 ### Patch Changes

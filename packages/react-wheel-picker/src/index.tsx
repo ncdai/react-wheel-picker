@@ -610,7 +610,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
   useEffect(() => {
     selectByValue(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value, valueProp]);
+  }, [value, valueProp, options]); // selected value is changed when options are changed
 
   return (
     <div ref={containerRef} data-rwp style={{ height: containerHeight }}>

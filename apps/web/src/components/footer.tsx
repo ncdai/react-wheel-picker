@@ -2,7 +2,7 @@ import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-dashed p-6">
+    <footer className="flex flex-col-reverse items-center justify-between gap-6 border-t border-dashed p-6 md:flex-row">
       <p className="text-center text-sm text-balance">
         Built by{" "}
         <a
@@ -24,6 +24,14 @@ export function Footer() {
         </a>
         .
       </p>
+
+      <a href="https://vercel.com/oss" target="_blank" rel="noopener">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          alt="Vercel OSS Program"
+          src="https://vercel.com/oss/program-badge.svg"
+        />
+      </a>
     </footer>
   );
 }

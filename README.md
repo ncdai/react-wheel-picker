@@ -22,12 +22,12 @@ Please read the [contributing guide](/CONTRIBUTING.md).
 
 Licensed under the [MIT license](./LICENSE).
 
+## Sponsors
+
+This project is proudly supported by:
+
+[![Vercel OSS Program](https://vercel.com/oss/program-badge.svg)](https://vercel.com/oss)
+
 ## Star History
 
 [![Star History](https://starchart.cc/ncdai/react-wheel-picker.svg?variant=adaptive)](https://starchart.cc/ncdai/react-wheel-picker)
-
-## GitAds Sponsored
-
-[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=ncdai/react-wheel-picker@github)](https://gitads.dev/v1/ad-track?source=ncdai/react-wheel-picker@github)
-
-<!-- GitAds-Verify: ZWW6YVB72F3EEFFTHLMCLS6WSKVVM4U2 -->

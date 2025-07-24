@@ -17,6 +17,7 @@
     "@hookform/resolvers": "5.0.1",
     "@ncdai/react-wheel-picker": "workspace:*",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "geist": "1.4.2",

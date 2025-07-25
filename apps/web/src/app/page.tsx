@@ -51,6 +51,23 @@ type Praise = {
 
 const praise: Praise[] = [
   {
+    id: "kapehe_ok",
+    avatar: "/images/avatars/kapehe_ok.webp",
+    name: "Kap",
+    description: "Head of Developer Community at Vercel",
+    content: "one of my favorite projects that submitted! you are crushing it!",
+    refLink: "https://x.com/kapehe_ok/status/1948104774358106612",
+  },
+  {
+    id: "initjean",
+    avatar: "/images/avatars/initjean.webp",
+    name: "Jean P.D. Meijer",
+    description: "Creator of analog.now",
+    content:
+      "congrats you deserve it! react wheel picker is so smooth, its insane 🐐",
+    refLink: "https://x.com/initjean/status/1948159885960438151",
+  },
+  {
     id: "jordwalke",
     avatar: "/images/avatars/jordwalke.webp",
     name: "jordwalke",
@@ -67,20 +84,20 @@ const praise: Praise[] = [
     refLink: "https://x.com/steventey/status/1936934909370830924",
   },
   {
-    id: "serhii_be",
-    avatar: "/images/avatars/serhii_be.webp",
-    name: "Serhii Bedrytskyi",
-    description: "Creator of uipub.com",
-    content: "Nice component",
-    refLink: "https://x.com/serhii_be/status/1933583827600904485",
-  },
-  {
     id: "theorcdev",
     name: "OrcDev",
     description: "Creator of 8bitcn/ui",
     avatar: "/images/avatars/theorcdev.webp",
     content: "Looks nice!",
     refLink: "https://x.com/theorcdev/status/1934586473040543885",
+  },
+  {
+    id: "serhii_be",
+    avatar: "/images/avatars/serhii_be.webp",
+    name: "Serhii Bedrytskyi",
+    description: "Creator of uipub.com",
+    content: "Nice component",
+    refLink: "https://x.com/serhii_be/status/1933583827600904485",
   },
 ];
 
@@ -139,7 +156,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mb-12 grid gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mb-12 grid gap-4 px-4 sm:grid-cols-2 lg:grid-cols-3">
         {praise.map((item) => (
           <PraiseCard key={item.id} {...item} />
         ))}
@@ -216,7 +233,7 @@ function PraiseCard({ avatar, name, description, content, refLink }: Praise) {
               {name}
               <VerifiedIcon className="size-[1em] text-[#1d9bf0]" aria-hidden />
             </span>
-            <span className="text-xs leading-none text-muted-foreground">
+            <span className="text-xs leading-none text-balance text-muted-foreground">
               {description}
             </span>
           </div>

@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 
 import { Footer } from "@/components/footer";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   description:
     "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
-  keywords: ["react", "wheel picker", "wheel", "picker"],
+  keywords: ["react wheel picker", "react", "wheel picker", "wheel", "picker"],
   authors: [
     {
       name: "ncdai",
@@ -45,6 +45,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: META_THEME_COLORS.light,
+};
+
 // Thanks @shadcn-ui, @tailwindcss
 const darkModeScript = String.raw`
   try {
@@ -66,7 +73,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="text/javascript"
@@ -79,7 +90,7 @@ export default function RootLayout({
         <Script src={`data:text/javascript;base64,${btoa(darkModeScript)}`} />
       </head>
 
-      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body>
         <div className="container mx-auto">
           <div className="sm:border-x">
             <Providers>

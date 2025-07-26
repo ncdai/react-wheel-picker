@@ -224,7 +224,6 @@ function PraiseCard({ avatar, name, description, content, refLink }: Praise) {
             alt={name}
             width={32}
             height={32}
-            unoptimized
             aria-hidden
           />
 

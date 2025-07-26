@@ -3,6 +3,7 @@ import "./globals.css";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -44,6 +45,21 @@ export const metadata: Metadata = {
   },
 };
 
+// Thanks @shadcn-ui, @tailwindcss
+const darkModeScript = String.raw`
+  try {
+    if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '${META_THEME_COLORS.dark}')
+    }
+  } catch (_) {}
+
+  try {
+    if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+      document.documentElement.classList.add('os-macos')
+    }
+  } catch (_) {}
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,18 +68,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Thanks @shadcn-ui */}
         <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            try {
-              if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.querySelector('meta[name="theme-color"]').setAttribute('content', '${META_THEME_COLORS.dark}')
-              }
-            } catch (_) {}
-          `,
-          }}
+          type="text/javascript"
+          dangerouslySetInnerHTML={{ __html: darkModeScript }}
         />
+        {/*
+          Thanks @tailwindcss. We inject the script via the `<Script/>` tag again,
+          since we found the regular `<script>` tag to not execute when rendering a not-found page.
+         */}
+        <Script src={`data:text/javascript;base64,${btoa(darkModeScript)}`} />
       </head>
 
       <body className={`${GeistSans.variable} ${GeistMono.variable}`}>

@@ -1,5 +1,7 @@
 import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
+import { VercelOSSProgramBadge } from "./vercel-oss-badge";
+
 export function Footer() {
   return (
     <footer className="flex flex-col-reverse items-center justify-between gap-6 border-t border-dashed p-6 md:flex-row">
@@ -12,6 +14,15 @@ export function Footer() {
           rel="noopener"
         >
           ncdai
+        </a>
+        . Hosted on{" "}
+        <a
+          className="font-medium underline underline-offset-4"
+          href="https://vercel.com/new?utm_source=react_wheel_picker&utm_medium=web&utm_campaign=cta_deploy_now_callout"
+          target="_blank"
+          rel="noopener"
+        >
+          Vercel
         </a>
         . The source code is available on{" "}
         <a
@@ -26,11 +37,7 @@ export function Footer() {
       </p>
 
       <a href="https://vercel.com/oss" target="_blank" rel="noopener">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          alt="Vercel OSS Program"
-          src="https://vercel.com/oss/program-badge.svg"
-        />
+        <VercelOSSProgramBadge className="h-6" />
       </a>
     </footer>
   );

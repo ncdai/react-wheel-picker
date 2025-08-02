@@ -18,7 +18,7 @@ export function Footer() {
         . Hosted on{" "}
         <a
           className="font-medium underline underline-offset-4"
-          href="https://vercel.com/new?utm_source=react_wheel_picker&utm_medium=web&utm_campaign=cta_deploy_now_callout"
+          href="https://vercel.com/new?utm_source=react-wheel-picker&utm_medium=web&utm_campaign=cta_deploy_now_callout"
           target="_blank"
           rel="noopener"
         >
@@ -36,7 +36,11 @@ export function Footer() {
         .
       </p>
 
-      <a href="https://vercel.com/oss" target="_blank" rel="noopener">
+      <a
+        href="https://vercel.com/oss?utm_source=react-wheel-picker&utm_medium=web"
+        target="_blank"
+        rel="noopener"
+      >
         <VercelOSSProgramBadge className="h-6" />
       </a>
     </footer>

@@ -117,7 +117,7 @@ export default function Home() {
         Smooth inertia scrolling and infinite loop support.
       </p>
 
-      <div className="mx-auto mb-12 grid grid-cols-2 gap-4 px-4 sm:w-sm">
+      <div className="mx-auto mb-6 grid grid-cols-2 gap-4 px-4 sm:w-sm">
         <Button asChild>
           <Link href="/docs/getting-started">Get Started</Link>
         </Button>
@@ -135,6 +135,18 @@ export default function Home() {
             Examples
           </a>
         </Button>
+      </div>
+
+      <div className="mb-12 flex justify-center">
+        <a
+          className="flex h-8 items-center gap-2 rounded-full bg-zinc-50 px-4 text-sm font-medium dark:bg-white/5"
+          href="http://vercel.com/oss?utm_source=react-wheel-picker&utm_medium=web"
+          target="_blank"
+          rel="noopener"
+        >
+          <span className="text-muted-foreground">Backed by</span>
+          <span>▲ Vercel OSS Program</span>
+        </a>
       </div>
 
       <div className="mb-12 border-y">

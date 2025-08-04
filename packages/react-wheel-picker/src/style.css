@@ -1,3 +1,14 @@
+[data-rwp-wrapper] ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+[data-rwp-wrapper] li {
+  margin: 0;
+  padding: 0;
+}
+
 [data-rwp-wrapper] {
   position: relative;
   overflow: hidden;
@@ -36,7 +47,6 @@
 [data-rwp-highlight-list] {
   position: absolute;
   width: 100%;
-  list-style: none;
 }
 
 [data-rwp-options] {
@@ -51,7 +61,6 @@
   will-change: transform;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  list-style: none;
 }
 
 [data-rwp-option] {

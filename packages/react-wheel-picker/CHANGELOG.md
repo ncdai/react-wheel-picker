@@ -1,5 +1,11 @@
 # @ncdai/react-wheel-picker
 
+## 1.0.15
+
+### Patch Changes
+
+- 8ae2379: style(react-wheel-picker): remove redundant list-style declarations and add reset styles for ul and li elements to ensure consistent styling across different browsers
+
 ## 1.0.14
 
 ### Patch Changes

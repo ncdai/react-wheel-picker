@@ -7,6 +7,7 @@ import { Mark } from "./mark";
 import { StarsCount } from "./stars-count";
 import { ToggleTheme } from "./toggle-theme";
 import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
 
 export function Header() {
   return (
@@ -21,8 +22,13 @@ export function Header() {
         </Link>
       </BrandContextMenu>
 
-      <div className="flex items-center gap-2">
-        <Button variant="outline" size="sm" asChild>
+      <div className="flex items-center gap-1">
+        <Button
+          className="gap-1.5 has-[>svg]:px-2"
+          variant="ghost"
+          size="sm"
+          asChild
+        >
           <a href={SOURCE_CODE_GITHUB_URL} target="_blank" rel="noopener">
             <svg viewBox="0 0 438.549 438.549">
               <path
@@ -33,6 +39,11 @@ export function Header() {
             <StarsCount />
           </a>
         </Button>
+
+        <Separator
+          className="data-[orientation=vertical]:h-4"
+          orientation="vertical"
+        />
 
         <ToggleTheme />
       </div>

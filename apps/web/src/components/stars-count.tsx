@@ -1,28 +1,24 @@
-"use client";
-
 import React from "react";
-import useSWR from "swr";
 
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
+export async function StarsCount() {
+  const data = await fetch(
+    `https://api.github.com/repos/ncdai/react-wheel-picker`,
+    {
+      headers: {
+        Accept: "application/vnd.github+json",
+        Authorization: `Bearer ${process.env.GITHUB_API_TOKEN}`,
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+      next: { revalidate: 86400 }, // Cache for 1 day (86400 seconds)
+    },
+  );
+  const json = await data.json();
 
-type StarsCountResponse = {
-  stargazers_count: number;
-};
-
-export function StarsCount() {
-  const { data } = useSWR<StarsCountResponse>(`/api/stargazers_count`, fetcher);
-
-  if (!data) {
-    return <span className="h-3 w-6 rounded-full bg-muted" />;
-  }
-
-  if (data.stargazers_count < 0) {
-    return <span className="h-3 w-6 rounded-full bg-muted" />;
-  }
+  const count = json?.stargazers_count ?? -1;
 
   return (
-    <span className="mt-px w-6 text-center font-mono text-xs/none font-medium text-muted-foreground tabular-nums">
-      {data.stargazers_count.toLocaleString()}
+    <span className="translate-y-px font-mono text-xs text-muted-foreground tabular-nums">
+      {count.toLocaleString()}
     </span>
   );
 }

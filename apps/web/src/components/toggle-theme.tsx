@@ -1,5 +1,6 @@
 "use client";
 
+import { MoonStarIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import React, { useCallback } from "react";
 
@@ -25,15 +26,15 @@ export function ToggleTheme() {
   return (
     <Button
       className="size-8"
-      variant="outline"
+      variant="ghost"
       size="icon"
       onClick={handleToggle}
     >
-      {/* <MoonStarIcon className="hidden [html.dark_&]:block" /> */}
-      {/* <SunIcon className="hidden [html.light_&]:block" /> */}
+      <MoonStarIcon className="hidden [html.dark_&]:block" />
+      <SunIcon className="hidden [html.light_&]:block" />
 
       {/* Source: @shadcn/ui */}
-      <svg
+      {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
@@ -50,7 +51,7 @@ export function ToggleTheme() {
         <path d="M12 9l4.65 -4.65"></path>
         <path d="M12 14.3l7.37 -7.37"></path>
         <path d="M12 19.6l8.85 -8.85"></path>
-      </svg>
+      </svg> */}
       <span className="sr-only">Toggle Theme</span>
     </Button>
   );

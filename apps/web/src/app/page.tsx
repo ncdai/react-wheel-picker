@@ -142,7 +142,7 @@ export default function Home() {
       <div className="mb-12 flex justify-center">
         <a
           className="flex h-8 items-center gap-2 rounded-full bg-zinc-50 px-4 text-sm font-medium dark:bg-white/5"
-          href="http://vercel.com/oss?utm_source=react-wheel-picker&utm_medium=web"
+          href="https://vercel.com/blog/summer-2025-oss-program?utm_source=react-wheel-picker&utm_medium=web#react-wheel-picker"
           target="_blank"
           rel="noopener"
         >

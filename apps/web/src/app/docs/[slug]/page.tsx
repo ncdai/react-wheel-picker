@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { LLMCopyButtonWithViewOptions } from "@/components/ai/page-actions";
 import { MDX } from "@/components/mdx";
 import { Prose } from "@/components/ui/typography";
 import { getAllPosts } from "@/data/docs";
@@ -58,6 +59,12 @@ export default async function Page({
         <h1 className="font-heading mb-6">{post.metadata.title}</h1>
 
         <p className="lead">{post.metadata.description}</p>
+
+        <div>
+          <LLMCopyButtonWithViewOptions
+            markdownUrl={`/docs/${post.slug}.mdx`}
+          />
+        </div>
 
         <MDX code={post.content} />
       </Prose>

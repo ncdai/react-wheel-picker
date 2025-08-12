@@ -130,7 +130,7 @@ export default function Home() {
           asChild
         >
           <a
-            href="https://chanhdai.com/blog/react-wheel-picker#examples"
+            href="https://chanhdai.com/components/react-wheel-picker#examples"
             target="_blank"
             rel="noopener"
           >

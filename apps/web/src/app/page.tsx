@@ -147,7 +147,7 @@ export default function Home() {
           rel="noopener"
         >
           <span className="text-muted-foreground">Backed by</span>
-          <span>▲ Vercel OSS Program</span>
+          <span>▲Vercel OSS Program</span>
         </a>
       </div>
 

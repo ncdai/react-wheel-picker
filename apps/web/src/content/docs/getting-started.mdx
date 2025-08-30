@@ -16,11 +16,43 @@ updatedAt: 2025-08-12
   <TabsTrigger value="primitives">Primitives</TabsTrigger>
 </TabsList>
 
-<TabsContent value="shadcn/ui" className="[&>figure]:mb-0">
+<TabsContent value="shadcn/ui" className="[&>figure]:mt-0 [&>figure]:mb-0">
+
+<Steps>
+
+<Step>Add the ncdai registry to your components.json</Step>
+
+```json title="components.json"
+{
+  "registries": {
+    "@ncdai": "https://chanhdai.com/r/{name}.json"
+  }
+}
+```
+
+<Step>Add the component to your project</Step>
 
 ```bash
-npx shadcn@latest add https://chanhdai.com/r/wheel-picker.json
+npx shadcn@latest add @ncdai/wheel-picker
 ```
+
+<Step>Configure the shadcn MCP server (optional)</Step>
+
+Enable AI assistants to understand your component registry:
+
+```bash
+npx shadcn@latest mcp init
+```
+
+Learn more about [shadcn MCP server](https://ui.shadcn.com/docs/mcp).
+
+**Example Prompts:**
+
+- Add the wheel picker component from the ncdai registry
+- Create a wheel picker demo from the ncdai registry
+- Create a wheel picker form demo from the ncdai registry
+
+</Steps>
 
 </TabsContent>
 

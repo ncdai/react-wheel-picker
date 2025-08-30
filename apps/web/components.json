@@ -1,5 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema.json",
+  "registries": {
+    "@ncdai": "https://chanhdai.com/r/{name}.json"
+  },
   "style": "new-york",
   "rsc": true,
   "tsx": true,

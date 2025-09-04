@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const INSTALLATION_COMMAND = `npx shadcn@latest add https://chanhdai.com/r/wheel-picker.json`;
+const INSTALLATION_COMMAND = `npx shadcn@latest add @ncdai/wheel-picker`;
 
 export function InstallationCommand({ className }: { className?: string }) {
   const [hasCopied, setHasCopied] = useState(false);

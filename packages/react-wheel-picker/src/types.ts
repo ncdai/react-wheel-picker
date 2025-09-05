@@ -41,6 +41,8 @@ export type WheelPickerProps = {
   visibleCount?: number;
   /** Sensitivity of the drag interaction (higher = more sensitive) */
   dragSensitivity?: number;
+  /** Sensitivity of the scroll interaction (higher = more sensitive) */
+  scrollSensitivity?: number;
   /** Height (in pixels) of each item in the picker list */
   optionItemHeight?: number;
   /** Custom class names for styling different parts of the wheel */

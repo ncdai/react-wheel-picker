@@ -2,7 +2,7 @@
 title: Getting started
 description: iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
 createdAt: 2025-05-16
-updatedAt: 2025-08-12
+updatedAt: 2025-09-06
 ---
 
 ## Installation
@@ -270,17 +270,18 @@ Props for the `WheelPickerWrapper` component:
 
 Props for the `WheelPicker` component:
 
-| Prop               | Type                      | Default    | Description                                                    |
-| ------------------ | ------------------------- | ---------- | -------------------------------------------------------------- |
-| `options`          | `WheelPickerOption[]`     | (required) | Array of options to display in the wheel                       |
-| `value`            | `string`                  | -          | Current value of the picker (controlled mode)                  |
-| `defaultValue`     | `string`                  | -          | Default value of the picker (uncontrolled mode)                |
-| `onValueChange`    | `(value: string) => void` | -          | Callback fired when the selected value changes                 |
-| `infinite`         | `boolean`                 | `false`    | Enable infinite scrolling                                      |
-| `visibleCount`     | `number`                  | `20`       | Number of options visible on the wheel (must be multiple of 4) |
-| `dragSensitivity`  | `number`                  | `3`        | Sensitivity of the drag interaction (higher = more sensitive)  |
-| `optionItemHeight` | `number`                  | `30`       | Height (in pixels) of each item in the picker list             |
-| `classNames`       | `WheelPickerClassNames`   | -          | Custom class names for styling                                 |
+| Prop                | Type                      | Default    | Description                                                     |
+| ------------------- | ------------------------- | ---------- | --------------------------------------------------------------- |
+| `options`           | `WheelPickerOption[]`     | (required) | Array of options to display in the wheel                        |
+| `value`             | `string`                  | -          | Current value of the picker (controlled mode)                   |
+| `defaultValue`      | `string`                  | -          | Default value of the picker (uncontrolled mode)                 |
+| `onValueChange`     | `(value: string) => void` | -          | Callback fired when the selected value changes                  |
+| `infinite`          | `boolean`                 | `false`    | Enable infinite scrolling                                       |
+| `visibleCount`      | `number`                  | `20`       | Number of options visible on the wheel (must be multiple of 4)  |
+| `dragSensitivity`   | `number`                  | `3`        | Sensitivity of the drag interaction (higher = more sensitive)   |
+| `scrollSensitivity` | `number`                  | `5`        | Sensitivity of the scroll interaction (higher = more sensitive) |
+| `optionItemHeight`  | `number`                  | `30`       | Height (in pixels) of each item in the picker list              |
+| `classNames`        | `WheelPickerClassNames`   | -          | Custom class names for styling                                  |
 
 ### Types
 

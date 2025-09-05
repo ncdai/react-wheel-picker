@@ -1,5 +1,11 @@
 # @ncdai/react-wheel-picker
 
+## 1.0.16
+
+### Patch Changes
+
+- d6c8ed6: feat(react-wheel-picker): add scrollSensitivity prop to WheelPicker ([#73](https://github.com/ncdai/react-wheel-picker/issues/73))
+
 ## 1.0.15
 
 ### Patch Changes

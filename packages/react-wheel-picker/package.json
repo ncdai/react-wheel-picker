@@ -1,6 +1,6 @@
 {
   "name": "@ncdai/react-wheel-picker",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
   "publishConfig": {
     "access": "public",

@@ -18,11 +18,26 @@ export function Header() {
           href="/"
         >
           <Mark className="size-8" />
-          React Wheel Picker
+          <span className="max-sm:hidden">React Wheel Picker</span>
         </Link>
       </BrandContextMenu>
 
       <div className="flex items-center gap-1">
+        <Button className="px-2" variant="ghost" size="sm" asChild>
+          <a
+            href="https://github.com/ncdai/react-wheel-picker/discussions/77"
+            target="_blank"
+            rel="noopener"
+          >
+            Showcase
+          </a>
+        </Button>
+
+        <Separator
+          className="data-[orientation=vertical]:h-4"
+          orientation="vertical"
+        />
+
         <Button
           className="gap-1.5 has-[>svg]:px-2"
           variant="ghost"

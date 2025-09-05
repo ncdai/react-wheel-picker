@@ -41,6 +41,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
   infinite: infiniteProp = false,
   visibleCount: countProp = 20,
   dragSensitivity: dragSensitivityProp = 3,
+  scrollSensitivity: scrollSensitivityProp = 5,
   optionItemHeight: optionHeightProp = 30,
   classNames,
 }) => {
@@ -300,7 +301,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     const distance = Math.abs(endScroll - startScroll);
     if (distance === 0) return;
 
-    const duration = Math.sqrt(distance / 5);
+    const duration = Math.sqrt(distance / scrollSensitivityProp);
 
     cancelAnimation();
     animateScroll(startScroll, endScroll, duration, () => {

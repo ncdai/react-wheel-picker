@@ -4,6 +4,7 @@ import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 import { BrandContextMenu } from "./brand-context-menu";
 import { Mark } from "./mark";
+import { Nav } from "./nav";
 import { StarsCount } from "./stars-count";
 import { ToggleTheme } from "./toggle-theme";
 import { Button } from "./ui/button";
@@ -11,7 +12,7 @@ import { Separator } from "./ui/separator";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 flex h-16 items-center justify-between border-b bg-background/90 px-4 backdrop-blur-md">
+    <header className="sticky top-0 z-50 flex h-16 items-center border-b bg-background/90 px-4 backdrop-blur-md">
       <BrandContextMenu>
         <Link
           className="flex items-center gap-2 text-lg leading-none font-bold tracking-tight"
@@ -22,22 +23,11 @@ export function Header() {
         </Link>
       </BrandContextMenu>
 
+      <div className="ml-2 sm:ml-8" />
+
+      <Nav />
+
       <div className="flex items-center gap-1">
-        <Button className="px-2" variant="ghost" size="sm" asChild>
-          <a
-            href="https://github.com/ncdai/react-wheel-picker/discussions/77"
-            target="_blank"
-            rel="noopener"
-          >
-            Showcase
-          </a>
-        </Button>
-
-        <Separator
-          className="data-[orientation=vertical]:h-4"
-          orientation="vertical"
-        />
-
         <Button
           className="gap-1.5 has-[>svg]:px-2"
           variant="ghost"

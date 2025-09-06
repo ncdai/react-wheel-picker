@@ -11,3 +11,14 @@ export const META_THEME_COLORS = {
   light: "#ffffff",
   dark: "#09090b",
 };
+
+export const NAV_ITEMS = [
+  {
+    name: "Docs",
+    href: "/docs/getting-started",
+  },
+  {
+    name: "Showcases",
+    href: "/showcases",
+  },
+];

@@ -381,7 +381,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
   const handleDragMoveEvent = (event: MouseEvent | TouchEvent) => {
     if (
       !dragingRef.current &&
-      !containerRef.current!.contains(event.target as Node) &&
+      !containerRef.current?.contains(event.target as Node) &&
       event.target !== containerRef.current
     ) {
       return;
@@ -437,7 +437,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     (e: MouseEvent | TouchEvent) => {
       const isDragging = dragingRef.current;
       const isTargetValid =
-        containerRef.current!.contains(e.target as Node) ||
+        !!containerRef.current?.contains(e.target as Node) ||
         e.target === containerRef.current;
 
       if ((isDragging || isTargetValid) && e.cancelable) {
@@ -546,7 +546,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
 
       const isDragging = dragingRef.current;
       const isTargetValid =
-        containerRef.current!.contains(event.target as Node) ||
+        !!containerRef.current?.contains(event.target as Node) ||
         event.target === containerRef.current;
 
       if ((isDragging || isTargetValid) && event.cancelable) {
@@ -594,10 +594,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     const container = containerRef.current;
     if (!container) return;
 
-    const controller = new AbortController();
-    const { signal } = controller;
-
-    const opts = { signal, passive: false };
+    const opts = { passive: false };
 
     container.addEventListener("touchstart", handleDragStartEvent, opts);
     container.addEventListener("touchend", handleDragEndEvent, opts);
@@ -605,7 +602,13 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     document.addEventListener("mousedown", handleDragStartEvent, opts);
     document.addEventListener("mouseup", handleDragEndEvent, opts);
 
-    return () => controller.abort();
+    return () => {
+      container.removeEventListener("touchstart", handleDragStartEvent);
+      container.removeEventListener("touchend", handleDragEndEvent);
+      container.removeEventListener("wheel", handleWheelEvent);
+      document.removeEventListener("mousedown", handleDragStartEvent);
+      document.removeEventListener("mouseup", handleDragEndEvent);
+    };
   }, [handleDragEndEvent, handleDragStartEvent, handleWheelEvent]);
 
   useEffect(() => {

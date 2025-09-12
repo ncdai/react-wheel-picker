@@ -1,5 +1,11 @@
 # @ncdai/react-wheel-picker
 
+## 1.0.17
+
+### Patch Changes
+
+- 8c9d4a8: fix(react-wheel-picker): clean up event handlers when component is unmounted
+
 ## 1.0.16
 
 ### Patch Changes

@@ -18,6 +18,12 @@ Please read the [documentation](https://react-wheel-picker.chanhdai.com/docs/get
 
 Please read the [contributing guide](/CONTRIBUTING.md).
 
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=ncdai/react-wheel-picker)](https://github.com/ncdai/react-wheel-picker/graphs/contributors)
+
+> Made with [contrib.rocks](https://contrib.rocks)
+
 ## License
 
 Licensed under the [MIT license](./LICENSE).

@@ -17,3 +17,11 @@ Please read the [documentation](https://react-wheel-picker.chanhdai.com/docs/get
 ## License
 
 Licensed under the [MIT license](./LICENSE).
+
+## Sponsors
+
+This project is proudly supported by:
+
+[![Vercel OSS Program](https://vercel.com/oss/program-badge.svg)](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker)
+
+> Using this package at work? [Sponsor me](https://github.com/sponsors/ncdai) to help with support and maintenance.

@@ -65,6 +65,7 @@
     "url": "git+https://github.com/ncdai/react-wheel-picker.git",
     "directory": "packages/react-wheel-picker"
   },
+  "funding": "https://github.com/sponsors/ncdai",
   "bugs": {
     "url": "https://github.com/ncdai/react-wheel-picker/issues"
   },

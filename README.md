@@ -34,6 +34,8 @@ This project is proudly supported by:
 
 [![Vercel OSS Program](https://vercel.com/oss/program-badge.svg)](https://vercel.com/oss)
 
+> Using this package at work? [Sponsor me](https://github.com/sponsors/ncdai) to help with support and maintenance.
+
 ## Star History
 
 [![Star History](https://starchart.cc/ncdai/react-wheel-picker.svg?variant=adaptive)](https://starchart.cc/ncdai/react-wheel-picker)

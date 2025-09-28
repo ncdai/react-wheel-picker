@@ -26,6 +26,7 @@ import { CodeBlockCommand } from "./code-block-command";
 import { CodeTabs } from "./code-tabs";
 import { CopyButton } from "./copy-button";
 import { getIconForLanguageExtension, Icons } from "./icons";
+import { Mark } from "./mark";
 
 const components: MDXRemoteProps["components"] = {
   h1: (props: React.ComponentProps<"h1">) => <Heading as="h1" {...props} />,
@@ -131,6 +132,9 @@ const components: MDXRemoteProps["components"] = {
   TabsTrigger,
   TabsContent,
   ShadcnIcon: Icons.shadcn,
+  TailwindCSSIcon: Icons.tailwindcss,
+  CSSIcon: Icons.css,
+  ReactWheelPickerIcon: Mark,
 };
 
 const options: MDXRemoteProps["options"] = {

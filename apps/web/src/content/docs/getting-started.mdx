@@ -13,7 +13,9 @@ updatedAt: 2025-09-06
   <TabsTrigger className="pl-2" value="shadcn/ui">
     <ShadcnIcon /> {`shadcn/ui`}
   </TabsTrigger>
-  <TabsTrigger value="primitives">Primitives</TabsTrigger>
+  <TabsTrigger value="primitives">
+    <ReactWheelPickerIcon /> {`Primitives`}
+  </TabsTrigger>
 </TabsList>
 
 <TabsContent value="shadcn/ui">
@@ -79,10 +81,12 @@ The core component that renders a single wheel of options. Each wheel picker con
 <CodeTabs className="gap-0 mt-6">
 
 <TabsList>
-  <TabsTrigger className="pl-2" value="shadcn/ui">
+  <TabsTrigger value="shadcn/ui">
     <ShadcnIcon /> {`shadcn/ui`}
   </TabsTrigger>
-  <TabsTrigger value="primitives">Primitives</TabsTrigger>
+  <TabsTrigger value="primitives">
+    <ReactWheelPickerIcon /> {`Primitives`}
+  </TabsTrigger>
 </TabsList>
 
 <TabsContent value="shadcn/ui" className="[&>figure]:mb-0">
@@ -140,8 +144,12 @@ This CSS includes only basic layout. Use `classNames` to customize visuals (see 
 <Tabs className="gap-0 mt-4" defaultValue="tailwindcss">
 
 <TabsList>
-  <TabsTrigger value="tailwindcss">Tailwind CSS</TabsTrigger>
-  <TabsTrigger value="css">CSS</TabsTrigger>
+  <TabsTrigger value="tailwindcss">
+    <TailwindCSSIcon /> {`Tailwind CSS`}
+  </TabsTrigger>
+  <TabsTrigger value="css">
+    <CSSIcon /> {`CSS`}
+  </TabsTrigger>
 </TabsList>
 
 <TabsContent value="tailwindcss" className="[&>figure]:mb-0">

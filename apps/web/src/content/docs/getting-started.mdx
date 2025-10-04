@@ -10,10 +10,10 @@ updatedAt: 2025-09-06
 <CodeTabs className="gap-0 mt-6">
 
 <TabsList>
-  <TabsTrigger className="pl-2" value="shadcn/ui">
+  <TabsTrigger className="gap-1.5 px-2" value="shadcn/ui">
     <ShadcnIcon /> {`shadcn/ui`}
   </TabsTrigger>
-  <TabsTrigger value="primitives">
+  <TabsTrigger className="gap-1.5 px-2" value="primitives">
     <ReactWheelPickerIcon /> {`Primitives`}
   </TabsTrigger>
 </TabsList>
@@ -21,7 +21,7 @@ updatedAt: 2025-09-06
 <TabsContent value="shadcn/ui">
 
 ```bash
-npx shadcn@latest add @ncdai/wheel-picker
+npx shadcn add @ncdai/wheel-picker
 ```
 
 ### Configure the shadcn MCP server (optional)
@@ -29,7 +29,7 @@ npx shadcn@latest add @ncdai/wheel-picker
 Enable AI assistants to understand your component registry:
 
 ```bash
-npx shadcn@latest mcp init
+npx shadcn mcp init
 ```
 
 Learn more about [shadcn MCP server](https://ui.shadcn.com/docs/mcp).
@@ -81,10 +81,10 @@ The core component that renders a single wheel of options. Each wheel picker con
 <CodeTabs className="gap-0 mt-6">
 
 <TabsList>
-  <TabsTrigger value="shadcn/ui">
+  <TabsTrigger className="gap-1.5 px-2" value="shadcn/ui">
     <ShadcnIcon /> {`shadcn/ui`}
   </TabsTrigger>
-  <TabsTrigger value="primitives">
+  <TabsTrigger className="gap-1.5 px-2" value="primitives">
     <ReactWheelPickerIcon /> {`Primitives`}
   </TabsTrigger>
 </TabsList>
@@ -144,11 +144,11 @@ This CSS includes only basic layout. Use `classNames` to customize visuals (see 
 <Tabs className="gap-0 mt-4" defaultValue="tailwindcss">
 
 <TabsList>
-  <TabsTrigger value="tailwindcss">
+  <TabsTrigger className="gap-1.5 px-2" value="tailwindcss">
     <TailwindCSSIcon /> {`Tailwind CSS`}
   </TabsTrigger>
-  <TabsTrigger value="css">
-    <CSSIcon /> {`CSS`}
+  <TabsTrigger className="gap-1.5 px-2" value="css">
+    <CSSIcon className="size-3" /> {`CSS`}
   </TabsTrigger>
 </TabsList>
 

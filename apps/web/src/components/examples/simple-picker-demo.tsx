@@ -3,10 +3,6 @@ import { WheelPicker, WheelPickerWrapper } from "@/components/wheel-picker";
 
 const options: WheelPickerOption[] = [
   {
-    label: "Next.js",
-    value: "nextjs",
-  },
-  {
     label: "Vite",
     value: "vite",
   },
@@ -17,6 +13,10 @@ const options: WheelPickerOption[] = [
   {
     label: "React Router",
     value: "react-router",
+  },
+  {
+    label: "Next.js",
+    value: "nextjs",
   },
   {
     label: "Astro",
@@ -39,7 +39,7 @@ const options: WheelPickerOption[] = [
 export function SimplePickerDemo() {
   return (
     <WheelPickerWrapper className="mx-auto max-w-64">
-      <WheelPicker options={options} defaultValue="react-router" />
+      <WheelPicker options={options} defaultValue="nextjs" />
     </WheelPickerWrapper>
   );
 }

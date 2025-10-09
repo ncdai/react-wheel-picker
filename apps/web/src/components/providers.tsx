@@ -20,7 +20,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         attribute="class"
       >
         <ProgressProvider
-          color="#2563eb"
+          color="var(--foreground)"
           height="2px"
           delay={500}
           options={{ showSpinner: false }}

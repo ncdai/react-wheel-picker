@@ -21,9 +21,9 @@ export function MultiPickerDemo() {
   return (
     <div className="mx-auto w-64">
       <WheelPickerWrapper>
-        <WheelPicker options={hourOptions} infinite />
-        <WheelPicker options={minuteOptions} infinite />
-        <WheelPicker options={meridiemOptions} />
+        <WheelPicker options={hourOptions} defaultValue="9" infinite />
+        <WheelPicker options={minuteOptions} defaultValue="41" infinite />
+        <WheelPicker options={meridiemOptions} defaultValue="AM" />
       </WheelPickerWrapper>
     </div>
   );

@@ -1,5 +1,11 @@
 # @ncdai/react-wheel-picker
 
+## 1.0.18
+
+### Patch Changes
+
+- ab23b5e: feat: add support for generic option and values
+
 ## 1.0.17
 
 ### Patch Changes

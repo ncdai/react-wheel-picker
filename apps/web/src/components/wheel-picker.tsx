@@ -4,7 +4,11 @@ import * as WheelPickerPrimitive from "@ncdai/react-wheel-picker";
 
 import { cn } from "@/lib/utils";
 
-type WheelPickerOption = WheelPickerPrimitive.WheelPickerOption;
+type WheelPickerValue = WheelPickerPrimitive.WheelPickerValue;
+
+type WheelPickerOption<T extends WheelPickerValue = string> =
+  WheelPickerPrimitive.WheelPickerOption<T>;
+
 type WheelPickerClassNames = WheelPickerPrimitive.WheelPickerClassNames;
 
 function WheelPickerWrapper({
@@ -17,17 +21,17 @@ function WheelPickerWrapper({
         "w-56 rounded-lg border border-zinc-200 bg-white px-1 shadow-xs dark:border-zinc-700/80 dark:bg-zinc-900",
         "*:data-rwp:first:*:data-rwp-highlight-wrapper:rounded-s-md",
         "*:data-rwp:last:*:data-rwp-highlight-wrapper:rounded-e-md",
-        className
+        className,
       )}
       {...props}
     />
   );
 }
 
-function WheelPicker({
+function WheelPicker<T extends WheelPickerValue = string>({
   classNames,
   ...props
-}: React.ComponentProps<typeof WheelPickerPrimitive.WheelPicker>) {
+}: WheelPickerPrimitive.WheelPickerProps<T>) {
   return (
     <WheelPickerPrimitive.WheelPicker
       classNames={{

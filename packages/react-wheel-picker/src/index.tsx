@@ -8,6 +8,7 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 import type {
   WheelPickerOption,
   WheelPickerProps,
+  WheelPickerValue,
   WheelPickerWrapperProps,
 } from "./types";
 import { useControllableState } from "./use-controllable-state";
@@ -32,7 +33,7 @@ const WheelPickerWrapper: React.FC<WheelPickerWrapperProps> = ({
   );
 };
 
-const WheelPicker: React.FC<WheelPickerProps> = ({
+function WheelPicker<T extends WheelPickerValue>({
   defaultValue,
   value: valueProp,
   onValueChange,
@@ -44,19 +45,19 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
   scrollSensitivity: scrollSensitivityProp = 5,
   optionItemHeight: optionHeightProp = 30,
   classNames,
-}) => {
-  const [value = optionsProp[0]?.value ?? "", setValue] = useControllableState({
+}: WheelPickerProps<T>) {
+  const [value = optionsProp[0]?.value, setValue] = useControllableState<T>({
     defaultProp: defaultValue,
     prop: valueProp,
     onChange: onValueChange,
   });
 
-  const options = useMemo<WheelPickerOption[]>(() => {
+  const options = useMemo<WheelPickerOption<T>[]>(() => {
     if (!infiniteProp) {
       return optionsProp;
     }
 
-    const result: WheelPickerOption[] = [];
+    const result: WheelPickerOption<T>[] = [];
     const halfCount = Math.ceil(countProp / 2);
 
     if (optionsProp.length === 0) {
@@ -104,7 +105,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
 
   const renderWheelItems = useMemo(() => {
     const renderItem = (
-      item: WheelPickerOption,
+      item: WheelPickerOption<T>,
       index: number,
       angle: number
     ) => (
@@ -161,7 +162,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
   ]);
 
   const renderHighlightItems = useMemo(() => {
-    const renderItem = (item: WheelPickerOption, key: React.Key) => (
+    const renderItem = (item: WheelPickerOption<T>, key: React.Key) => (
       <li
         key={key}
         className={classNames?.highlightItem}
@@ -276,7 +277,7 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
     setValue(selected.value);
   };
 
-  const selectByValue = (value: string) => {
+  const selectByValue = (value: T) => {
     const index = options.findIndex((opt) => opt.value === value);
 
     if (index === -1) {
@@ -643,7 +644,14 @@ const WheelPicker: React.FC<WheelPickerProps> = ({
       </div>
     </div>
   );
+}
+
+export {
+  WheelPicker,
+  type WheelPickerOption,
+  type WheelPickerProps,
+  type WheelPickerValue,
+  WheelPickerWrapper,
 };
 
-export { WheelPicker, type WheelPickerOption, WheelPickerWrapper };
 export { type WheelPickerClassNames } from "./types";

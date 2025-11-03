@@ -1,11 +1,16 @@
 import type { ReactNode } from "react";
 
 /**
+ * Represents the value of a single option in the wheel picker
+ */
+export type WheelPickerValue = string | number;
+
+/**
  * Represents a single option in the wheel picker
  */
-export type WheelPickerOption = {
+export type WheelPickerOption<T extends WheelPickerValue = string> = {
   /** The value that will be returned when this option is selected */
-  value: string;
+  value: T;
   /** The content displayed for this option */
   label: ReactNode;
 };
@@ -25,16 +30,16 @@ export type WheelPickerClassNames = {
 /**
  * Props for the WheelPicker component
  */
-export type WheelPickerProps = {
+export type WheelPickerProps<T extends WheelPickerValue = string> = {
   /** Initial value of the picker when uncontrolled */
-  defaultValue?: string;
+  defaultValue?: T;
   /** Current value of the picker when controlled */
-  value?: string;
+  value?: T;
   /** Callback fired when the selected value changes */
-  onValueChange?: (value: string) => void;
+  onValueChange?: (value: T) => void;
 
   /** Array of options to display in the wheel */
-  options: WheelPickerOption[];
+  options: WheelPickerOption<T>[];
   /** Whether the wheel should loop infinitely */
   infinite?: boolean;
   /** The number of options visible on the circular ring, must be a multiple of 4 */

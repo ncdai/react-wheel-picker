@@ -1,5 +1,11 @@
 # @ncdai/react-wheel-picker
 
+## 1.0.19
+
+### Patch Changes
+
+- 4f4bef0: docs(README.md): update Vercel OSS Program badge URL to new asset location for improved reliability and future-proofing
+
 ## 1.0.18
 
 ### Patch Changes

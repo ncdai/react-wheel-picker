@@ -1,6 +1,6 @@
 "use client";
 
-import { MoonStarIcon, SunIcon } from "lucide-react";
+import { MoonIcon, SunMediumIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import React, { useCallback } from "react";
 
@@ -30,8 +30,8 @@ export function ToggleTheme() {
       size="icon"
       onClick={handleToggle}
     >
-      <MoonStarIcon className="hidden [html.dark_&]:block" />
-      <SunIcon className="hidden [html.light_&]:block" />
+      <MoonIcon className="hidden [html.dark_&]:block" />
+      <SunMediumIcon className="hidden [html.light_&]:block" />
 
       {/* Source: @shadcn/ui */}
       {/* <svg

@@ -21,4 +21,8 @@ export const NAV_ITEMS = [
     name: "Showcases",
     href: "/showcases",
   },
+  {
+    name: "Sponsors",
+    href: "/sponsors",
+  },
 ];

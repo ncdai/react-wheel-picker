@@ -17,7 +17,7 @@ export async function StarsCount() {
   const count = json?.stargazers_count ?? -1;
 
   return (
-    <span className="translate-y-px font-mono text-xs text-muted-foreground tabular-nums">
+    <span className="font-mono text-[13px] text-muted-foreground tabular-nums">
       {count.toLocaleString()}
     </span>
   );

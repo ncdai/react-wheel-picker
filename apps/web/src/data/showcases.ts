@@ -7,4 +7,12 @@ export const SHOWCASES = [
     name: "Namer UI",
     href: "https://namer-ui.vercel.app",
   },
+  {
+    name: "Color Palette Generator",
+    href: "https://nofpg.netlify.app",
+  },
+  {
+    name: "Lead Conversion Widget Builder",
+    href: "https://lead-conversion-widget-builder.netlify.app",
+  },
 ];

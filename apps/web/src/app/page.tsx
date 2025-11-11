@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 import "@ncdai/react-wheel-picker/style.css";
 
 import {
@@ -160,30 +158,6 @@ export default function Home() {
               {featuredItems.map((item) => (
                 <FeaturedItem key={item.title} {...item} />
               ))}
-            </div>
-
-            <div className="mt-6 flex items-center gap-2">
-              <a
-                href="https://www.npmjs.com/package/@ncdai/react-wheel-picker"
-                target="_blank"
-                rel="noopener"
-              >
-                <img
-                  src="https://img.shields.io/npm/v/%40ncdai%2Freact-wheel-picker"
-                  alt="NPM Version"
-                />
-              </a>
-
-              <a
-                href="https://www.npmjs.com/package/@ncdai/react-wheel-picker"
-                target="_blank"
-                rel="noopener"
-              >
-                <img
-                  src="https://img.shields.io/npm/dy/%40ncdai%2Freact-wheel-picker"
-                  alt="NPM Downloads"
-                />
-              </a>
             </div>
           </div>
 

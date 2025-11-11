@@ -28,17 +28,19 @@ export default function ShowcasesPage() {
       </div>
 
       <div className="grid gap-4 border-t border-dashed p-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {SHOWCASES.map((showcase) => (
-          <a
-            key={showcase.href}
-            className="flex rounded-md border p-8 text-sm font-semibold text-balance shadow-xs transition-colors hover:bg-accent/30"
-            href={showcase.href}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {showcase.name}
-          </a>
-        ))}
+        {SHOWCASES.slice()
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((showcase) => (
+            <a
+              key={showcase.href}
+              className="flex rounded-md border p-8 text-sm font-semibold text-balance shadow-xs transition-colors hover:bg-accent/30"
+              href={showcase.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {showcase.name}
+            </a>
+          ))}
       </div>
     </div>
   );

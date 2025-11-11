@@ -1,5 +1,9 @@
 export const SHOWCASES = [
   {
+    name: "Wigggle UI",
+    href: "https://wigggle-ui.vercel.app",
+  },
+  {
     name: "Blueberry Loom",
     href: "https://blueberry-loom.netlify.app",
   },

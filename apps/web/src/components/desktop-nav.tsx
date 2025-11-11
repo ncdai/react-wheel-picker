@@ -8,14 +8,14 @@ import { cn } from "@/lib/utils";
 
 import { Button } from "./ui/button";
 
-export function Nav() {
+export function DesktopNav() {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-1 items-center gap-2">
+    <div className="flex items-center gap-2 max-sm:hidden">
       {NAV_ITEMS.map((item) => (
         <Button
-          key={item.name}
+          key={item.title}
           className={cn(
             "px-2 text-muted-foreground",
             item.href === pathname && "text-foreground",
@@ -24,7 +24,7 @@ export function Nav() {
           size="sm"
           asChild
         >
-          <Link href={item.href}>{item.name}</Link>
+          <Link href={item.href}>{item.title}</Link>
         </Button>
       ))}
     </div>

@@ -3,8 +3,9 @@ import Link from "next/link";
 import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 import { BrandContextMenu } from "./brand-context-menu";
+import { DesktopNav } from "./desktop-nav";
 import { Mark } from "./mark";
-import { Nav } from "./nav";
+import { MobileNav } from "./mobile-nav";
 import { StarsCount } from "./stars-count";
 import { ToggleTheme } from "./toggle-theme";
 import { Button } from "./ui/button";
@@ -25,7 +26,9 @@ export function Header() {
 
       <div className="ml-2 sm:ml-8" />
 
-      <Nav />
+      <DesktopNav />
+
+      <div className="flex-1" />
 
       <div className="flex items-center gap-1">
         <Button
@@ -51,6 +54,8 @@ export function Header() {
         />
 
         <ToggleTheme />
+
+        <MobileNav />
       </div>
     </header>
   );

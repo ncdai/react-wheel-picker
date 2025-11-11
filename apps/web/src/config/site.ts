@@ -1,3 +1,5 @@
+import type { NavItem } from "@/types/nav";
+
 export const SITE_INFO = {
   name: "React Wheel Picker",
   url: process.env.APP_URL || "https://react-wheel-picker.chanhdai.com",
@@ -12,17 +14,17 @@ export const META_THEME_COLORS = {
   dark: "#09090b",
 };
 
-export const NAV_ITEMS = [
+export const NAV_ITEMS: NavItem[] = [
   {
-    name: "Docs",
+    title: "Docs",
     href: "/docs/getting-started",
   },
   {
-    name: "Showcases",
+    title: "Showcases",
     href: "/showcases",
   },
   {
-    name: "Sponsors",
+    title: "Sponsors",
     href: "/sponsors",
   },
 ];

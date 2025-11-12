@@ -10,6 +10,8 @@ iOS-like wheel picker for React with smooth inertia scrolling and infinite loop 
 
 Check out the live demo: https://react-wheel-picker.chanhdai.com
 
+![Preview](.github/preview.gif)
+
 ## Documentation
 
 Please read the [documentation](https://react-wheel-picker.chanhdai.com/docs/getting-started) for setup and API usage.

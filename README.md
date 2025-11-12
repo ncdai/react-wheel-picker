@@ -40,4 +40,4 @@ This project is proudly supported by:
 
 ## Star History
 
-[![Star History](https://starchart.cc/ncdai/react-wheel-picker.svg?variant=adaptive)](https://starchart.cc/ncdai/react-wheel-picker)
+[![Star History](https://starchart.cc/ncdai/react-wheel-picker.svg?variant=adaptive&line=%2300d3f3)](https://starchart.cc/ncdai/react-wheel-picker)

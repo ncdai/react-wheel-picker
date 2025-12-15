@@ -91,14 +91,6 @@ const praise: Praise[] = [
     content: "Looks nice!",
     refLink: "https://x.com/theorcdev/status/1934586473040543885",
   },
-  {
-    id: "serhii_be",
-    avatar: "/images/avatars/serhii_be.webp",
-    name: "Serhii Bedrytskyi",
-    description: "Creator of uipub.com",
-    content: "Nice component",
-    refLink: "https://x.com/serhii_be/status/1933583827600904485",
-  },
 ];
 
 export default function Home() {

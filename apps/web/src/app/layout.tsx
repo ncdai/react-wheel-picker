@@ -5,8 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import { ConsentManager } from "@/components/consent-manager";
 import { Providers } from "@/components/providers";
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
 
@@ -94,9 +93,7 @@ export default function RootLayout({
         <div className="container mx-auto">
           <div className="sm:border-x">
             <Providers>
-              <Header />
-              {children}
-              <Footer />
+              <ConsentManager>{children}</ConsentManager>
             </Providers>
           </div>
         </div>

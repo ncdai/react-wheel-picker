@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@bprogress/next": "^3.2.12",
+    "@c15t/nextjs": "^1.8.2",
     "@hookform/resolvers": "5.0.1",
     "@ncdai/react-wheel-picker": "workspace:*",
     "@vercel/analytics": "^1.5.0",

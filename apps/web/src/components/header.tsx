@@ -16,21 +16,101 @@ export function Header() {
     <header className="sticky top-0 z-50 flex h-16 items-center border-b bg-background/90 px-4 backdrop-blur-md">
       <BrandContextMenu>
         <Link
-          className="flex items-center gap-2 text-lg leading-none font-bold tracking-tight"
+          className="mr-2 flex items-center gap-2 text-lg leading-none font-bold tracking-tight lg:mr-8"
           href="/"
         >
           <Mark className="size-8" />
-          <span className="max-sm:hidden">React Wheel Picker</span>
+          <span className="max-lg:hidden">React Wheel Picker</span>
         </Link>
       </BrandContextMenu>
-
-      <div className="ml-2 sm:ml-8" />
 
       <DesktopNav />
 
       <div className="flex-1" />
 
       <div className="flex items-center gap-1">
+        <a
+          href="https://shadcnstudio.com"
+          target="_blank"
+          rel="noopener"
+          className="mr-1 flex items-center gap-2.5 rounded-md bg-zinc-50 px-2.5 py-2 transition-colors duration-300 hover:bg-zinc-100 dark:bg-zinc-900 dark:hover:bg-zinc-800"
+        >
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 328 329"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="size-5 shrink-0 sm:size-7"
+          >
+            <rect
+              y="0.5"
+              width="328"
+              height="328"
+              rx="164"
+              fill="black"
+              className="dark:fill-white"
+            />
+            <path
+              d="M165.018 72.3008V132.771C165.018 152.653 148.9 168.771 129.018 168.771H70.2288"
+              stroke="white"
+              strokeWidth="20"
+              className="dark:stroke-black"
+            />
+            <path
+              d="M166.627 265.241L166.627 204.771C166.627 184.889 182.744 168.771 202.627 168.771L261.416 168.771"
+              stroke="white"
+              strokeWidth="20"
+              className="dark:stroke-black"
+            />
+            <line
+              x1="238.136"
+              y1="98.8184"
+              x2="196.76"
+              y2="139.707"
+              stroke="white"
+              strokeWidth="20"
+              className="dark:stroke-black"
+            />
+            <line
+              x1="135.688"
+              y1="200.957"
+              x2="94.3128"
+              y2="241.845"
+              stroke="white"
+              strokeWidth="20"
+              className="dark:stroke-black"
+            />
+            <line
+              x1="133.689"
+              y1="137.524"
+              x2="92.5566"
+              y2="96.3914"
+              stroke="white"
+              strokeWidth="20"
+              className="dark:stroke-black"
+            />
+            <line
+              x1="237.679"
+              y1="241.803"
+              x2="196.547"
+              y2="200.671"
+              stroke="white"
+              strokeWidth="20"
+              className="dark:stroke-black"
+            />
+          </svg>
+
+          <div className="flex flex-col gap-1 max-sm:hidden">
+            <span className="text-sm leading-none font-semibold text-foreground">
+              shadcnstudio.com
+            </span>
+            <span className="text-xs leading-none text-muted-foreground">
+              shadcn blocks & templates
+            </span>
+          </div>
+        </a>
+
         <Button
           className="gap-1.5 has-[>svg]:px-2"
           variant="ghost"

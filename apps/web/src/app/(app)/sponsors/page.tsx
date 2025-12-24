@@ -41,7 +41,7 @@ export default function SponsorsPage() {
             <VercelOSSProgramBadge className="h-6" />
           </SponsorCard>
 
-          <SponsorCard href="https://shadcnstudio.com">
+          <SponsorCard href="https://shadcnstudio.com?utm_source=chandai&utm_medium=banner&utm_campaign=github">
             <div className="flex items-center gap-2.5">
               <svg
                 width="1em"

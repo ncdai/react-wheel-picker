@@ -76,6 +76,15 @@ const praise: Praise[] = [
     refLink: "https://x.com/jordwalke/status/1937166049868439854",
   },
   {
+    id: "ajaypatel_aj",
+    avatar: "/images/avatars/ajaypatel_aj.webp",
+    name: "Ajay Patel",
+    description: "Creator of shadcn/studio",
+    content:
+      "Perfect iOS-like wheel picker for the web 🙌 Natural touch physics, infinite looping, and unstyled components with shadcn CLI support.",
+    refLink: "https://x.com/ajaypatel_aj/status/2003723039029231737",
+  },
+  {
     id: "steventey",
     avatar: "/images/avatars/steventey.webp",
     name: "Steven Tey",

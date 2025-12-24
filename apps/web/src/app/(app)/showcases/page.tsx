@@ -6,11 +6,11 @@ import { SHOWCASES } from "@/data/showcases";
 export default function ShowcasesPage() {
   return (
     <div className="relative min-h-dvh max-w-screen overflow-x-hidden">
-      <h1 className="mt-12 mb-2 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+      <h1 className="mt-12 mb-2 text-center text-3xl font-semibold tracking-tight">
         Showcases
       </h1>
 
-      <p className="mb-6 text-center text-lg text-balance text-muted-foreground sm:text-xl">
+      <p className="mx-4 mb-6 text-center text-balance text-muted-foreground">
         A collection of projects built with React Wheel Picker.
       </p>
 

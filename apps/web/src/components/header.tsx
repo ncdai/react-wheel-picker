@@ -30,7 +30,7 @@ export function Header() {
 
       <div className="flex items-center gap-1">
         <a
-          href="https://shadcnstudio.com"
+          href="https://shadcnstudio.com?utm_source=chandai&utm_medium=banner&utm_campaign=github"
           target="_blank"
           rel="noopener"
           className="mr-1 flex items-center gap-2.5 rounded-md bg-zinc-50 px-2.5 py-2 transition-colors duration-300 hover:bg-zinc-100 dark:bg-zinc-900 dark:hover:bg-zinc-800"

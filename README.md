@@ -34,9 +34,7 @@ Licensed under the [MIT license](./LICENSE).
 
 This project is proudly supported by:
 
-[![Vercel OSS Program](https://assets.chanhdai.com/images/vercel-oss-program-2025.svg?t=1762229330)](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker)
-
-[![shadcnstudio.com](https://assets.chanhdai.com/images/shadcnstudio.svg?t=1766507207)](https://shadcnstudio.com)
+[![Vercel OSS Program](https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg?v=1#gh-light-mode-only)](https://vercel.com/blog/summer-2025-oss-program#gh-light-mode-only) [![Vercel OSS Program](https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025-dark.svg?v=1#gh-dark-mode-only)](https://vercel.com/blog/summer-2025-oss-program#gh-dark-mode-only) [![shadcnstudio.com](https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=1#gh-light-mode-only)](https://shadcnstudio.com#gh-light-mode-only) [![shadcnstudio.com](https://assets.chanhdai.com/images/sponsors/shadcnstudio-dark.svg?v=1#gh-dark-mode-only)](https://shadcnstudio.com#gh-dark-mode-only)
 
 > Using this package at work? [Sponsor me](https://github.com/sponsors/ncdai) to help with support and maintenance.
 

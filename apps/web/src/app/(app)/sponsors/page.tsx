@@ -1,18 +1,21 @@
 import { HeartIcon } from "lucide-react";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { VercelOSSProgramBadge } from "@/components/vercel-oss-badge";
 import { cn } from "@/lib/utils";
 
+import { INDIVIDUAL_SPONSORS } from "./data";
+
 export default function SponsorsPage() {
   return (
     <div className="relative min-h-dvh max-w-screen overflow-x-hidden">
-      <h1 className="mt-12 mb-2 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+      <h1 className="mt-12 mb-2 text-center text-3xl font-semibold tracking-tight">
         Support <span className="block sm:hidden" />
         React Wheel Picker
       </h1>
 
-      <p className="mx-4 mb-6 text-center text-lg text-balance text-muted-foreground sm:text-xl">
+      <p className="mx-4 mb-6 text-center text-balance text-muted-foreground">
         Your sponsorship means a lot to open-source projects, including React
         Wheel Picker.
       </p>
@@ -30,8 +33,8 @@ export default function SponsorsPage() {
         </Button>
       </div>
 
-      <div className="border-t border-dashed p-4">
-        <div className="mb-4 font-medium">Organization Sponsors</div>
+      <div className="space-y-4 border-t border-dashed p-4">
+        <h2 className="font-mono text-xs">Organization Sponsors</h2>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <SponsorCard href="https://vercel.com/oss?utm_source=react-wheel-picker&utm_medium=web">
@@ -116,6 +119,38 @@ export default function SponsorsPage() {
               </div>
             </div>
           </SponsorCard>
+        </div>
+
+        <h2 className="font-mono text-xs">Individual Sponsors</h2>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {INDIVIDUAL_SPONSORS.map((item) => (
+            <SponsorCard
+              key={item.name}
+              href={item.website}
+              className="justify-start p-4"
+            >
+              <div className="grid grid-cols-[auto_1fr] items-center gap-x-3">
+                <div className="relative row-span-2 size-8 shrink-0">
+                  <Image
+                    className="size-8 rounded-full select-none"
+                    src={item.avatar}
+                    alt={item.name}
+                    width={32}
+                    height={32}
+                    unoptimized
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-black/10 ring-inset dark:ring-white/15" />
+                </div>
+                <div className="truncate text-sm leading-4 font-semibold text-foreground">
+                  {item.name}
+                </div>
+                <div className="translate-y-px truncate text-xs leading-4 text-muted-foreground">
+                  {item.tagline}
+                </div>
+              </div>
+            </SponsorCard>
+          ))}
         </div>
       </div>
     </div>

@@ -33,8 +33,8 @@ export default function SponsorsPage() {
         </Button>
       </div>
 
-      <div className="space-y-4 border-t border-dashed p-4">
-        <h2 className="font-mono text-xs">Organization Sponsors</h2>
+      <div className="border-t border-dashed px-4 py-12">
+        <h2 className="mb-4 font-mono text-xs">Organization Sponsors</h2>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <SponsorCard href="https://vercel.com/oss?utm_source=react-wheel-picker&utm_medium=web">
@@ -121,16 +121,16 @@ export default function SponsorsPage() {
           </SponsorCard>
         </div>
 
-        <h2 className="font-mono text-xs">Individual Sponsors</h2>
+        <h2 className="mt-12 mb-4 font-mono text-xs">Individual Sponsors</h2>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
           {INDIVIDUAL_SPONSORS.map((item) => (
             <SponsorCard
               key={item.name}
               href={item.website}
               className="justify-start p-4"
             >
-              <div className="grid grid-cols-[auto_1fr] items-center gap-x-3">
+              <div className="grid grid-cols-[auto_1fr] items-center gap-x-4">
                 <div className="relative row-span-2 size-8 shrink-0">
                   <Image
                     className="size-8 rounded-full select-none"
@@ -142,10 +142,10 @@ export default function SponsorsPage() {
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-black/10 ring-inset dark:ring-white/15" />
                 </div>
-                <div className="truncate text-sm leading-4 font-semibold text-foreground">
+                <div className="truncate text-sm leading-5 font-semibold text-foreground">
                   {item.name}
                 </div>
-                <div className="translate-y-px truncate text-xs leading-4 text-muted-foreground">
+                <div className="truncate text-xs leading-4 text-muted-foreground">
                   {item.tagline}
                 </div>
               </div>

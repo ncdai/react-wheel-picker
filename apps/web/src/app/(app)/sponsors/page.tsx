@@ -42,7 +42,7 @@ export default function SponsorsPage() {
           </SponsorCard>
 
           <SponsorCard
-            className="relative pb-10"
+            className="relative"
             href="https://shadcnstudio.com?utm_source=chandai&utm_medium=banner&utm_campaign=github"
           >
             <div className="flex items-center gap-2.5">
@@ -122,7 +122,7 @@ export default function SponsorsPage() {
               </div>
             </div>
 
-            <span className="absolute right-0 bottom-0 rounded-tl-sm border-t border-l border-dashed px-1.5 py-0.5 font-mono text-xs font-medium text-muted-foreground">
+            <span className="absolute right-2 bottom-1 text-xs font-medium text-muted-foreground">
               Silver Sponsor
             </span>
           </SponsorCard>

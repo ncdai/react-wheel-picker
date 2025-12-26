@@ -43,7 +43,7 @@ export default function SponsorsPage() {
 
           <SponsorCard
             className="relative"
-            href="https://shadcnstudio.com?utm_source=chandai&utm_medium=banner&utm_campaign=github"
+            href="https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github"
           >
             <div className="flex items-center gap-2.5">
               <svg

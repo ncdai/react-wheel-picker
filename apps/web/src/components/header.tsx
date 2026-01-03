@@ -33,7 +33,7 @@ export function Header() {
           href="https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github"
           target="_blank"
           rel="noopener"
-          className="flex items-center gap-2.5 rounded-md bg-zinc-50 px-2.5 py-2 transition-colors duration-300 hover:bg-zinc-100 dark:bg-zinc-900/60 dark:hover:bg-zinc-900"
+          className="flex items-center gap-2.5 rounded-md bg-zinc-50 px-2.5 py-2 transition-colors duration-300 hover:bg-zinc-100 dark:bg-zinc-900/50 dark:hover:bg-zinc-900"
         >
           <svg
             viewBox="0 0 328 329"

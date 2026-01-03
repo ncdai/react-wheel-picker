@@ -2,6 +2,7 @@ import "@ncdai/react-wheel-picker/style.css";
 
 import {
   InfinityIcon,
+  KeyboardIcon,
   MousePointerClickIcon,
   PointerIcon,
   TriangleDashedIcon,
@@ -33,6 +34,10 @@ const featuredItems = [
   {
     icon: TriangleDashedIcon,
     title: "Unstyled components for complete style customization",
+  },
+  {
+    icon: KeyboardIcon,
+    title: "Full keyboard navigation",
   },
   {
     icon: Icons.shadcn,

@@ -34,6 +34,10 @@
   );
 }
 
+[data-rwp]:focus-visible {
+  outline: none;
+}
+
 [data-rwp-highlight-wrapper] {
   position: absolute;
   overflow: hidden;
@@ -43,6 +47,10 @@
   font-size: 1rem;
   font-weight: 500;
 }
+
+/* [data-rwp-highlight-wrapper][data-rwp-focused] {
+  box-shadow: inset 0 0 0 2px Highlight;
+} */
 
 [data-rwp-highlight-list] {
   position: absolute;

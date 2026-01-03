@@ -120,7 +120,7 @@ const components: MDXRemoteProps["components"] = {
   CodeTabs,
   Steps: (props) => (
     <div
-      className="md:ml-3.5 md:border-l md:pl-7.5 prose-h3:text-wrap"
+      className="md:ml-3.5 md:border-l md:pl-7.5 prose-h3:text-lg prose-h3:text-wrap"
       {...props}
     />
   ),

@@ -2,7 +2,7 @@
 title: Getting started
 description: iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
 createdAt: 2025-05-16
-updatedAt: 2025-09-06
+updatedAt: 2026-01-03
 ---
 
 ## Installation
@@ -187,7 +187,7 @@ export function WheelPickerDemo() {
         classNames={{
           optionItem: "text-zinc-400 dark:text-zinc-500",
           highlightWrapper:
-            "bg-zinc-100 text-zinc-950 dark:bg-zinc-900 dark:text-zinc-50",
+            "bg-zinc-100 text-zinc-950 dark:bg-zinc-900 dark:text-zinc-50 data-rwp-focused:ring-2 data-rwp-focused:ring-zinc-300 data-rwp-focused:ring-inset dark:data-rwp-focused:ring-zinc-600",
         }}
       />
     </WheelPickerWrapper>
@@ -303,6 +303,8 @@ type WheelPickerOption<T extends WheelPickerValue = string> = {
   value: T;
   /** The content displayed for this option */
   label: ReactNode;
+  /** Optional text for type-ahead search (useful when label is a ReactNode). Defaults to label if string, otherwise value. */
+  textValue?: string;
 };
 ```
 
@@ -316,3 +318,28 @@ type WheelPickerClassNames = {
   highlightItem?: string;
 };
 ```
+
+### Data Attributes
+
+The following data attributes are available for CSS styling:
+
+| Attribute                      | Element           | Description                                                          |
+| ------------------------------ | ----------------- | -------------------------------------------------------------------- |
+| `[data-rwp-wrapper]`           | Wrapper           | Applied to `WheelPickerWrapper`                                      |
+| `[data-rwp]`                   | Picker            | Applied to `WheelPicker` root element                                |
+| `[data-rwp-options]`           | Options container | Applied to the options list container                                |
+| `[data-rwp-option]`            | Option item       | Applied to each option item in the wheel                             |
+| `[data-rwp-highlight-wrapper]` | Highlight wrapper | Applied to the highlight area wrapper                                |
+| `[data-rwp-highlight-list]`    | Highlight list    | Applied to the highlight list container                              |
+| `[data-rwp-highlight-item]`    | Highlight item    | Applied to the highlighted option item                               |
+| `[data-rwp-focused]`           | Highlight wrapper | Present on `[data-rwp-highlight-wrapper]` when the picker is focused |
+
+### Data Slots
+
+The following `data-slot` attributes are available for targeting specific elements:
+
+| Slot                | Element           | Description                   |
+| ------------------- | ----------------- | ----------------------------- |
+| `option-item`       | Option item       | Each option item in the wheel |
+| `highlight-wrapper` | Highlight wrapper | The highlight area wrapper    |
+| `highlight-item`    | Highlight item    | The highlighted option item   |

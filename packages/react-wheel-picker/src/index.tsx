@@ -3,8 +3,9 @@
 import "./style.css";
 
 import React from "react";
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { useWheelPickerGroup, WheelPickerGroupProvider } from "./context";
 import type {
   WheelPickerOption,
   WheelPickerProps,
@@ -12,6 +13,7 @@ import type {
   WheelPickerWrapperProps,
 } from "./types";
 import { useControllableState } from "./use-controllable-state";
+import { useTypeaheadSearch } from "./use-typeahead-search";
 
 const RESISTANCE = 0.3; // Resistance when scrolling above the top or below the bottom
 const MAX_VELOCITY = 30; // Maximum velocity for the scroll animation
@@ -22,14 +24,26 @@ const easeOutCubic = (p: number) => Math.pow(p - 1, 3) + 1;
 const clamp = (value: number, min: number, max: number) =>
   Math.max(min, Math.min(value, max));
 
+// Get text value from option for type-ahead search
+const getOptionTextValue = <T extends WheelPickerValue>(
+  option: WheelPickerOption<T>
+): string => {
+  return (
+    option.textValue ??
+    (typeof option.label === "string" ? option.label : String(option.value))
+  );
+};
+
 const WheelPickerWrapper: React.FC<WheelPickerWrapperProps> = ({
   className,
   children,
 }) => {
   return (
-    <div className={className} data-rwp-wrapper>
-      {children}
-    </div>
+    <WheelPickerGroupProvider>
+      <div className={className} data-rwp-wrapper>
+        {children}
+      </div>
+    </WheelPickerGroupProvider>
   );
 };
 
@@ -88,6 +102,28 @@ function WheelPicker<T extends WheelPickerValue>({
   const moveId = useRef(0);
   const dragingRef = useRef(false);
   const lastWheelTimeRef = useRef(0);
+
+  const [isFocused, setIsFocused] = useState(false);
+  const pickerIndexRef = useRef(-1);
+
+  const group = useWheelPickerGroup();
+
+  // Register picker with group context (sync, using ref callback pattern)
+  const containerRefCallback = useCallback(
+    (node: HTMLDivElement | null) => {
+      containerRef.current = node;
+
+      if (node && group) {
+        // Always register when node exists (handles React Strict Mode re-mount)
+        const existingIndex =
+          pickerIndexRef.current === -1 ? null : pickerIndexRef.current;
+        pickerIndexRef.current = group.register(existingIndex, node);
+      }
+      // Note: We don't unregister on unmount to avoid React Strict Mode issues
+      // The Map will be garbage collected when the Provider unmounts
+    },
+    [group]
+  );
 
   const touchDataRef = useRef<{
     startY: number;
@@ -591,6 +627,128 @@ function WheelPicker<T extends WheelPickerValue>({
     [scrollByWheel]
   );
 
+  const navigateToPicker = useCallback(
+    (direction: "prev" | "next") => {
+      const pickerIndex = pickerIndexRef.current;
+      if (!group || pickerIndex === -1) return;
+
+      const sortedIndices = group.getPickerIndices();
+      const currentPos = sortedIndices.indexOf(pickerIndex);
+
+      if (currentPos === -1) return;
+
+      let targetPos: number;
+      if (direction === "prev") {
+        targetPos = currentPos > 0 ? currentPos - 1 : sortedIndices.length - 1;
+      } else {
+        targetPos = currentPos < sortedIndices.length - 1 ? currentPos + 1 : 0;
+      }
+
+      const targetIndex = sortedIndices[targetPos];
+      const targetRef = group.getPickerRef(targetIndex);
+
+      if (targetRef) {
+        // Update tabIndex directly on DOM before focusing (React state update is async)
+        const currentRef = containerRef.current;
+        if (currentRef) {
+          currentRef.tabIndex = -1;
+        }
+        targetRef.tabIndex = 0;
+
+        group.setActiveIndex(targetIndex);
+        targetRef.focus();
+      }
+    },
+    [group]
+  );
+
+  const { handleTypeaheadSearch, resetTypeahead } = useTypeaheadSearch(
+    options,
+    {
+      getTextValue: getOptionTextValue,
+      getCurrentIndex: useCallback(() => Math.round(scrollRef.current), []),
+      onMatch: useCallback(
+        (matchIndex: number) => {
+          const step = matchIndex - Math.round(scrollRef.current);
+          scrollByStep(step);
+        },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        []
+      ),
+    }
+  );
+
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (!options.length) return;
+
+      switch (event.key) {
+        case "ArrowUp":
+          event.preventDefault();
+          scrollByStep(-1);
+          break;
+
+        case "ArrowDown":
+          event.preventDefault();
+          scrollByStep(1);
+          break;
+
+        case "ArrowLeft":
+          event.preventDefault();
+          navigateToPicker("prev");
+          break;
+
+        case "ArrowRight":
+          event.preventDefault();
+          navigateToPicker("next");
+          break;
+
+        case "Home":
+          if (!infiniteProp) {
+            event.preventDefault();
+            scrollByStep(-scrollRef.current);
+          }
+          break;
+
+        case "End":
+          if (!infiniteProp) {
+            event.preventDefault();
+            scrollByStep(options.length - 1 - scrollRef.current);
+          }
+          break;
+
+        default:
+          // Type-ahead search: handle printable characters
+          if (
+            event.key.length === 1 &&
+            !event.ctrlKey &&
+            !event.metaKey &&
+            !event.altKey
+          ) {
+            event.preventDefault();
+            handleTypeaheadSearch(event.key);
+          }
+          break;
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [options.length, infiniteProp, navigateToPicker, handleTypeaheadSearch]
+  );
+
+  const handleFocus = useCallback(() => {
+    setIsFocused(true);
+    const pickerIndex = pickerIndexRef.current;
+    if (group && pickerIndex !== -1) {
+      group.setActiveIndex(pickerIndex);
+    }
+  }, [group]);
+
+  const handleBlur = useCallback(() => {
+    setIsFocused(false);
+    // Clear search buffer on blur
+    resetTypeahead();
+  }, [resetTypeahead]);
+
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -617,8 +775,22 @@ function WheelPicker<T extends WheelPickerValue>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, valueProp, options]); // selected value is changed when options are changed
 
+  // Determine tabIndex: if in group, only active picker is focusable
+  const pickerIndex = pickerIndexRef.current;
+  const activeIndex = group?.activeIndex ?? -1;
+  const tabIndex =
+    group && pickerIndex !== -1 ? (activeIndex === pickerIndex ? 0 : -1) : 0;
+
   return (
-    <div ref={containerRef} data-rwp style={{ height: containerHeight }}>
+    <div
+      ref={containerRefCallback}
+      data-rwp
+      tabIndex={tabIndex}
+      onKeyDown={handleKeyDown}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      style={{ height: containerHeight }}
+    >
       <ul ref={wheelItemsRef} data-rwp-options>
         {renderWheelItems}
       </ul>
@@ -626,6 +798,7 @@ function WheelPicker<T extends WheelPickerValue>({
       <div
         className={classNames?.highlightWrapper}
         data-rwp-highlight-wrapper
+        data-rwp-focused={isFocused || undefined}
         data-slot="highlight-wrapper"
         style={{
           height: itemHeight,

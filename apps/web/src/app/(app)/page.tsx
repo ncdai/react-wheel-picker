@@ -45,21 +45,21 @@ const featuredItems = [
   },
 ];
 
-type Praise = {
+type Testimonial = {
   id: string;
   avatar: string;
   name: string;
-  description: string;
+  tagline: string;
   content: string;
   refLink: string;
 };
 
-const praise: Praise[] = [
+const testimonials: Testimonial[] = [
   {
     id: "kapehe_ok",
     avatar: "/images/avatars/kapehe_ok.webp",
     name: "Kap",
-    description: "Head of Developer Community at Vercel",
+    tagline: "Head of Developer Community at Vercel",
     content: "one of my favorite projects that submitted! you are crushing it!",
     refLink: "https://x.com/kapehe_ok/status/1948104774358106612",
   },
@@ -67,7 +67,7 @@ const praise: Praise[] = [
     id: "initjean",
     avatar: "/images/avatars/initjean.webp",
     name: "Jean P.D. Meijer",
-    description: "Creator of analog.now",
+    tagline: "Creator of analog.now",
     content:
       "congrats you deserve it! react wheel picker is so smooth, its insane 🐐",
     refLink: "https://x.com/initjean/status/1948159885960438151",
@@ -76,7 +76,7 @@ const praise: Praise[] = [
     id: "jordwalke",
     avatar: "/images/avatars/jordwalke.webp",
     name: "jordwalke",
-    description: "Creator of React",
+    tagline: "Creator of React",
     content: "Also, cool wheel picker!",
     refLink: "https://x.com/jordwalke/status/1937166049868439854",
   },
@@ -84,7 +84,7 @@ const praise: Praise[] = [
     id: "ajaypatel_aj",
     avatar: "/images/avatars/ajaypatel_aj.webp",
     name: "Ajay Patel",
-    description: "Creator of shadcn/studio",
+    tagline: "Creator of shadcn/studio",
     content:
       "Perfect iOS-like wheel picker for the web 🙌 Natural touch physics, infinite looping, and unstyled components with shadcn CLI support.",
     refLink: "https://x.com/ajaypatel_aj/status/2003723039029231737",
@@ -93,14 +93,14 @@ const praise: Praise[] = [
     id: "steventey",
     avatar: "/images/avatars/steventey.webp",
     name: "Steven Tey",
-    description: "Founder of dub.co",
+    tagline: "Founder of dub.co",
     content: "whoa, this is really dope – needs to get added to @shadcn UI 👀",
     refLink: "https://x.com/steventey/status/1936934909370830924",
   },
   {
     id: "theorcdev",
     name: "OrcDev",
-    description: "Creator of 8bitcn/ui",
+    tagline: "Creator of 8bitcn/ui",
     avatar: "/images/avatars/theorcdev.webp",
     content: "Looks nice!",
     refLink: "https://x.com/theorcdev/status/1934586473040543885",
@@ -175,8 +175,8 @@ export default function Home() {
       </div>
 
       <div className="mb-12 grid gap-4 px-4 sm:grid-cols-2 lg:grid-cols-3">
-        {praise.map((item) => (
-          <PraiseCard key={item.id} {...item} />
+        {testimonials.map((item) => (
+          <TestimonialCard key={item.id} {...item} />
         ))}
       </div>
     </div>
@@ -221,7 +221,13 @@ function FeaturedItem({
   );
 }
 
-function PraiseCard({ avatar, name, description, content, refLink }: Praise) {
+function TestimonialCard({
+  avatar,
+  name,
+  tagline,
+  content,
+  refLink,
+}: Testimonial) {
   return (
     <a
       className="block rounded-md"
@@ -235,7 +241,7 @@ function PraiseCard({ avatar, name, description, content, refLink }: Praise) {
           <p>{content}</p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <Image
             className="shrink-0 rounded-full"
             src={avatar}
@@ -245,13 +251,13 @@ function PraiseCard({ avatar, name, description, content, refLink }: Praise) {
             aria-hidden
           />
 
-          <div className="flex flex-col gap-1.5">
-            <span className="flex items-center gap-1 text-sm leading-none font-semibold">
+          <div className="flex translate-y-px flex-col">
+            <span className="flex items-center gap-1 text-sm leading-4 font-semibold">
               {name}
-              <VerifiedIcon className="size-[1em] text-[#1d9bf0]" aria-hidden />
+              <VerifiedIcon className="size-3 text-[#1d9bf0]" aria-hidden />
             </span>
-            <span className="text-xs leading-none text-balance text-muted-foreground">
-              {description}
+            <span className="text-xs leading-4 text-balance text-muted-foreground">
+              {tagline}
             </span>
           </div>
         </div>

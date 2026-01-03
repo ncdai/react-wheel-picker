@@ -26,10 +26,10 @@ jobs:
           version: 10.7.0
           run_install: false
 
-      - name: Setup Node.js 20.16.0
+      - name: Setup Node.js 22.20.0
         uses: actions/setup-node@v4
         with:
-          node-version: 20.16.0
+          node-version: 22.20.0
           registry-url: "https://registry.npmjs.org"
           cache: "pnpm"
 
@@ -50,10 +50,6 @@ jobs:
           commit: "chore(release): version packages"
           version: node .github/changeset-version.mjs
           publish: npx changeset publish
-          # commitMode: github-api
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          # Use OIDC for npm authentication instead of NPM_TOKEN
-          # NPM_TOKEN: "" # https://github.com/changesets/changesets/issues/1152#issuecomment-3190884868
           NODE_ENV: "production"

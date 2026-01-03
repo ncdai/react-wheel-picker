@@ -46,7 +46,7 @@ jobs:
           commit: "chore(release): version packages"
           version: node .github/changeset-version.mjs
           publish: npx changeset publish
-          commitMode: github-api
+          # commitMode: github-api
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

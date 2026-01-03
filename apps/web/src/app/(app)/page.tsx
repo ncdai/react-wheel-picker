@@ -37,7 +37,7 @@ const featuredItems = [
   },
   {
     icon: KeyboardIcon,
-    title: "Full keyboard navigation",
+    title: "Full keyboard navigation and type-ahead search",
   },
   {
     icon: Icons.shadcn,
@@ -224,7 +224,7 @@ function FeaturedItem({
 function PraiseCard({ avatar, name, description, content, refLink }: Praise) {
   return (
     <a
-      className="block"
+      className="block rounded-md"
       href={refLink}
       target="_blank"
       rel="noopener"

@@ -135,7 +135,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
 
   body {

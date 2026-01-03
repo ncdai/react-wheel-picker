@@ -7,11 +7,13 @@ Add full keyboard navigation and type-ahead search support
 ### New Features
 
 - **Keyboard Navigation**: Navigate options using Arrow keys
+
   - `ArrowUp` / `ArrowDown`: Move between options
   - `ArrowLeft` / `ArrowRight`: Move focus between pickers in a group
   - `Home` / `End`: Jump to first/last option (non-infinite mode)
 
 - **Type-ahead Search**: Quickly jump to options by typing
+
   - Single character cycles through matching options
   - Multi-character search finds options starting with the typed string
   - 500ms timeout to reset search buffer

@@ -53,12 +53,12 @@ export default async function Page({
 
   return (
     <>
-      <div className="h-10" />
+      <div className="h-12" />
 
       <Prose>
-        <h1 className="font-heading mb-6">{post.metadata.title}</h1>
+        <h1 className="font-heading mb-2">{post.metadata.title}</h1>
 
-        <p className="lead">{post.metadata.description}</p>
+        <p className="lead mt-2 mb-6">{post.metadata.description}</p>
 
         <div>
           <LLMCopyButtonWithViewOptions

@@ -9,9 +9,10 @@ iOS-like wheel picker for React with smooth inertia scrolling and infinite loop 
 - ⌨️ Full keyboard navigation and type-ahead search
 - ⚡️ Easy installation via shadcn CLI
 
-Check out the live demo: https://react-wheel-picker.chanhdai.com
+→ Check out the live demo: https://react-wheel-picker.chanhdai.com
 
-![Preview](.github/preview.gif)
+[![screenshot-dark](.github/screenshot-dark.webp?v=1#gh-dark-mode-only)](https://react-wheel-picker.chanhdai.com#gh-dark-mode-only)
+[![screenshot-light](.github/screenshot-light.webp?v=1#gh-light-mode-only)](https://react-wheel-picker.chanhdai.com#gh-light-mode-only)
 
 ## Documentation
 

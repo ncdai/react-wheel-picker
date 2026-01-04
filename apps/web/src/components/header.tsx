@@ -16,10 +16,10 @@ export function Header() {
     <header className="sticky top-0 z-50 flex h-16 items-center border-b bg-background/90 pr-2 pl-4 backdrop-blur-md">
       <BrandContextMenu>
         <Link
-          className="mr-2 flex items-center gap-2 text-lg leading-none font-bold tracking-tight lg:mr-8"
+          className="mr-2 flex items-center gap-1 text-base leading-none font-semibold tracking-tight lg:mr-8"
           href="/"
         >
-          <Mark className="size-8" />
+          <Mark className="size-6" />
           <span className="max-lg:hidden">React Wheel Picker</span>
         </Link>
       </BrandContextMenu>

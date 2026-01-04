@@ -11,8 +11,7 @@ export default function SponsorsPage() {
   return (
     <div className="relative min-h-dvh max-w-screen overflow-x-hidden">
       <h1 className="mt-12 mb-2 text-center text-3xl font-semibold tracking-tight">
-        Support <span className="block sm:hidden" />
-        React Wheel Picker
+        Sponsors
       </h1>
 
       <p className="mx-4 mb-6 text-center text-balance text-muted-foreground">
@@ -28,7 +27,7 @@ export default function SponsorsPage() {
             rel="noopener"
           >
             <HeartIcon />
-            Sponsor
+            Sponsor My Work
           </a>
         </Button>
       </div>

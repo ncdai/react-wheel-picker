@@ -59,7 +59,7 @@ const testimonials: Testimonial[] = [
     id: "kapehe_ok",
     avatar: "/images/avatars/kapehe_ok.webp",
     name: "Kap",
-    tagline: "Head of Developer Community at Vercel",
+    tagline: "Head of Developer Community @Vercel",
     content: "one of my favorite projects that submitted! you are crushing it!",
     refLink: "https://x.com/kapehe_ok/status/1948104774358106612",
   },
@@ -100,7 +100,7 @@ const testimonials: Testimonial[] = [
   {
     id: "theorcdev",
     name: "OrcDev",
-    tagline: "Creator of 8bitcn/ui",
+    tagline: "Creator of 8bitcn.com",
     avatar: "/images/avatars/theorcdev.webp",
     content: "Looks nice!",
     refLink: "https://x.com/theorcdev/status/1934586473040543885",
@@ -114,7 +114,7 @@ export default function Home() {
 
       <Mark className="mx-auto mt-12 mb-6 size-14" />
 
-      <h1 className="mb-2 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+      <h1 className="mb-2 text-center text-3xl font-semibold tracking-tight sm:text-4xl">
         iOS-like Wheel Picker <span className="block sm:inline" />
         for React
       </h1>

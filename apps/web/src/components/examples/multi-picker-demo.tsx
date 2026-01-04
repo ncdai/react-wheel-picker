@@ -19,7 +19,7 @@ const meridiemOptions: WheelPickerOption[] = [
 
 export function MultiPickerDemo() {
   return (
-    <div className="mx-auto w-64">
+    <div className="mx-auto w-64 **:data-[slot=highlight-item]:tabular-nums **:data-[slot=option-item]:tabular-nums">
       <WheelPickerWrapper>
         <WheelPicker options={hourOptions} defaultValue="9" infinite />
         <WheelPicker options={minuteOptions} defaultValue="41" infinite />

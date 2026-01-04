@@ -47,6 +47,8 @@
   --radius-xl: calc(var(--radius) + 4px);
   --color-popover-border: var(--popover-border);
   --shadow-popover: var(--shadow-popover);
+  --color-selection: var(--selection);
+  --color-selection-foreground: var(--selection-foreground);
 }
 
 :root {
@@ -88,6 +90,9 @@
   --code-number: oklch(0.552 0.016 285.938);
   --popover-border: color-mix(in oklab, var(--color-black) 15%, transparent);
   --shadow-popover: 0 6px 24px rgba(0, 0, 0, 0.25);
+
+  --selection: oklch(0.141 0.005 285.823);
+  --selection-foreground: oklch(0.985 0 0);
 }
 
 .dark {
@@ -127,6 +132,8 @@
   --code-number: oklch(0.705 0.015 286.067);
   --popover-border: oklch(0.37 0.013 285.805);
   --shadow-popover: 0 0 24px rgba(0, 0, 0, 0.5);
+  --selection: oklch(0.985 0 0);
+  --selection-foreground: oklch(0.141 0.005 285.823);
 }
 
 @layer base {
@@ -138,8 +145,12 @@
     @apply border-border outline-ring/50;
   }
 
+  ::selection {
+    @apply bg-selection text-selection-foreground;
+  }
+
   body {
-    @apply overscroll-none bg-background font-sans text-foreground antialiased;
+    @apply bg-background text-foreground overscroll-none font-sans antialiased;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
@@ -151,7 +162,7 @@
 
 @layer components {
   [data-rehype-pretty-code-figure] {
-    @apply relative my-6 rounded-lg bg-code text-code-foreground;
+    @apply bg-code text-code-foreground relative my-6 rounded-lg;
 
     pre {
       @apply overflow-x-auto px-4 py-4 has-[[data-line-numbers]]:px-0;
@@ -171,7 +182,7 @@
   }
 
   [data-rehype-pretty-code-title] {
-    @apply flex items-center gap-2 border-b px-4 py-2.5 text-sm text-muted-foreground [&_svg]:size-4 [&_svg]:text-muted-foreground;
+    @apply text-muted-foreground [&_svg]:text-muted-foreground flex items-center gap-2 border-b px-4 py-2.5 text-sm [&_svg]:size-4;
   }
 
   [data-line-numbers] {
@@ -181,7 +192,7 @@
   [data-line-numbers] > [data-line]::before {
     counter-increment: line;
     content: counter(line);
-    @apply sticky left-0 inline-block w-16 bg-code pr-6 text-right text-sm text-code-number;
+    @apply bg-code text-code-number sticky left-0 inline-block w-16 pr-6 text-right text-sm;
   }
 }
 
@@ -189,7 +200,7 @@
   counter-increment: step;
 
   &::before {
-    @apply mr-2 inline-flex size-7 -translate-y-px items-center justify-center rounded-full border border-muted-foreground/15 bg-muted text-center text-sm font-medium text-muted-foreground md:absolute md:-mt-0.5 md:-ml-11.5 md:size-8 md:translate-y-0;
+    @apply border-muted-foreground/15 bg-muted text-muted-foreground md:-ml-11.5 mr-2 inline-flex size-7 -translate-y-px items-center justify-center rounded-full border text-center text-sm font-medium md:absolute md:-mt-0.5 md:size-8 md:translate-y-0;
     content: counter(step);
   }
 }

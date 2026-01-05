@@ -38,6 +38,9 @@ This project is proudly supported by:
 
 [![Vercel OSS Program](https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg?v=2#gh-light-mode-only)](https://vercel.com/blog/summer-2025-oss-program#gh-light-mode-only) [![Vercel OSS Program](https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025-dark.svg?v=2#gh-dark-mode-only)](https://vercel.com/blog/summer-2025-oss-program#gh-dark-mode-only) [![shadcnstudio.com](https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=2#gh-light-mode-only)](https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github#gh-light-mode-only) [![shadcnstudio.com](https://assets.chanhdai.com/images/sponsors/shadcnstudio-dark.svg?v=2#gh-dark-mode-only)](https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github#gh-dark-mode-only)
 
+<a href="https://termius.com#gh-light-mode-only"><img align="center" alt="termius" src="https://assets.chanhdai.com/images/sponsors/termius.svg?v=2#gh-light-mode-only"></a>
+<a href="https://termius.com#gh-dark-mode-only"><img align="center" alt="termius-dark" src="https://assets.chanhdai.com/images/sponsors/termius-dark.svg?v=2#gh-dark-mode-only"></a> [Termius](https://termius.com) provides a secure, reliable, and collaborative SSH client.
+
 > Using this package at work? [Sponsor me](https://github.com/sponsors/ncdai) to help with support and maintenance.
 
 ## Star History

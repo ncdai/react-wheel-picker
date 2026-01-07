@@ -23,8 +23,6 @@ Licensed under the [MIT license](./LICENSE).
 
 This project is proudly supported by:
 
-[![Vercel OSS Program](https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg?v=2)](https://vercel.com/blog/summer-2025-oss-program) [![shadcnstudio.com](https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=2)](https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github)
-
-<a href="https://termius.com"><img src="https://assets.chanhdai.com/images/sponsors/termius.svg?v=1" align="center"></a> [Termius](https://termius.com) provides a secure, reliable, and collaborative SSH client.
+[![Vercel OSS Program](https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg?v=2)](https://vercel.com/blog/summer-2025-oss-program) [![shadcnstudio.com](https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=2)](https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github) [![shadcraft.com](https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=1)](https://shadcraft.com) [![termius.com](https://assets.chanhdai.com/images/sponsors/termius.svg?v=1)](https://termius.com)
 
 > Using this package at work? [Sponsor me](https://github.com/sponsors/ncdai) to help with support and maintenance.

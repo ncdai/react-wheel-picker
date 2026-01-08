@@ -23,6 +23,56 @@ Licensed under the [MIT license](./LICENSE).
 
 This project is proudly supported by:
 
-[![Vercel OSS Program](https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg?v=2)](https://vercel.com/blog/summer-2025-oss-program) [![shadcnstudio.com](https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=2)](https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github) [![shadcraft.com](https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=1)](https://shadcraft.com) [![reactbits.com](https://assets.chanhdai.com/images/sponsors/reactbits.svg?v=1)](https://reactbits.com) [![termius.com](https://assets.chanhdai.com/images/sponsors/termius.svg?v=1)](https://termius.com)
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <a href="https://vercel.com/blog/summer-2025-oss-program">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg?v=2"
+            alt="Vercel OSS Program"
+          />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github">
+          <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=2" alt="shadcnstudio.com" />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://shadcraft.com">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=1"
+            alt="shadcraft.com"
+          />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://reactbits.com">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/reactbits.svg?v=1"
+            alt="reactbits.com"
+          />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://termius.com">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/termius.svg?v=1"
+            alt="termius.com"
+          />
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 > Using this package at work? [Sponsor me](https://github.com/sponsors/ncdai) to help with support and maintenance.

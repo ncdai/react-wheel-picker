@@ -129,7 +129,7 @@ export const ORGANIZATIONAL_SPONSORS: OrganizationalSponsor[] = [
   },
   {
     name: "OpenPanel",
-    url: "https://openpanel.dev",
+    url: "https://openpanel.dev?utm_source=react-wheel-picker&utm_medium=sponsor&utm_campaign=website",
     logo: function (props: React.ComponentProps<"svg">) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>

@@ -64,6 +64,16 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
+        <a href="https://openpanel.dev">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1"
+            alt="openpanel.dev"
+          />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <a href="https://termius.com">
           <img
             src="https://assets.chanhdai.com/images/sponsors/termius.svg?v=1"

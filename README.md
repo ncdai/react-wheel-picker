@@ -98,6 +98,22 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
+        <a href="https://openpanel.dev/#gh-light-mode-only">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1#gh-light-mode-only"
+            alt="openpanel.dev"
+          />
+        </a>
+        <a href="https://openpanel.dev/#gh-dark-mode-only">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/openpanel-dark.svg?v=1#gh-dark-mode-only"
+            alt="openpanel.dev"
+          />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <a href="https://termius.com#gh-light-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/termius.svg?v=1#gh-light-mode-only"

@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { OpenPanelComponent } from "@openpanel/nextjs";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata, Viewport } from "next";
@@ -93,6 +94,10 @@ export default function RootLayout({
         <div className="container mx-auto">
           <div className="sm:border-x">
             <Providers>
+              <OpenPanelComponent
+                clientId={process.env.OPENPANEL_CLIENT_ID!}
+                trackScreenViews={true}
+              />
               <ConsentManager>{children}</ConsentManager>
             </Providers>
           </div>

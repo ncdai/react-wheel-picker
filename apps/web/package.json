@@ -17,6 +17,7 @@
     "@c15t/nextjs": "^1.8.2",
     "@hookform/resolvers": "5.0.1",
     "@ncdai/react-wheel-picker": "workspace:*",
+    "@openpanel/nextjs": "^1.1.3",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "0.7.1",

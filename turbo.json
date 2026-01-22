@@ -1,20 +1,23 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "extends": ["//"],
   "tasks": {
+    "transit": {
+      "dependsOn": ["^transit"]
+    },
     "build": {
       "env": ["APP_URL", "GITHUB_API_TOKEN"],
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["transit"]
     },
     "lint:fix": {
-      "dependsOn": ["^lint:fix"]
+      "dependsOn": ["transit"]
     },
     "check-types": {
-      "dependsOn": ["^check-types"]
+      "dependsOn": ["transit"],
+      "outputs": [".next/types/**"]
     },
     "format:check": {
       "cache": false

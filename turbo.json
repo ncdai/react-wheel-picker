@@ -5,7 +5,7 @@
       "dependsOn": ["^transit"]
     },
     "build": {
-      "env": ["APP_URL", "GITHUB_API_TOKEN"],
+      "env": ["APP_URL", "GITHUB_API_TOKEN", "OPENPANEL_CLIENT_ID"],
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },

@@ -82,16 +82,16 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://reactbits.com#gh-light-mode-only">
+        <a href="https://reactbits.dev#gh-light-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/reactbits.svg?v=1#gh-light-mode-only"
-            alt="reactbits.com"
+            alt="reactbits.dev"
           />
         </a>
-        <a href="https://reactbits.com#gh-dark-mode-only">
+        <a href="https://reactbits.dev#gh-dark-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/reactbits-dark.svg?v=1#gh-dark-mode-only"
-            alt="reactbits.com"
+            alt="reactbits.dev"
           />
         </a>
       </td>

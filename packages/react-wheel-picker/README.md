@@ -54,10 +54,10 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://reactbits.com">
+        <a href="https://reactbits.dev">
           <img
             src="https://assets.chanhdai.com/images/sponsors/reactbits.svg?v=1"
-            alt="reactbits.com"
+            alt="reactbits.dev"
           />
         </a>
       </td>

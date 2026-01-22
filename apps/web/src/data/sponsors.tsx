@@ -118,7 +118,7 @@ export const ORGANIZATIONAL_SPONSORS: OrganizationalSponsor[] = [
   },
   {
     name: "Reactbits",
-    url: "https://reactbits.com?utm_source=react-wheel-picker&utm_medium=sponsor&utm_campaign=website",
+    url: "https://reactbits.dev?utm_source=react-wheel-picker&utm_medium=sponsor&utm_campaign=website",
     logo: function (props: React.ComponentProps<"svg">) {
       return (
         <svg viewBox="0 0 320 96" fill="currentColor" {...props}>

@@ -56,74 +56,90 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github#gh-light-mode-only">
+        <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github#gh-light-mode-only">
           <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=2#gh-light-mode-only" alt="shadcnstudio.com" />
         </a>
-        <a href="https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github#gh-dark-mode-only">
+        <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github#gh-dark-mode-only">
           <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio-dark.svg?v=2#gh-dark-mode-only" alt="shadcnstudio.com" />
         </a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://shadcraft.com#gh-light-mode-only">
+        <a href="https://shadcraft.com?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=1#gh-light-mode-only"
-            alt="shadcraft.com"
+            src="https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=2#gh-light-mode-only"
+            alt="Shadcraft"
           />
         </a>
-        <a href="https://shadcraft.com#gh-dark-mode-only">
+        <a href="https://shadcraft.com?utm_source=react-wheel-picker#gh-dark-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/shadcraft-dark.svg?v=1#gh-dark-mode-only"
-            alt="shadcraft.com"
+            alt="Shadcraft"
           />
         </a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://reactbits.dev#gh-light-mode-only">
+        <a href="https://uirules.com?utm_source=react-wheel-picker#gh-light-mode-only">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/uirules.svg?v=1#gh-light-mode-only"
+            alt="UI Rules"
+          />
+        </a>
+        <a href="https://uirules.com?utm_source=react-wheel-picker#gh-dark-mode-only">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/uirules-dark.svg?v=1#gh-dark-mode-only"
+            alt="UI Rules"
+          />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://reactbits.dev?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/reactbits.svg?v=1#gh-light-mode-only"
-            alt="reactbits.dev"
+            alt="React Bits"
           />
         </a>
-        <a href="https://reactbits.dev#gh-dark-mode-only">
+        <a href="https://reactbits.dev?utm_source=react-wheel-picker#gh-dark-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/reactbits-dark.svg?v=1#gh-dark-mode-only"
-            alt="reactbits.dev"
+            alt="React Bits"
           />
         </a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://openpanel.dev/#gh-light-mode-only">
+        <a href="https://openpanel.dev?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1#gh-light-mode-only"
-            alt="openpanel.dev"
+            alt="OpenPanel"
           />
         </a>
-        <a href="https://openpanel.dev/#gh-dark-mode-only">
+        <a href="https://openpanel.dev?utm_source=react-wheel-picker#gh-dark-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/openpanel-dark.svg?v=1#gh-dark-mode-only"
-            alt="openpanel.dev"
+            alt="OpenPanel"
           />
         </a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://termius.com#gh-light-mode-only">
+        <a href="https://termius.com?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/termius.svg?v=1#gh-light-mode-only"
-            alt="termius.com"
+            alt="Termius"
           />
         </a>
-        <a href="https://termius.com#gh-dark-mode-only">
+        <a href="https://termius.com?utm_source=react-wheel-picker#gh-dark-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/termius-dark.svg?v=1#gh-dark-mode-only"
-            alt="termius.com"
+            alt="Termius"
           />
         </a>
       </td>

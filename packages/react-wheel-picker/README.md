@@ -27,7 +27,7 @@ This project is proudly supported by:
   <tbody>
     <tr>
       <td>
-        <a href="https://vercel.com/blog/summer-2025-oss-program">
+        <a href="https://vercel.com/blog/summer-2025-oss-program?utm_source=react-wheel-picker">
           <img
             src="https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg?v=2"
             alt="Vercel OSS Program"
@@ -37,47 +37,57 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://shadcnstudio.com?utm_source=chanhdai&utm_medium=banner&utm_campaign=github">
+        <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github">
           <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=2" alt="shadcnstudio.com" />
         </a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://shadcraft.com">
+        <a href="https://shadcraft.com?utm_source=react-wheel-picker">
           <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=1"
-            alt="shadcraft.com"
+            src="https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=2"
+            alt="Shadcraft"
           />
         </a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://reactbits.dev">
+        <a href="https://uirules.com?utm_source=react-wheel-picker">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/uirules.svg?v=1"
+            alt="UI Rules"
+          />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://reactbits.dev?utm_source=react-wheel-picker">
           <img
             src="https://assets.chanhdai.com/images/sponsors/reactbits.svg?v=1"
-            alt="reactbits.dev"
+            alt="React Bits"
           />
         </a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://openpanel.dev">
+        <a href="https://openpanel.dev?utm_source=react-wheel-picker">
           <img
             src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1"
-            alt="openpanel.dev"
+            alt="OpenPanel"
           />
         </a>
       </td>
     </tr>
     <tr>
       <td>
-        <a href="https://termius.com">
+        <a href="https://termius.com?utm_source=react-wheel-picker">
           <img
             src="https://assets.chanhdai.com/images/sponsors/termius.svg?v=1"
-            alt="termius.com"
+            alt="Termius"
           />
         </a>
       </td>

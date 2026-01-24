@@ -4,7 +4,7 @@ import { VercelOSSProgramBadge } from "./vercel-oss-badge";
 
 export function Footer() {
   return (
-    <footer className="flex flex-col-reverse items-center justify-between gap-6 border-t border-dashed p-6 md:flex-row">
+    <footer className="relative flex flex-col-reverse items-center justify-between gap-6 border-t p-6 md:flex-row">
       <p className="text-center text-sm text-balance">
         Built by{" "}
         <a
@@ -43,6 +43,9 @@ export function Footer() {
       >
         <VercelOSSProgramBadge className="h-6" />
       </a>
+
+      <div className="absolute top-[-4.5px] left-[-4.5px] flex size-2 rounded-[2px] border border-zinc-300 bg-popover dark:border-border" />
+      <div className="absolute top-[-4.5px] right-[-4.5px] flex size-2 rounded-[2px] border border-zinc-300 bg-popover dark:border-border" />
     </footer>
   );
 }

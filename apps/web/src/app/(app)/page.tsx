@@ -17,6 +17,7 @@ import { InstallationCommand } from "@/components/installation-command";
 import { Mark } from "@/components/mark";
 import { Spotlight } from "@/components/spotlight";
 import { Button } from "@/components/ui/button";
+import { ORGANIZATIONAL_SPONSORS } from "@/data/sponsors";
 
 const featuredItems = [
   {
@@ -178,6 +179,50 @@ export default function Home() {
         {testimonials.map((item) => (
           <TestimonialCard key={item.id} {...item} />
         ))}
+      </div>
+
+      <div className="border-t border-dashed px-4 py-12">
+        <h2 className="mb-2 text-3xl font-semibold tracking-tight">
+          Supported by the Best
+        </h2>
+
+        <p className="mb-6 leading-snug text-balance text-muted-foreground">
+          Your sponsorship means a lot to open-source projects, including React
+          Wheel Picker.
+        </p>
+
+        <div className="mb-8">
+          <Button variant="outline" asChild>
+            <a
+              href="https://github.com/sponsors/ncdai"
+              target="_blank"
+              rel="noopener"
+            >
+              Sponsor My Work
+            </a>
+          </Button>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {ORGANIZATIONAL_SPONSORS.map((sponsor) => {
+            const SponsorLogo = sponsor.logo;
+
+            return (
+              <a
+                key={sponsor.name}
+                className="flex items-center justify-center rounded-md border shadow-xs transition-colors hover:bg-accent/30"
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener sponsored"
+              >
+                <SponsorLogo
+                  className="w-full max-w-80"
+                  aria-label={`${sponsor.name} logo`}
+                />
+              </a>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

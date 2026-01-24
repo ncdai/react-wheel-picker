@@ -16,6 +16,7 @@
   width: 100%;
   align-items: stretch;
   justify-content: space-between;
+  -webkit-perspective: 2000px;
   perspective: 2000px;
   user-select: none;
 }

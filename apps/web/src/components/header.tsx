@@ -130,6 +130,9 @@ export function Header() {
 
         <MobileNav />
       </div>
+
+      <div className="absolute right-[-4.5px] bottom-[-4.5px] flex size-2 rounded-[2px] border border-zinc-300 bg-popover dark:border-border" />
+      <div className="absolute bottom-[-4.5px] left-[-4.5px] flex size-2 rounded-[2px] border border-zinc-300 bg-popover dark:border-border" />
     </header>
   );
 }

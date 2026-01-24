@@ -34,7 +34,7 @@ export function InstallationCommand({ className }: { className?: string }) {
       <Button
         size="icon"
         variant="secondary"
-        className="absolute top-3.5 right-3.5 z-10 size-6 shadow-none"
+        className="absolute top-3.5 right-3.5 z-10 size-6 rounded-sm shadow-none"
         onClick={handleCopy}
       >
         {hasCopied ? (

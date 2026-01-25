@@ -91,8 +91,8 @@ export default function RootLayout({
       </head>
 
       <body>
-        <div className="container mx-auto">
-          <div className="sm:border-x">
+        <div className="container mx-auto px-2">
+          <div className="border-x">
             <Providers>
               <OpenPanelComponent
                 clientId={process.env.OPENPANEL_CLIENT_ID!}

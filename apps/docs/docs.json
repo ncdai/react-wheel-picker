@@ -6,6 +6,8 @@
     "primary": "#000000"
   },
   "navigation": {
-    "pages": []
+    "pages": [
+      "untitled-page"
+    ]
   }
 }

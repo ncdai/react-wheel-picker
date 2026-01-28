@@ -3,15 +3,22 @@
   "theme": "willow",
   "name": "React Wheel Picker Docs",
   "colors": {
-    "primary": "#000000"
+    "primary": "#006AD4",
+    "light": "#007FFF",
+    "dark": "#006AD4"
   },
   "navigation": {
-    "pages": [
-      "getting-started"
-    ]
+    "pages": ["getting-started"]
   },
   "icons": {
     "library": "lucide"
   },
-  "favicon": "/images/favicon.ico"
+  "favicon": "/images/favicon.ico",
+  "footer": {
+    "socials": {
+      "x": "https://x.com/iamncdai",
+      "github": "https://github.com/ncdai/react-wheel-picker",
+      "linkedin": "https://www.linkedin.com/in/ncdai"
+    }
+  }
 }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "willow",
   "name": "React Wheel Picker Docs",
   "colors": {
     "primary": "#000000"
@@ -9,5 +9,9 @@
     "pages": [
       "getting-started"
     ]
-  }
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "favicon": "/images/favicon.ico"
 }

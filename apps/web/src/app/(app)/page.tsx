@@ -181,7 +181,7 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="border-t border-dashed px-4 py-12">
+      <div className="border-t px-4 py-12">
         <h2 className="mb-2 text-3xl font-semibold tracking-tight">
           Supported by the Best
         </h2>

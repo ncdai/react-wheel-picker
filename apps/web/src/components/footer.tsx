@@ -4,7 +4,7 @@ import { VercelOSSProgramBadge } from "./vercel-oss-badge";
 
 export function Footer() {
   return (
-    <footer className="relative flex flex-col-reverse items-center justify-between gap-6 border-t p-6 md:flex-row">
+    <footer className="relative mb-2 flex flex-col-reverse items-center justify-between gap-6 border-y p-6 md:flex-row">
       <p className="text-center text-sm text-balance">
         Built by{" "}
         <a

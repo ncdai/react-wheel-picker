@@ -46,7 +46,7 @@ This project is proudly supported by:
       <td>
         <a href="https://shadcraft.com?utm_source=react-wheel-picker">
           <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=2"
+            src="https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=3"
             alt="Shadcraft"
           />
         </a>
@@ -74,6 +74,16 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
+        <a href="https://www.mintlify.com?utm_source=react-wheel-picker">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/mintlify.svg?v=1"
+            alt="Mintlify"
+          />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <a href="https://openpanel.dev?utm_source=react-wheel-picker">
           <img
             src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1"
@@ -86,7 +96,7 @@ This project is proudly supported by:
       <td>
         <a href="https://termius.com?utm_source=react-wheel-picker">
           <img
-            src="https://assets.chanhdai.com/images/sponsors/termius.svg?v=1"
+            src="https://assets.chanhdai.com/images/sponsors/termius.svg?v=3"
             alt="Termius"
           />
         </a>

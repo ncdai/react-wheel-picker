@@ -12,7 +12,7 @@ export function DesktopNav() {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center gap-2 max-sm:hidden">
+    <div className="flex items-center max-sm:hidden">
       {NAV_ITEMS.map((item) => (
         <Button
           key={item.title}

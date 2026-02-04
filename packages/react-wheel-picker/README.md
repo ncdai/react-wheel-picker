@@ -34,11 +34,20 @@ This project is proudly supported by:
           />
         </a>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
         <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github">
-          <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=2" alt="shadcnstudio.com" />
+          <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=3" alt="shadcnstudio.com" />
+        </a>
+      </td>
+      <td>
+        <a href="https://shadcnspace.com">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/shadcnspace.svg?v=3"
+            alt="Shadcn Space"
+          />
         </a>
       </td>
     </tr>
@@ -51,8 +60,6 @@ This project is proudly supported by:
           />
         </a>
       </td>
-    </tr>
-    <tr>
       <td>
         <a href="https://uirules.com?utm_source=react-wheel-picker">
           <img
@@ -71,8 +78,6 @@ This project is proudly supported by:
           />
         </a>
       </td>
-    </tr>
-    <tr>
       <td>
         <a href="https://www.mintlify.com?utm_source=react-wheel-picker">
           <img
@@ -91,8 +96,6 @@ This project is proudly supported by:
           />
         </a>
       </td>
-    </tr>
-    <tr>
       <td>
         <a href="https://termius.com?utm_source=react-wheel-picker">
           <img

@@ -53,14 +53,29 @@ This project is proudly supported by:
           />
         </a>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
         <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github#gh-light-mode-only">
-          <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=2#gh-light-mode-only" alt="shadcnstudio.com" />
+          <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=3#gh-light-mode-only" alt="shadcnstudio.com" />
         </a>
         <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github#gh-dark-mode-only">
-          <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio-dark.svg?v=2#gh-dark-mode-only" alt="shadcnstudio.com" />
+          <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio-dark.svg?v=3#gh-dark-mode-only" alt="shadcnstudio.com" />
+        </a>
+      </td>
+      <td>
+        <a href="https://shadcnspace.com#gh-light-mode-only">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/shadcnspace.svg?v=3#gh-light-mode-only"
+            alt="Shadcn Space"
+          />
+        </a>
+        <a href="https://shadcnspace.com#gh-dark-mode-only">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/shadcnspace-dark.svg?v=3#gh-dark-mode-only"
+            alt="Shadcn Space"
+          />
         </a>
       </td>
     </tr>
@@ -79,8 +94,6 @@ This project is proudly supported by:
           />
         </a>
       </td>
-    </tr>
-    <tr>
       <td>
         <a href="https://uirules.com?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
@@ -111,8 +124,6 @@ This project is proudly supported by:
           />
         </a>
       </td>
-    </tr>
-    <tr>
       <td>
         <a href="https://www.mintlify.com?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
@@ -143,8 +154,6 @@ This project is proudly supported by:
           />
         </a>
       </td>
-    </tr>
-    <tr>
       <td>
         <a href="https://termius.com?utm_source=react-wheel-picker#gh-light-mode-only">
           <img

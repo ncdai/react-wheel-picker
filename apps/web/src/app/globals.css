@@ -9,6 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-pixel-square: var(--font-geist-pixel-square);
   --color-code: var(--code);
   --color-code-foreground: var(--code-foreground);
   --color-code-number: var(--code-number);
@@ -150,7 +151,7 @@
   }
 
   body {
-    @apply bg-background text-foreground overscroll-none font-sans antialiased;
+    @apply overscroll-none bg-background font-sans text-foreground antialiased;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
@@ -162,7 +163,7 @@
 
 @layer components {
   [data-rehype-pretty-code-figure] {
-    @apply bg-code text-code-foreground relative my-6 rounded-lg;
+    @apply relative my-6 rounded-lg bg-code text-code-foreground;
 
     pre {
       @apply overflow-x-auto px-4 py-4 has-[[data-line-numbers]]:px-0;
@@ -182,7 +183,7 @@
   }
 
   [data-rehype-pretty-code-title] {
-    @apply text-muted-foreground [&_svg]:text-muted-foreground flex items-center gap-2 border-b px-4 py-2.5 text-sm [&_svg]:size-4;
+    @apply flex items-center gap-2 border-b px-4 py-2.5 text-sm text-muted-foreground [&_svg]:size-4 [&_svg]:text-muted-foreground;
   }
 
   [data-line-numbers] {
@@ -192,7 +193,7 @@
   [data-line-numbers] > [data-line]::before {
     counter-increment: line;
     content: counter(line);
-    @apply bg-code text-code-number sticky left-0 inline-block w-16 pr-6 text-right text-sm;
+    @apply sticky left-0 inline-block w-16 bg-code pr-6 text-right text-sm text-code-number;
   }
 }
 
@@ -200,7 +201,7 @@
   counter-increment: step;
 
   &::before {
-    @apply border-muted-foreground/15 bg-muted text-muted-foreground md:-ml-11.5 mr-2 inline-flex size-7 -translate-y-px items-center justify-center rounded-full border text-center text-sm font-medium md:absolute md:-mt-0.5 md:size-8 md:translate-y-0;
+    @apply mr-2 inline-flex size-7 -translate-y-px items-center justify-center rounded-full border border-muted-foreground/15 bg-muted text-center text-sm font-medium text-muted-foreground md:absolute md:-mt-0.5 md:-ml-11.5 md:size-8 md:translate-y-0;
     content: counter(step);
   }
 }

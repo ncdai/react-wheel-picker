@@ -23,24 +23,32 @@ export function InstallationCommand({ className }: { className?: string }) {
   };
 
   return (
-    <div className={cn("relative text-center font-mono text-sm", className)}>
+    <div
+      className={cn(
+        "flex items-center justify-center gap-4 text-sm",
+        className,
+      )}
+    >
       <pre
-        className="hide no-scrollbar cursor-copy overflow-x-auto p-4 text-cyan-600 dark:text-cyan-400"
+        className="hide no-scrollbar cursor-copy overflow-x-auto py-4 text-cyan-600 dark:text-cyan-400"
         onClick={handleCopy}
       >
-        <code>{INSTALLATION_COMMAND}</code>
+        <code className="font-pixel-square">
+          <span className="select-none">$ </span>
+          {INSTALLATION_COMMAND}
+        </code>
       </pre>
 
       <Button
         size="icon"
-        variant="secondary"
-        className="absolute top-3.5 right-3.5 z-10 size-6 rounded-sm shadow-none"
+        variant="ghost"
+        className="size-6 rounded-sm shadow-none" // absolute top-3.5 right-3.5 z-10
         onClick={handleCopy}
       >
         {hasCopied ? (
-          <CheckIcon className="size-3" />
+          <CheckIcon className="size-3.5" />
         ) : (
-          <CopyIcon className="size-3" />
+          <CopyIcon className="size-3.5" />
         )}
         <span className="sr-only">Copy</span>
       </Button>

@@ -66,8 +66,9 @@ export function CodeBlockCommand({
                 <code
                   data-slot="code-block"
                   data-language="bash"
-                  className="font-mono text-sm leading-none text-cyan-600 dark:text-cyan-400"
+                  className="font-pixel-square text-sm leading-none text-cyan-600 dark:text-cyan-400"
                 >
+                  <span className="select-none">$ </span>
                   {value}
                 </code>
               </pre>

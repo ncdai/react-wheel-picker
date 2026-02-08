@@ -185,9 +185,11 @@ export function WheelPickerDemo() {
         value={value}
         onValueChange={setValue}
         classNames={{
-          optionItem: "text-zinc-400 dark:text-zinc-500",
+          optionItem:
+            "text-zinc-400 dark:text-zinc-500 data-disabled:opacity-40",
           highlightWrapper:
             "bg-zinc-100 text-zinc-950 dark:bg-zinc-900 dark:text-zinc-50 data-rwp-focused:ring-2 data-rwp-focused:ring-zinc-300 data-rwp-focused:ring-inset dark:data-rwp-focused:ring-zinc-600",
+          highlightItem: "data-disabled:opacity-40",
         }}
       />
     </WheelPickerWrapper>
@@ -218,6 +220,11 @@ export function WheelPickerDemo() {
 
 [data-rwp-highlight-wrapper][data-rwp-focused] {
   box-shadow: inset 0 0 0 2px #d4d4d8;
+}
+
+[data-rwp-option][data-disabled],
+[data-rwp-highlight-item][data-disabled] {
+  opacity: 0.4;
 }
 ```
 
@@ -309,6 +316,8 @@ type WheelPickerOption<T extends WheelPickerValue = string> = {
   label: ReactNode;
   /** Optional text for type-ahead search (useful when label is a ReactNode). Defaults to label if string, otherwise value. */
   textValue?: string;
+  /** Whether this option is disabled and cannot be selected */
+  disabled?: boolean;
 };
 ```
 
@@ -337,6 +346,7 @@ The following data attributes are available for CSS styling:
 | `[data-rwp-highlight-list]`    | Highlight list    | Applied to the highlight list container                              |
 | `[data-rwp-highlight-item]`    | Highlight item    | Applied to the highlighted option item                               |
 | `[data-rwp-focused]`           | Highlight wrapper | Present on `[data-rwp-highlight-wrapper]` when the picker is focused |
+| `[data-disabled]`              | Option/Highlight  | Present on option items and highlight items when disabled            |
 
 ### Data Slots
 

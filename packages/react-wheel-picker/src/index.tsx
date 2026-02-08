@@ -34,6 +34,60 @@ const getOptionTextValue = <T extends WheelPickerValue>(
   );
 };
 
+// Find the nearest enabled item from a starting index
+const findNearestEnabledIndex = <T extends WheelPickerValue>(
+  startIndex: number,
+  direction: 1 | -1,
+  options: WheelPickerOption<T>[],
+  infinite: boolean
+): number => {
+  if (options.length === 0) return startIndex;
+
+  // Check if all items are disabled
+  const hasEnabledItem = options.some((opt) => !opt.disabled);
+  if (!hasEnabledItem) return startIndex;
+
+  const searchInDirection = (dir: 1 | -1): number => {
+    let currentIndex = startIndex;
+    let attempts = 0;
+    const maxAttempts = options.length;
+
+    while (attempts < maxAttempts) {
+      currentIndex = currentIndex + dir;
+
+      if (infinite) {
+        // Wrap around for infinite mode
+        currentIndex =
+          ((currentIndex % options.length) + options.length) % options.length;
+      } else {
+        // Clamp for non-infinite mode
+        if (currentIndex < 0 || currentIndex >= options.length) {
+          return -1; // No enabled item found in this direction
+        }
+      }
+
+      if (!options[currentIndex]?.disabled) {
+        return currentIndex;
+      }
+
+      attempts++;
+    }
+
+    return -1;
+  };
+
+  // First, search in the given direction
+  let nearestIndex = searchInDirection(direction);
+
+  // If not found, reverse and search the other direction
+  if (nearestIndex === -1) {
+    nearestIndex = searchInDirection((direction * -1) as 1 | -1);
+  }
+
+  // If still not found, return the start index (shouldn't happen if hasEnabledItem is true)
+  return nearestIndex === -1 ? startIndex : nearestIndex;
+};
+
 const WheelPickerWrapper: React.FC<WheelPickerWrapperProps> = ({
   className,
   children,
@@ -60,7 +114,13 @@ function WheelPicker<T extends WheelPickerValue>({
   optionItemHeight: optionHeightProp = 30,
   classNames,
 }: WheelPickerProps<T>) {
-  const [value = optionsProp[0]?.value, setValue] = useControllableState<T>({
+  // Find first enabled option as fallback default value
+  const firstEnabledValue = useMemo(() => {
+    const firstEnabled = optionsProp.find((opt) => !opt.disabled);
+    return firstEnabled?.value ?? optionsProp[0]?.value;
+  }, [optionsProp]);
+
+  const [value = firstEnabledValue, setValue] = useControllableState<T>({
     defaultProp: defaultValue,
     prop: valueProp,
     onChange: onValueChange,
@@ -151,6 +211,7 @@ function WheelPicker<T extends WheelPickerValue>({
         data-slot="option-item"
         data-rwp-option
         data-index={index}
+        data-disabled={item.disabled || undefined}
         style={{
           top: -halfItemHeight,
           height: itemHeight,
@@ -204,6 +265,7 @@ function WheelPicker<T extends WheelPickerValue>({
         className={classNames?.highlightItem}
         data-slot="highlight-item"
         data-rwp-highlight-item
+        data-disabled={item.disabled || undefined}
         style={{ height: itemHeight }}
       >
         {item.label}
@@ -299,7 +361,9 @@ function WheelPicker<T extends WheelPickerValue>({
     requestAnimationFrame(tick);
   };
 
-  const selectByScroll = (scroll: number) => {
+  const scrollDirectionRef = useRef<1 | -1>(1);
+
+  const selectByScroll = (scroll: number, scrollDirection?: 1 | -1) => {
     const normalized = normalizeScroll(scroll) | 0;
 
     const boundedScroll = infiniteProp
@@ -308,17 +372,42 @@ function WheelPicker<T extends WheelPickerValue>({
 
     if (!infiniteProp && boundedScroll !== scroll) return;
 
+    // Check if the item is disabled and find nearest enabled item
+    if (options[boundedScroll]?.disabled) {
+      const direction = scrollDirection ?? scrollDirectionRef.current;
+      const nearestEnabled = findNearestEnabledIndex(
+        boundedScroll,
+        direction,
+        options,
+        infiniteProp
+      );
+
+      // Calculate step to nearest enabled item and scroll to it smoothly
+      const step = nearestEnabled - scrollRef.current;
+      if (step !== 0) {
+        scrollByStep(step);
+        return;
+      }
+    }
+
     scrollRef.current = scrollTo(boundedScroll);
     const selected = options[scrollRef.current];
-    setValue(selected.value);
+    if (selected && !selected.disabled) {
+      setValue(selected.value);
+    }
   };
 
   const selectByValue = (value: T) => {
-    const index = options.findIndex((opt) => opt.value === value);
+    let index = options.findIndex((opt) => opt.value === value);
 
     if (index === -1) {
       console.error("Invalid value selected:", value);
       return;
+    }
+
+    // If the selected value is disabled, find the nearest enabled item
+    if (options[index]?.disabled) {
+      index = findNearestEnabledIndex(index, 1, options, infiniteProp);
     }
 
     cancelAnimation();
@@ -338,11 +427,15 @@ function WheelPicker<T extends WheelPickerValue>({
     const distance = Math.abs(endScroll - startScroll);
     if (distance === 0) return;
 
+    // Track scroll direction
+    const direction = step > 0 ? 1 : -1;
+    scrollDirectionRef.current = direction;
+
     const duration = Math.sqrt(distance / scrollSensitivityProp);
 
     cancelAnimation();
     animateScroll(startScroll, endScroll, duration, () => {
-      selectByScroll(scrollRef.current);
+      selectByScroll(scrollRef.current, direction);
     });
   };
 
@@ -366,6 +459,16 @@ function WheelPicker<T extends WheelPickerValue>({
     }
 
     const stepsToScroll = (quarterCount - clickedSegmentIndex - 1) * -1;
+    const targetIndex = scrollRef.current + stepsToScroll;
+    const normalizedIndex = infiniteProp
+      ? normalizeScroll(targetIndex)
+      : Math.max(0, Math.min(targetIndex, options.length - 1));
+
+    // Do nothing if clicking on a disabled item
+    if (options[normalizedIndex]?.disabled) {
+      return;
+    }
+
     scrollByStep(stepsToScroll);
   };
 
@@ -495,6 +598,10 @@ function WheelPicker<T extends WheelPickerValue>({
       initialVelocity > 0 ? -baseDeceleration : baseDeceleration;
     let duration = 0;
 
+    // Track scroll direction based on velocity
+    const direction = initialVelocity > 0 ? 1 : -1;
+    scrollDirectionRef.current = direction;
+
     if (infiniteProp) {
       // Infinite mode: apply uniform deceleration to calculate scroll distance
       duration = Math.abs(initialVelocity / deceleration);
@@ -524,11 +631,11 @@ function WheelPicker<T extends WheelPickerValue>({
 
     // Start animation to target scroll position with calculated duration
     animateScroll(currentScroll, targetScroll, duration, () => {
-      selectByScroll(scrollRef.current); // Ensure selected item updates at end
+      selectByScroll(scrollRef.current, direction); // Ensure selected item updates at end
     });
 
     // Fallback selection update (in case animation callback fails)
-    selectByScroll(scrollRef.current);
+    selectByScroll(scrollRef.current, direction);
   };
 
   const finalizeDragAndStartInertiaScroll = () => {
@@ -601,10 +708,11 @@ function WheelPicker<T extends WheelPickerValue>({
     const now = Date.now();
     if (now - lastWheelTimeRef.current < 100) return;
 
-    const direction = Math.sign(event.deltaY);
+    const direction = Math.sign(event.deltaY) as 1 | -1;
     if (!direction) return;
 
     lastWheelTimeRef.current = now;
+    scrollDirectionRef.current = direction;
 
     scrollByStep(direction);
   };
@@ -662,18 +770,42 @@ function WheelPicker<T extends WheelPickerValue>({
     [group]
   );
 
+  // Filter out disabled options for type-ahead search
+  const enabledOptionsMap = useMemo(() => {
+    const map = new Map<number, number>(); // enabled index -> original index
+    const reverseMap = new Map<number, number>(); // original index -> enabled index
+    const enabled: WheelPickerOption<T>[] = [];
+
+    options.forEach((option, index) => {
+      if (!option.disabled) {
+        const enabledIndex = enabled.length;
+        map.set(enabledIndex, index);
+        reverseMap.set(index, enabledIndex);
+        enabled.push(option);
+      }
+    });
+
+    return { enabled, map, reverseMap };
+  }, [options]);
+
   const { handleTypeaheadSearch, resetTypeahead } = useTypeaheadSearch(
-    options,
+    enabledOptionsMap.enabled,
     {
       getTextValue: getOptionTextValue,
-      getCurrentIndex: useCallback(() => Math.round(scrollRef.current), []),
+      getCurrentIndex: useCallback(() => {
+        const currentIndex = Math.round(scrollRef.current);
+        return enabledOptionsMap.reverseMap.get(currentIndex) ?? 0;
+      }, [enabledOptionsMap]),
       onMatch: useCallback(
-        (matchIndex: number) => {
-          const step = matchIndex - Math.round(scrollRef.current);
-          scrollByStep(step);
+        (enabledIndex: number) => {
+          const originalIndex = enabledOptionsMap.map.get(enabledIndex);
+          if (originalIndex !== undefined) {
+            const step = originalIndex - Math.round(scrollRef.current);
+            scrollByStep(step);
+          }
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        []
+        [enabledOptionsMap]
       ),
     }
   );
@@ -682,53 +814,113 @@ function WheelPicker<T extends WheelPickerValue>({
     (event: React.KeyboardEvent<HTMLDivElement>) => {
       if (!options.length) return;
 
-      switch (event.key) {
-        case "ArrowUp":
-          event.preventDefault();
-          scrollByStep(-1);
-          break;
+      // Helper: Handle vertical navigation (ArrowUp/ArrowDown)
+      const handleVerticalNavigation = (direction: 1 | -1) => {
+        event.preventDefault();
 
-        case "ArrowDown":
-          event.preventDefault();
-          scrollByStep(1);
-          break;
+        const currentIndex = Math.round(scrollRef.current);
+        let targetIndex = currentIndex + direction;
 
-        case "ArrowLeft":
+        // In non-infinite mode, check bounds
+        if (!infiniteProp) {
+          if (direction === -1 && targetIndex < 0) return; // Already at top
+          if (direction === 1 && targetIndex >= options.length) return; // Already at bottom
+        }
+
+        // Normalize for checking disabled state
+        const normalizedTarget = infiniteProp
+          ? direction === -1
+            ? ((targetIndex % options.length) + options.length) %
+              options.length
+            : targetIndex % options.length
+          : targetIndex;
+
+        // If target is disabled, find nearest enabled item
+        if (options[normalizedTarget]?.disabled) {
+          const nearestEnabled = findNearestEnabledIndex(
+            normalizedTarget,
+            direction,
+            options,
+            infiniteProp
+          );
+          // Calculate step from current to nearest enabled
+          targetIndex =
+            currentIndex + direction + (nearestEnabled - normalizedTarget);
+        }
+
+        const step = targetIndex - currentIndex;
+        if (step !== 0) {
+          scrollByStep(step);
+        }
+      };
+
+      // Helper: Handle Home key
+      const handleHome = () => {
+        if (infiniteProp) return;
+
+        event.preventDefault();
+        // Go to first item, or first enabled item if first is disabled
+        let targetIndex = 0;
+        if (options[0]?.disabled) {
+          targetIndex = findNearestEnabledIndex(0, 1, options, false);
+        }
+        const step = targetIndex - scrollRef.current;
+        if (step !== 0) {
+          scrollByStep(step);
+        }
+      };
+
+      // Helper: Handle End key
+      const handleEnd = () => {
+        if (infiniteProp) return;
+
+        event.preventDefault();
+        // Go to last item, or last enabled item if last is disabled
+        let targetIndex = options.length - 1;
+        if (options[targetIndex]?.disabled) {
+          targetIndex = findNearestEnabledIndex(targetIndex, -1, options, false);
+        }
+        const step = targetIndex - scrollRef.current;
+        if (step !== 0) {
+          scrollByStep(step);
+        }
+      };
+
+      // Helper: Handle typeahead search for printable characters
+      const handleTypeahead = () => {
+        if (
+          event.key.length === 1 &&
+          !event.ctrlKey &&
+          !event.metaKey &&
+          !event.altKey
+        ) {
+          event.preventDefault();
+          handleTypeaheadSearch(event.key);
+        }
+      };
+
+      // Key handlers mapping
+      const keyHandlers: Record<string, () => void> = {
+        ArrowUp: () => handleVerticalNavigation(-1),
+        ArrowDown: () => handleVerticalNavigation(1),
+        ArrowLeft: () => {
           event.preventDefault();
           navigateToPicker("prev");
-          break;
-
-        case "ArrowRight":
+        },
+        ArrowRight: () => {
           event.preventDefault();
           navigateToPicker("next");
-          break;
+        },
+        Home: handleHome,
+        End: handleEnd,
+      };
 
-        case "Home":
-          if (!infiniteProp) {
-            event.preventDefault();
-            scrollByStep(-scrollRef.current);
-          }
-          break;
-
-        case "End":
-          if (!infiniteProp) {
-            event.preventDefault();
-            scrollByStep(options.length - 1 - scrollRef.current);
-          }
-          break;
-
-        default:
-          // Type-ahead search: handle printable characters
-          if (
-            event.key.length === 1 &&
-            !event.ctrlKey &&
-            !event.metaKey &&
-            !event.altKey
-          ) {
-            event.preventDefault();
-            handleTypeaheadSearch(event.key);
-          }
-          break;
+      // Execute handler if exists, otherwise try typeahead
+      const handler = keyHandlers[event.key];
+      if (handler) {
+        handler();
+      } else {
+        handleTypeahead();
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps

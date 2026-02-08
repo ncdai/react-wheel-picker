@@ -15,6 +15,8 @@ export type WheelPickerOption<T extends WheelPickerValue = string> = {
   label: ReactNode;
   /** Optional text for type-ahead search (useful when label is a ReactNode). Defaults to label if string, otherwise value. */
   textValue?: string;
+  /** Whether this option is disabled and cannot be selected */
+  disabled?: boolean;
 };
 
 /**

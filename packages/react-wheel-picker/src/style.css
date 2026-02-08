@@ -87,3 +87,8 @@
   align-items: center;
   justify-content: center;
 }
+
+[data-rwp-option][data-disabled],
+[data-rwp-highlight-item][data-disabled] {
+  pointer-events: none;
+}

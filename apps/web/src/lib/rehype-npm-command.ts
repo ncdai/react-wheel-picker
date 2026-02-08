@@ -74,7 +74,7 @@ export function rehypeNpmCommand() {
           "npx",
           "pnpm dlx",
         );
-        node.properties["__yarnCommand__"] = npmCommand;
+        node.properties["__yarnCommand__"] = npmCommand.replace("npx", "yarn");
         node.properties["__npmCommand__"] = npmCommand;
         node.properties["__bunCommand__"] = npmCommand.replace(
           "npx",

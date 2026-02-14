@@ -19,12 +19,12 @@ export function BrandContextMenu({ children }: { children: React.ReactNode }) {
     <ContextMenu>
       <ContextMenuTrigger asChild>{children}</ContextMenuTrigger>
 
-      <ContextMenuContent className="w-64">
+      <ContextMenuContent className="w-fit">
         <ContextMenuItem
           onClick={() => {
             const svg = getMarkSVG(resolvedTheme === "light" ? "#000" : "#fff");
             navigator.clipboard.writeText(svg);
-            toast.success("Copied Mark as SVG");
+            toast.success("Mark as SVG copied");
           }}
         >
           <Mark />
@@ -35,7 +35,7 @@ export function BrandContextMenu({ children }: { children: React.ReactNode }) {
           onClick={() => {
             const svg = getIconSVG();
             navigator.clipboard.writeText(svg);
-            toast.success("Copied Icon as SVG");
+            toast.success("Icon as SVG copied");
           }}
         >
           <CircleDashedIcon />

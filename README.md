@@ -1,13 +1,13 @@
 # [React Wheel Picker](https://react-wheel-picker.chanhdai.com) &middot; [![GitHub License](https://img.shields.io/github/license/ncdai/react-wheel-picker)](https://github.com/ncdai/react-wheel-picker/blob/main/LICENSE) [![NPM Version](https://img.shields.io/npm/v/%40ncdai%2Freact-wheel-picker)](https://www.npmjs.com/package/@ncdai/react-wheel-picker) [![NPM Downloads](https://img.shields.io/npm/dy/%40ncdai%2Freact-wheel-picker)](https://www.npmjs.com/package/@ncdai/react-wheel-picker) ![GitHub Repo Views](https://gitviews.com/repo/ncdai/react-wheel-picker.svg?label=views&style=flat&label-color=%23555&color=%234c1) [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ncdai/react-wheel-picker/release.yml)](https://github.com/ncdai/react-wheel-picker/actions/workflows/release.yml)
 
-iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
+iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. / Backed by [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker)
 
-- 📱 Natural touch scrolling with smooth inertia effect
-- 🖱️ Mouse drag and scroll support for desktop
-- 🔄 Infinite loop scrolling
-- 🎨 Unstyled components for complete style customization
-- ⌨️ Full keyboard navigation and type-ahead search
-- ⚡️ Easy installation via shadcn CLI
+- Natural touch scrolling with smooth inertia effect
+- Mouse drag and scroll support for desktop
+- Infinite loop scrolling
+- Unstyled components for complete style customization
+- Full keyboard navigation and type-ahead search
+- Easy installation via shadcn CLI
 
 → Check out the live demo: https://react-wheel-picker.chanhdai.com
 
@@ -39,7 +39,7 @@ This project is proudly supported by:
 <table>
   <tbody>
     <tr>
-      <td colspan="2" align="center">
+      <td>
         <a href="https://vercel.com/blog/summer-2025-oss-program#gh-light-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg?v=2#gh-light-mode-only"
@@ -53,8 +53,6 @@ This project is proudly supported by:
           />
         </a>
       </td>
-    </tr>
-    <tr>
       <td>
         <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github#gh-light-mode-only">
           <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=3#gh-light-mode-only" alt="shadcnstudio.com" />
@@ -107,8 +105,6 @@ This project is proudly supported by:
           />
         </a>
       </td>
-    </tr>
-    <tr>
       <td>
         <a href="https://reactbits.dev?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
@@ -123,6 +119,8 @@ This project is proudly supported by:
           />
         </a>
       </td>
+    </tr>
+    <tr>
       <td>
         <a href="https://uirules.com?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
@@ -137,8 +135,6 @@ This project is proudly supported by:
           />
         </a>
       </td>
-    </tr>
-    <tr>
       <td>
         <a href="https://openpanel.dev?utm_source=react-wheel-picker#gh-light-mode-only">
           <img

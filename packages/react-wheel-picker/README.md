@@ -1,6 +1,8 @@
 # React Wheel Picker
 
-iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. / Backed by [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker)
+Backed by [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker)
+
+iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
 
 - Natural touch scrolling with smooth inertia effect
 - Mouse drag and scroll support for desktop

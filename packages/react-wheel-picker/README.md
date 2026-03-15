@@ -78,6 +78,14 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
+        <a href="https://shoogle.dev?utm_source=react-wheel-picker">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/shoogle.svg?v=1"
+            alt="Shoogle"
+          />
+        </a>
+      </td>
+      <td>
         <a href="https://uirules.com?utm_source=react-wheel-picker">
           <img
             src="https://assets.chanhdai.com/images/sponsors/uirules.svg?v=1"
@@ -93,6 +101,8 @@ This project is proudly supported by:
           />
         </a>
       </td>
+    </tr>
+    <tr>
       <td>
         <a href="https://www.mintlify.com?utm_source=react-wheel-picker">
           <img
@@ -101,6 +111,8 @@ This project is proudly supported by:
           />
         </a>
       </td>
+      <td></td>
+      <td></td>
     </tr>
   </tbody>
 </table>

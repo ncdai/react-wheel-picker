@@ -171,6 +171,10 @@ This project is proudly supported by:
 
 > Using this package at work? [Sponsor me](https://github.com/sponsors/ncdai) to help with support and maintenance.
 
+## NPM Downloads
+
+![npm downloads](https://www.npm.bet/svg?q=%40ncdai%2Freact-wheel-picker&timeRange=last-year&grouping=week)
+
 ## Star History
 
 [![Star History](https://starchart.cc/ncdai/react-wheel-picker.svg?variant=adaptive&line=%2300d3f3)](https://starchart.cc/ncdai/react-wheel-picker)

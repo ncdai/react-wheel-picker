@@ -69,6 +69,7 @@ export const ORGANIZATIONAL_SPONSORS: OrganizationalSponsor[] = [
         </svg>
       );
     },
+    tier: "osp",
     featured: true,
   },
   {
@@ -200,7 +201,6 @@ export const ORGANIZATIONAL_SPONSORS: OrganizationalSponsor[] = [
         </svg>
       );
     },
-    tier: "silver",
     featured: true,
   },
   {
@@ -219,6 +219,7 @@ export const ORGANIZATIONAL_SPONSORS: OrganizationalSponsor[] = [
         </svg>
       );
     },
+    tier: "osp",
   },
   {
     name: "Mintlify",
@@ -235,6 +236,7 @@ export const ORGANIZATIONAL_SPONSORS: OrganizationalSponsor[] = [
         </svg>
       );
     },
+    tier: "osp",
   },
   {
     name: "Termius",
@@ -273,6 +275,7 @@ export const ORGANIZATIONAL_SPONSORS: OrganizationalSponsor[] = [
         </svg>
       );
     },
+    tier: "osp",
   },
 ];
 

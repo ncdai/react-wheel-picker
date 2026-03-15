@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-export type SponsorTier = "silver" | "gold" | "platinum";
+export type SponsorTier = "osp" | "silver" | "gold" | "platinum";
 
 export type IndividualSponsor = {
   name: string;

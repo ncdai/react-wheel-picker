@@ -15,5 +15,4 @@ export type OrganizationalSponsor = {
   url: string;
   logo: (props: React.ComponentProps<"svg">) => JSX.Element;
   tier?: SponsorTier;
-  featured?: boolean;
 };

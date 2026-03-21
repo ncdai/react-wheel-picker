@@ -78,10 +78,18 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://shoogle.dev?utm_source=react-wheel-picker">
+        <a href="https://openpanel.dev?utm_source=react-wheel-picker">
           <img
-            src="https://assets.chanhdai.com/images/sponsors/shoogle.svg?v=1"
-            alt="Shoogle"
+            src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1"
+            alt="OpenPanel"
+          />
+        </a>
+      </td>
+      <td>
+        <a href="https://www.mintlify.com?utm_source=react-wheel-picker">
+          <img
+            src="https://assets.chanhdai.com/images/sponsors/mintlify.svg?v=1"
+            alt="Mintlify"
           />
         </a>
       </td>
@@ -93,21 +101,13 @@ This project is proudly supported by:
           />
         </a>
       </td>
-      <td>
-        <a href="https://openpanel.dev?utm_source=react-wheel-picker">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1"
-            alt="OpenPanel"
-          />
-        </a>
-      </td>
     </tr>
     <tr>
       <td>
-        <a href="https://www.mintlify.com?utm_source=react-wheel-picker">
+        <a href="https://shoogle.dev?utm_source=react-wheel-picker">
           <img
-            src="https://assets.chanhdai.com/images/sponsors/mintlify.svg?v=1"
-            alt="Mintlify"
+            src="https://assets.chanhdai.com/images/sponsors/shoogle.svg?v=1"
+            alt="Shoogle"
           />
         </a>
       </td>

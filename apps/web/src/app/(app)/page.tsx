@@ -204,7 +204,7 @@ export default function Home() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {ORGANIZATIONAL_SPONSORS.filter((sponsor) => sponsor.featured).map(
+          {ORGANIZATIONAL_SPONSORS.filter((sponsor) => sponsor.tier).map(
             (sponsor) => {
               const SponsorLogo = sponsor.logo;
 

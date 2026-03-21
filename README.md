@@ -80,16 +80,16 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://shadcraft.com?utm_source=react-wheel-picker#gh-light-mode-only">
+        <a href="https://shadcncraft.com?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=2#gh-light-mode-only"
-            alt="Shadcraft"
+            src="https://assets.chanhdai.com/images/sponsors/shadcncraft.svg?v=2#gh-light-mode-only"
+            alt="shadcncraft"
           />
         </a>
-        <a href="https://shadcraft.com?utm_source=react-wheel-picker#gh-dark-mode-only">
+        <a href="https://shadcncraft.com?utm_source=react-wheel-picker#gh-dark-mode-only">
           <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcraft-dark.svg?v=1#gh-dark-mode-only"
-            alt="Shadcraft"
+            src="https://assets.chanhdai.com/images/sponsors/shadcncraft-dark.svg?v=1#gh-dark-mode-only"
+            alt="shadcncraft"
           />
         </a>
       </td>

@@ -52,10 +52,10 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://shadcraft.com?utm_source=react-wheel-picker">
+        <a href="https://shadcncraft.com?utm_source=react-wheel-picker">
           <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcraft.svg?v=3"
-            alt="Shadcraft"
+            src="https://assets.chanhdai.com/images/sponsors/shadcncraft.svg?v=3"
+            alt="shadcncraft"
           />
         </a>
       </td>

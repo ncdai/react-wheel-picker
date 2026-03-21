@@ -1,5 +1,11 @@
 # @ncdai/react-wheel-picker
 
+## 1.2.1
+
+### Patch Changes
+
+- cccfeda: chore(README.md): Update sponsors
+
 ## 1.2.0
 
 ### Minor Changes

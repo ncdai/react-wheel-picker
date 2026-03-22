@@ -2,10 +2,14 @@
 
 "use client";
 
-import { CheckIcon, ChevronDownIcon, CopyIcon } from "lucide-react";
-import { useMemo, useState } from "react";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  CircleXIcon,
+  CopyIcon,
+} from "lucide-react";
+import { useMemo, useRef, useState } from "react";
 
-import { useCopyButton } from "@/hooks/use-copy-button";
 import { cn } from "@/lib/utils";
 
 import { Icons } from "../icons";
@@ -19,40 +23,64 @@ import {
 
 const cache = new Map<string, string>();
 
+type CopyState = "idle" | "done" | "error";
+
 export function LLMCopyButton({ markdownUrl }: { markdownUrl: string }) {
-  const [isLoading, setLoading] = useState(false);
+  const [state, setState] = useState<CopyState>("idle");
+  const [isCopying, setIsCopying] = useState(false);
+  const operationRef = useRef(false);
 
-  const [checked, onClick] = useCopyButton(async () => {
-    const cached = cache.get(markdownUrl);
-    if (cached) {
-      return navigator.clipboard.writeText(cached);
-    }
+  const handleCopy = async () => {
+    if (operationRef.current) return;
 
-    setLoading(true);
+    operationRef.current = true;
+
+    const loadingTimer = setTimeout(() => {
+      setIsCopying(true);
+    }, 150);
 
     try {
-      await navigator.clipboard.write([
-        new ClipboardItem({
-          "text/plain": fetch(markdownUrl)
-            .then((res) => res.text())
-            .then((content) => {
-              cache.set(markdownUrl, content);
-              return content;
-            }),
-        }),
-      ]);
+      const cached = cache.get(markdownUrl);
+      if (cached) {
+        await navigator.clipboard.writeText(cached);
+      } else {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            "text/plain": fetch(markdownUrl)
+              .then((res) => res.text())
+              .then((content) => {
+                cache.set(markdownUrl, content);
+                return content;
+              }),
+          }),
+        ]);
+      }
+      setState("done");
+    } catch {
+      setState("error");
     } finally {
-      setLoading(false);
+      clearTimeout(loadingTimer);
+      setIsCopying(false);
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      operationRef.current = false;
+      setState("idle");
     }
-  });
+  };
 
   return (
     <button
       className="flex h-8 items-center gap-2 rounded-l-full pr-2 pl-2.5 text-sm font-medium disabled:pointer-events-none disabled:opacity-50"
-      disabled={isLoading}
-      onClick={onClick}
+      aria-busy={isCopying}
+      disabled={isCopying}
+      onClick={handleCopy}
     >
-      {checked ? <CheckIcon /> : <CopyIcon />}
+      {state === "idle" ? (
+        <CopyIcon />
+      ) : state === "done" ? (
+        <CheckIcon />
+      ) : (
+        <CircleXIcon />
+      )}
       Copy Page
     </button>
   );
@@ -103,6 +131,13 @@ export function ViewOptions({ markdownUrl }: { markdownUrl: string }) {
         icon: Icons.claude,
       },
       {
+        title: "Open in Cursor",
+        href: `https://cursor.com/link/prompt?${new URLSearchParams({
+          text: q,
+        })}`,
+        icon: Icons.cursor,
+      },
+      {
         title: "Open in Scira AI",
         href: `https://scira.ai/?${new URLSearchParams({
           q,
@@ -123,7 +158,10 @@ export function ViewOptions({ markdownUrl }: { markdownUrl: string }) {
         </button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent onCloseAutoFocus={(e) => e.preventDefault()}>
+      <DropdownMenuContent
+        className="w-fit"
+        onCloseAutoFocus={(e) => e.preventDefault()}
+      >
         {items.map(({ title, href, icon: Icon }) => (
           <DropdownMenuItem key={href} asChild>
             <a href={href} rel="noreferrer noopener" target="_blank">

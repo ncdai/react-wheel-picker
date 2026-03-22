@@ -1,8 +1,21 @@
 import { HeartIcon } from "lucide-react";
-import Image from "next/image";
 
+import { SponsorCard } from "@/components/sponsor-card";
 import { Button } from "@/components/ui/button";
-import { INDIVIDUAL_SPONSORS, ORGANIZATIONAL_SPONSORS } from "@/data/sponsors";
+import { SPONSORS } from "@/data/sponsors";
+import type { SponsorTier } from "@/types/sponsors";
+import { type Sponsor, SPONSOR_TIERS } from "@/types/sponsors";
+
+const sponsorsByTier = SPONSORS.reduce(
+  (acc, sponsor) => {
+    if (!acc[sponsor.tier]) {
+      acc[sponsor.tier] = [];
+    }
+    acc[sponsor.tier].push(sponsor);
+    return acc;
+  },
+  {} as Record<SponsorTier, Sponsor[]>,
+);
 
 export default function SponsorsPage() {
   return (
@@ -29,71 +42,38 @@ export default function SponsorsPage() {
         </Button>
       </div>
 
-      <div className="border-t border-dashed px-4 py-12">
-        <h2 className="mb-4 font-mono text-xs">Organization Sponsors</h2>
+      <div className="flex flex-col gap-12 border-t border-dashed px-4 py-12">
+        {SPONSOR_TIERS.map((tier) => (
+          <SponsorsGroup
+            key={tier.name}
+            title={tier.title}
+            sponsors={sponsorsByTier[tier.name] || []}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {ORGANIZATIONAL_SPONSORS.map((sponsor) => {
-            const SponsorLogo = sponsor.logo;
+function SponsorsGroup({
+  title,
+  sponsors,
+}: {
+  title: string;
+  sponsors: Sponsor[];
+}) {
+  if (sponsors.length === 0) {
+    return null;
+  }
 
-            return (
-              <a
-                key={sponsor.name}
-                className="flex items-center justify-center rounded-md border shadow-xs transition-colors hover:bg-accent/30"
-                href={sponsor.url}
-                target="_blank"
-                rel="noopener sponsored"
-              >
-                <SponsorLogo
-                  className="w-full max-w-80"
-                  aria-label={`${sponsor.name} logo`}
-                />
-              </a>
-            );
-          })}
-        </div>
+  return (
+    <div>
+      <h2 className="mb-4 font-mono text-xs">{title}</h2>
 
-        {INDIVIDUAL_SPONSORS.length > 0 && (
-          <>
-            <h2 className="mt-12 mb-4 font-mono text-xs">
-              Individual Sponsors
-            </h2>
-
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
-              {INDIVIDUAL_SPONSORS.map((sponsor) => (
-                <a
-                  key={sponsor.name}
-                  className="flex items-center justify-start rounded-md border p-4 shadow-xs transition-colors hover:bg-accent/30"
-                  href={sponsor.url}
-                  target="_blank"
-                  rel="noopener sponsored"
-                >
-                  <div className="grid grid-cols-[auto_1fr] items-center gap-x-4">
-                    <div className="relative row-span-2 size-10 shrink-0">
-                      <Image
-                        className="size-10 rounded-full select-none"
-                        src={sponsor.avatar}
-                        alt={sponsor.name}
-                        width={40}
-                        height={40}
-                        unoptimized
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-black/10 ring-inset dark:ring-white/15" />
-                    </div>
-
-                    <div className="truncate text-sm leading-5 font-semibold text-foreground">
-                      {sponsor.name}
-                    </div>
-
-                    <div className="truncate text-xs leading-5 text-muted-foreground">
-                      {sponsor.tagline}
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </>
-        )}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {sponsors.map((sponsor) => (
+          <SponsorCard key={sponsor.name} sponsor={sponsor} />
+        ))}
       </div>
     </div>
   );

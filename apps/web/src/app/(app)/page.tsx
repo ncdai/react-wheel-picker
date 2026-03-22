@@ -7,106 +7,41 @@ import {
   PointerIcon,
   TriangleDashedIcon,
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 
-import { MultiPickerDemo } from "@/components/examples/multi-picker-demo";
-import { SimplePickerDemo } from "@/components/examples/simple-picker-demo";
 import { Icons } from "@/components/icons";
 import { InstallationCommand } from "@/components/installation-command";
 import { Mark } from "@/components/mark";
+import { SponsorCard } from "@/components/sponsor-card";
 import { Spotlight } from "@/components/spotlight";
 import { Button } from "@/components/ui/button";
-import { ORGANIZATIONAL_SPONSORS } from "@/data/sponsors";
+import { SPONSORS } from "@/data/sponsors";
+import type { SponsorTier } from "@/types/sponsors";
 
-const featuredItems = [
-  {
-    icon: PointerIcon,
-    title: "Natural touch scrolling",
-  },
-  {
-    icon: MousePointerClickIcon,
-    title: "Mouse drag and scroll support for desktop",
-  },
-  {
-    icon: InfinityIcon,
-    title: "Infinite loop scrolling",
-  },
-  {
-    icon: TriangleDashedIcon,
-    title: "Unstyled components for complete style customization",
-  },
-  {
-    icon: KeyboardIcon,
-    title: "Full keyboard navigation and type-ahead search",
-  },
-  {
-    icon: Icons.shadcn,
-    title: "Easy installation via shadcn CLI",
-  },
-];
+const MultiPickerDemo = dynamic(() =>
+  import("@/components/examples/multi-picker-demo").then(
+    (mod) => mod.MultiPickerDemo,
+  ),
+);
 
-type Testimonial = {
-  id: string;
-  avatar: string;
-  name: string;
-  tagline: string;
-  content: string;
-  refLink: string;
-};
+const SimplePickerDemo = dynamic(() =>
+  import("@/components/examples/simple-picker-demo").then(
+    (mod) => mod.SimplePickerDemo,
+  ),
+);
 
-const testimonials: Testimonial[] = [
-  {
-    id: "kapehe_ok",
-    avatar: "/images/avatars/kapehe_ok.webp",
-    name: "Kap",
-    tagline: "Head of Developer Community @Vercel",
-    content: "one of my favorite projects that submitted! you are crushing it!",
-    refLink: "https://x.com/kapehe_ok/status/1948104774358106612",
-  },
-  {
-    id: "initjean",
-    avatar: "/images/avatars/initjean.webp",
-    name: "Jean P.D. Meijer",
-    tagline: "Creator of analog.now",
-    content:
-      "congrats you deserve it! react wheel picker is so smooth, its insane 🐐",
-    refLink: "https://x.com/initjean/status/1948159885960438151",
-  },
-  {
-    id: "jordwalke",
-    avatar: "/images/avatars/jordwalke.webp",
-    name: "jordwalke",
-    tagline: "Creator of React",
-    content: "Also, cool wheel picker!",
-    refLink: "https://x.com/jordwalke/status/1937166049868439854",
-  },
-  {
-    id: "ajaypatel_aj",
-    avatar: "/images/avatars/ajaypatel_aj.webp",
-    name: "Ajay Patel",
-    tagline: "Creator of shadcn/studio",
-    content:
-      "Perfect iOS-like wheel picker for the web 🙌 Natural touch physics, infinite looping, and unstyled components with shadcn CLI support.",
-    refLink: "https://x.com/ajaypatel_aj/status/2003723039029231737",
-  },
-  {
-    id: "steventey",
-    avatar: "/images/avatars/steventey.webp",
-    name: "Steven Tey",
-    tagline: "Founder of dub.co",
-    content: "whoa, this is really dope – needs to get added to @shadcn UI 👀",
-    refLink: "https://x.com/steventey/status/1936934909370830924",
-  },
-  {
-    id: "theorcdev",
-    name: "OrcDev",
-    tagline: "Creator of 8bitcn.com",
-    avatar: "/images/avatars/theorcdev.webp",
-    content: "Looks nice!",
-    refLink: "https://x.com/theorcdev/status/1934586473040543885",
-  },
-];
+const FEATURED_TIERS = new Set<SponsorTier>([
+  "osp",
+  "platinum",
+  "gold",
+  "silver",
+]);
+
+const FEATURED_SPONSORS = SPONSORS.filter((sponsor) =>
+  FEATURED_TIERS.has(sponsor.tier),
+);
 
 export default function Home() {
   return (
@@ -204,31 +139,41 @@ export default function Home() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {ORGANIZATIONAL_SPONSORS.filter((sponsor) => sponsor.tier).map(
-            (sponsor) => {
-              const SponsorLogo = sponsor.logo;
-
-              return (
-                <a
-                  key={sponsor.name}
-                  className="flex items-center justify-center rounded-md border shadow-xs transition-colors hover:bg-accent/30"
-                  href={sponsor.url}
-                  target="_blank"
-                  rel="noopener sponsored"
-                >
-                  <SponsorLogo
-                    className="w-full max-w-80"
-                    aria-label={`${sponsor.name} logo`}
-                  />
-                </a>
-              );
-            },
-          )}
+          {FEATURED_SPONSORS.map((sponsor) => (
+            <SponsorCard key={sponsor.name} sponsor={sponsor} />
+          ))}
         </div>
       </div>
     </div>
   );
 }
+
+const featuredItems = [
+  {
+    icon: PointerIcon,
+    title: "Natural touch scrolling",
+  },
+  {
+    icon: MousePointerClickIcon,
+    title: "Mouse drag and scroll support for desktop",
+  },
+  {
+    icon: InfinityIcon,
+    title: "Infinite loop scrolling",
+  },
+  {
+    icon: TriangleDashedIcon,
+    title: "Unstyled components for complete style customization",
+  },
+  {
+    icon: KeyboardIcon,
+    title: "Full keyboard navigation and type-ahead search",
+  },
+  {
+    icon: Icons.shadcn,
+    title: "Easy installation via shadcn CLI",
+  },
+];
 
 function FeaturedItem({
   icon: Icon,
@@ -267,6 +212,68 @@ function FeaturedItem({
     </div>
   );
 }
+
+type Testimonial = {
+  id: string;
+  avatar: string;
+  name: string;
+  tagline: string;
+  content: string;
+  refLink: string;
+};
+
+const testimonials: Testimonial[] = [
+  {
+    id: "kapehe_ok",
+    avatar: "/images/avatars/kapehe_ok.webp",
+    name: "Kap",
+    tagline: "Head of Developer Community @Vercel",
+    content: "one of my favorite projects that submitted! you are crushing it!",
+    refLink: "https://x.com/kapehe_ok/status/1948104774358106612",
+  },
+  {
+    id: "initjean",
+    avatar: "/images/avatars/initjean.webp",
+    name: "Jean P.D. Meijer",
+    tagline: "Creator of analog.now",
+    content:
+      "congrats you deserve it! react wheel picker is so smooth, its insane 🐐",
+    refLink: "https://x.com/initjean/status/1948159885960438151",
+  },
+  {
+    id: "jordwalke",
+    avatar: "/images/avatars/jordwalke.webp",
+    name: "jordwalke",
+    tagline: "Creator of React",
+    content: "Also, cool wheel picker!",
+    refLink: "https://x.com/jordwalke/status/1937166049868439854",
+  },
+  {
+    id: "ajaypatel_aj",
+    avatar: "/images/avatars/ajaypatel_aj.webp",
+    name: "Ajay Patel",
+    tagline: "Creator of shadcn/studio",
+    content:
+      "Perfect iOS-like wheel picker for the web 🙌 Natural touch physics, infinite looping, and unstyled components with shadcn CLI support.",
+    refLink: "https://x.com/ajaypatel_aj/status/2003723039029231737",
+  },
+  {
+    id: "steventey",
+    avatar: "/images/avatars/steventey.webp",
+    name: "Steven Tey",
+    tagline: "Founder of dub.co",
+    content: "whoa, this is really dope – needs to get added to @shadcn UI 👀",
+    refLink: "https://x.com/steventey/status/1936934909370830924",
+  },
+  {
+    id: "theorcdev",
+    name: "OrcDev",
+    tagline: "Creator of 8bitcn.com",
+    avatar: "/images/avatars/theorcdev.webp",
+    content: "Looks nice!",
+    refLink: "https://x.com/theorcdev/status/1934586473040543885",
+  },
+];
 
 function TestimonialCard({
   avatar,

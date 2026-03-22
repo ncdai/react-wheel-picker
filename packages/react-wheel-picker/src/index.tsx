@@ -830,8 +830,7 @@ function WheelPicker<T extends WheelPickerValue>({
         // Normalize for checking disabled state
         const normalizedTarget = infiniteProp
           ? direction === -1
-            ? ((targetIndex % options.length) + options.length) %
-              options.length
+            ? ((targetIndex % options.length) + options.length) % options.length
             : targetIndex % options.length
           : targetIndex;
 
@@ -878,7 +877,12 @@ function WheelPicker<T extends WheelPickerValue>({
         // Go to last item, or last enabled item if last is disabled
         let targetIndex = options.length - 1;
         if (options[targetIndex]?.disabled) {
-          targetIndex = findNearestEnabledIndex(targetIndex, -1, options, false);
+          targetIndex = findNearestEnabledIndex(
+            targetIndex,
+            -1,
+            options,
+            false
+          );
         }
         const step = targetIndex - scrollRef.current;
         if (step !== 0) {

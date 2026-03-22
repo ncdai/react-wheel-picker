@@ -1,5 +1,13 @@
 # @ncdai/react-wheel-picker
 
+## 1.2.2
+
+### Patch Changes
+
+- 423210a: chore(README.md): Update sponsors
+
+  chore(index.tsx): Format code
+
 ## 1.2.1
 
 ### Patch Changes

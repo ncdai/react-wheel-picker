@@ -70,7 +70,7 @@ export const SPONSORS: Sponsor[] = [
   },
   {
     name: "OpenPanel",
-    url: "https://openpanel.dev?utm_source=react-wheel-picker&utm_medium=sponsor&utm_campaign=website",
+    url: "https://openpanel.dev/open-source?utm_source=react-wheel-picker&utm_medium=sponsor&utm_campaign=website",
     logo: function (props: React.ComponentProps<"svg">) {
       return (
         <svg fill="currentColor" viewBox="0 0 320 96" {...props}>
@@ -88,7 +88,7 @@ export const SPONSORS: Sponsor[] = [
   },
   {
     name: "Mintlify",
-    url: "https://www.mintlify.com?utm_source=react-wheel-picker&utm_medium=sponsor&utm_campaign=website",
+    url: "https://www.mintlify.com/oss-program?utm_source=react-wheel-picker&utm_medium=sponsor&utm_campaign=website",
     logo: function (props: React.ComponentProps<"svg">) {
       return (
         <svg viewBox="0 0 320 96" fill="currentColor" {...props}>
@@ -105,7 +105,7 @@ export const SPONSORS: Sponsor[] = [
   },
   // {
   //   name: "Termius",
-  //   url: "https://termius.com?utm_source=react-wheel-picker&utm_medium=sponsor&utm_campaign=website",
+  //   url: "https://termius.com/opensource?utm_source=react-wheel-picker&utm_medium=sponsor&utm_campaign=website",
   //   logo: function (props: React.ComponentProps<"svg">) {
   //     return (
   //       <svg viewBox="0 0 320 96" fill="none" {...props}>

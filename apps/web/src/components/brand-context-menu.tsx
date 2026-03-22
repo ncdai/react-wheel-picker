@@ -1,6 +1,7 @@
 "use client";
 
 import { CircleDashedIcon, DownloadIcon } from "lucide-react";
+import Link from "next/link";
 import { useTheme } from "next-themes";
 import { toast } from "sonner";
 
@@ -12,12 +13,20 @@ import {
   ContextMenuTrigger,
 } from "./ui/context-menu";
 
-export function BrandContextMenu({ children }: { children: React.ReactNode }) {
+export function BrandContextMenu() {
   const { resolvedTheme } = useTheme();
 
   return (
     <ContextMenu>
-      <ContextMenuTrigger asChild>{children}</ContextMenuTrigger>
+      <ContextMenuTrigger asChild>
+        <Link
+          className="mr-2 flex items-center gap-1 text-base leading-none font-semibold tracking-tight lg:mr-8"
+          href="/"
+        >
+          <Mark className="size-8 md:size-7" />
+          <span className="max-lg:hidden">React Wheel Picker</span>
+        </Link>
+      </ContextMenuTrigger>
 
       <ContextMenuContent className="w-fit">
         <ContextMenuItem

@@ -1,29 +1,23 @@
-import Link from "next/link";
+import dynamic from "next/dynamic";
 
 import { NAV_ITEMS, SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
-import { BrandContextMenu } from "./brand-context-menu";
 import { DesktopNav } from "./desktop-nav";
-import { Mark } from "./mark";
 import { MobileNavV2 } from "./mobile-nav-v2";
 import { StarsCount } from "./stars-count";
 import { ToggleTheme } from "./toggle-theme";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
+const BrandContextMenu = dynamic(() =>
+  import("@/components/brand-context-menu").then((mod) => mod.BrandContextMenu),
+);
+
 export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background pt-2 before:absolute before:-inset-x-px before:top-0 before:h-2 before:bg-background">
       <div className="flex h-16 items-center border-t border-b pr-1 pl-4">
-        <BrandContextMenu>
-          <Link
-            className="mr-2 flex items-center gap-1 text-base leading-none font-semibold tracking-tight lg:mr-8"
-            href="/"
-          >
-            <Mark className="size-8 md:size-7" />
-            <span className="max-lg:hidden">React Wheel Picker</span>
-          </Link>
-        </BrandContextMenu>
+        <BrandContextMenu />
 
         <DesktopNav />
 

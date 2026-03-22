@@ -59,13 +59,13 @@ This project is proudly supported by:
         </a>
       </td>
       <td>
-        <a href="https://openpanel.dev?utm_source=react-wheel-picker#gh-light-mode-only">
+        <a href="https://openpanel.dev/open-source?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1#gh-light-mode-only"
             alt="OpenPanel"
           />
         </a>
-        <a href="https://openpanel.dev?utm_source=react-wheel-picker#gh-dark-mode-only">
+        <a href="https://openpanel.dev/open-source?utm_source=react-wheel-picker#gh-dark-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/openpanel-dark.svg?v=1#gh-dark-mode-only"
             alt="OpenPanel"
@@ -73,13 +73,13 @@ This project is proudly supported by:
         </a>
       </td>
       <td>
-        <a href="https://www.mintlify.com?utm_source=react-wheel-picker#gh-light-mode-only">
+        <a href="https://www.mintlify.com/oss-program?utm_source=react-wheel-picker#gh-light-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/mintlify.svg?v=1#gh-light-mode-only"
             alt="Mintlify"
           />
         </a>
-        <a href="https://www.mintlify.com?utm_source=react-wheel-picker#gh-dark-mode-only">
+        <a href="https://www.mintlify.com/oss-program?utm_source=react-wheel-picker#gh-dark-mode-only">
           <img
             src="https://assets.chanhdai.com/images/sponsors/mintlify-dark.svg?v=1#gh-dark-mode-only"
             alt="Mintlify"

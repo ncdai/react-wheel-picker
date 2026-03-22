@@ -40,7 +40,7 @@ This project is proudly supported by:
         </a>
       </td>
       <td>
-        <a href="https://openpanel.dev?utm_source=react-wheel-picker">
+        <a href="https://openpanel.dev/open-source?utm_source=react-wheel-picker">
           <img
             src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1"
             alt="OpenPanel"
@@ -48,7 +48,7 @@ This project is proudly supported by:
         </a>
       </td>
       <td>
-        <a href="https://www.mintlify.com?utm_source=react-wheel-picker">
+        <a href="https://www.mintlify.com/oss-program?utm_source=react-wheel-picker">
           <img
             src="https://assets.chanhdai.com/images/sponsors/mintlify.svg?v=1"
             alt="Mintlify"

@@ -8,7 +8,9 @@
     "dark": "#006AD4"
   },
   "navigation": {
-    "pages": ["getting-started"]
+    "pages": [
+      "getting-started"
+    ]
   },
   "icons": {
     "library": "lucide"

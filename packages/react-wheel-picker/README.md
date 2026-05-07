@@ -80,7 +80,7 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://shadcncraft.com?utm_source=react-wheel-picker">
+        <a href="https://shadcncraft.com?atp=ncdai&utm_source=react-wheel-picker">
           <img
             src="https://assets.chanhdai.com/images/sponsors/shadcncraft.svg?v=2"
             alt="shadcncraft"
@@ -88,7 +88,7 @@ This project is proudly supported by:
         </a>
       </td>
       <td>
-        <a href="https://www.shadcnblocks.com?utm_source=react-wheel-picker">
+        <a href="https://www.shadcnblocks.com?via=ncdai&utm_source=react-wheel-picker">
           <img
             src="https://assets.chanhdai.com/images/sponsors/shadcnblocks.svg?v=1"
             alt="Shadcnblocks"

@@ -2,7 +2,7 @@
   "name": "react-wheel-picker-monorepo",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@10.7.0",
+  "packageManager": "pnpm@11.1.1",
   "scripts": {
     "dev": "turbo run dev",
     "dev:web": "turbo run dev --filter=web...",

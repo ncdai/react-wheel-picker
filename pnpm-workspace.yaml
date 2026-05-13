@@ -4,6 +4,7 @@ packages:
 
 autoInstallPeers: true
 linkWorkspacePackages: true
+minimumReleaseAge: 1440
 
 allowBuilds:
   "@tailwindcss/oxide": true

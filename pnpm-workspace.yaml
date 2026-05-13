@@ -1,3 +1,16 @@
 packages:
   - "packages/*"
   - "apps/*"
+
+autoInstallPeers: true
+linkWorkspacePackages: true
+minimumReleaseAge: 1440
+
+allowBuilds:
+  "@tailwindcss/oxide": true
+  "@vercel/speed-insights": true
+  esbuild: false
+  msw: false
+  protobufjs: false
+  sharp: false
+  unrs-resolver: false

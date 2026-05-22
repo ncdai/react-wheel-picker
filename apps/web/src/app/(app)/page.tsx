@@ -16,6 +16,7 @@ import { InstallationCommand } from "@/components/installation-command";
 import { Mark } from "@/components/mark";
 import { SponsorCard } from "@/components/sponsor-card";
 import { Spotlight } from "@/components/spotlight";
+import { Twemoji } from "@/components/twemoji";
 import { Button } from "@/components/ui/button";
 import { SPONSORS } from "@/data/sponsors";
 import type { SponsorTier } from "@/types/sponsors";
@@ -224,8 +225,16 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
+    id: "shadcn",
+    avatar: "https://unavatar.io/x/shadcn",
+    name: "shadcn",
+    tagline: "Creator of shadcn/ui",
+    content: "See @iamncdai Wheel Picker. It’s on the registry. Quick install.",
+    refLink: "https://x.com/shadcn/status/2057717991387869600",
+  },
+  {
     id: "kapehe_ok",
-    avatar: "/images/avatars/kapehe_ok.webp",
+    avatar: "https://unavatar.io/x/kapehe_ok",
     name: "Kap",
     tagline: "Head of Developer Community @Vercel",
     content: "one of my favorite projects that submitted! you are crushing it!",
@@ -233,7 +242,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: "initjean",
-    avatar: "/images/avatars/initjean.webp",
+    avatar: "https://unavatar.io/x/initjean",
     name: "Jean P.D. Meijer",
     tagline: "Creator of analog.now",
     content:
@@ -242,36 +251,36 @@ const testimonials: Testimonial[] = [
   },
   {
     id: "jordwalke",
-    avatar: "/images/avatars/jordwalke.webp",
+    avatar: "https://unavatar.io/x/jordwalke",
     name: "jordwalke",
     tagline: "Creator of React",
     content: "Also, cool wheel picker!",
     refLink: "https://x.com/jordwalke/status/1937166049868439854",
   },
   {
-    id: "ajaypatel_aj",
-    avatar: "/images/avatars/ajaypatel_aj.webp",
-    name: "Ajay Patel",
-    tagline: "Creator of shadcn/studio",
-    content:
-      "Perfect iOS-like wheel picker for the web 🙌 Natural touch physics, infinite looping, and unstyled components with shadcn CLI support.",
-    refLink: "https://x.com/ajaypatel_aj/status/2003723039029231737",
+    id: "orcdev",
+    name: "OrcDev",
+    tagline: "Creator of 8bitcn.com",
+    avatar: "https://unavatar.io/x/orcdev",
+    content: "Looks nice!",
+    refLink: "https://x.com/orcdev/status/1934586473040543885",
   },
   {
     id: "steventey",
-    avatar: "/images/avatars/steventey.webp",
+    avatar: "https://unavatar.io/x/steventey",
     name: "Steven Tey",
     tagline: "Founder of dub.co",
     content: "whoa, this is really dope – needs to get added to @shadcn UI 👀",
     refLink: "https://x.com/steventey/status/1936934909370830924",
   },
   {
-    id: "theorcdev",
-    name: "OrcDev",
-    tagline: "Creator of 8bitcn.com",
-    avatar: "/images/avatars/theorcdev.webp",
-    content: "Looks nice!",
-    refLink: "https://x.com/theorcdev/status/1934586473040543885",
+    id: "ajaypatel_aj",
+    avatar: "https://unavatar.io/x/ajaypatel_aj",
+    name: "Ajay Patel",
+    tagline: "Creator of shadcn/studio",
+    content:
+      "Perfect iOS-like wheel picker for the web 🙌 Natural touch physics, infinite looping, and unstyled components with shadcn CLI support.",
+    refLink: "https://x.com/ajaypatel_aj/status/2003723039029231737",
   },
 ];
 
@@ -292,7 +301,9 @@ function TestimonialCard({
     >
       <div className="flex h-full flex-col gap-4 rounded-md border p-4 shadow-xs transition-colors hover:bg-accent/30">
         <div className="grow">
-          <p>{content}</p>
+          <p className="font-serif">
+            <Twemoji>{content}</Twemoji>
+          </p>
         </div>
 
         <div className="flex items-center gap-3">

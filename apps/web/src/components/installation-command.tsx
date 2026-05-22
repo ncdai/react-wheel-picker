@@ -1,25 +1,20 @@
 "use client";
 
-import { CheckIcon, CopyIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { CheckIcon, CopyIcon, XIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { cn } from "@/lib/utils";
 
-const INSTALLATION_COMMAND = `npx shadcn add @ncdai/wheel-picker`;
+import { IconSwap, IconSwapItem } from "./icon-swap";
+
+const INSTALLATION_COMMAND = `npx shadcn@latest add @ncdai/wheel-picker`;
 
 export function InstallationCommand({ className }: { className?: string }) {
-  const [hasCopied, setHasCopied] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setHasCopied(false);
-    }, 2000);
-  }, [hasCopied]);
+  const { state, copy } = useCopyToClipboard();
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(INSTALLATION_COMMAND);
-    setHasCopied(true);
+    copy(INSTALLATION_COMMAND);
   };
 
   return (
@@ -35,21 +30,27 @@ export function InstallationCommand({ className }: { className?: string }) {
       >
         <code className="font-pixel-square">
           <span className="select-none">$ </span>
-          {INSTALLATION_COMMAND}
+          {INSTALLATION_COMMAND.replace("@latest", "")}
         </code>
       </pre>
 
       <Button
         size="icon"
         variant="ghost"
-        className="size-6 rounded-sm shadow-none" // absolute top-3.5 right-3.5 z-10
+        className="size-6 rounded-sm shadow-none"
         onClick={handleCopy}
       >
-        {hasCopied ? (
-          <CheckIcon className="size-3.5" />
-        ) : (
-          <CopyIcon className="size-3.5" />
-        )}
+        <IconSwap>
+          <IconSwapItem key={state}>
+            {state === "idle" ? (
+              <CopyIcon className="size-3.5" />
+            ) : state === "done" ? (
+              <CheckIcon className="size-3.5" />
+            ) : (
+              <XIcon className="size-3.5" />
+            )}
+          </IconSwapItem>
+        </IconSwap>
         <span className="sr-only">Copy</span>
       </Button>
     </div>

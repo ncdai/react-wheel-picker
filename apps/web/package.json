@@ -18,6 +18,7 @@
     "@hookform/resolvers": "5.0.1",
     "@ncdai/react-wheel-picker": "workspace:*",
     "@openpanel/nextjs": "^1.1.3",
+    "@rexa-developer/tiks": "^0.2.0",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "0.7.1",
@@ -40,6 +41,7 @@
     "sonner": "2.0.3",
     "swr": "^2.3.3",
     "tailwind-merge": "3.3.0",
+    "web-haptics": "^0.0.6",
     "zod": "3.24.2"
   },
   "devDependencies": {

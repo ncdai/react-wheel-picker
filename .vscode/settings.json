@@ -35,4 +35,5 @@
     "cn"
   ],
   "tailwindCSS.experimental.configFile": "apps/web/src/app/globals.css",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
 }

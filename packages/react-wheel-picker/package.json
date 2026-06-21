@@ -24,7 +24,6 @@
       },
       "default": "./dist/index.js"
     },
-    "./dist/style.css": "./dist/index.css",
     "./style.css": "./dist/index.css"
   },
   "tsup": {

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ncdai/react-wheel-picker",
+  "homepage": "https://github.com/ncdai/react-wheel-picker",
+  "items": [
+    {
+      "name": "react-wheel-picker",
+      "type": "registry:item",
+      "title": "React Wheel Picker",
+      "description": "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
+      "files": [
+        {
+          "path": "packages/react-wheel-picker/src/index.tsx",
+          "type": "registry:component",
+          "target": "@components/react-wheel-picker/index.tsx"
+        },
+        {
+          "path": "packages/react-wheel-picker/src/context.tsx",
+          "type": "registry:component",
+          "target": "@components/react-wheel-picker/context.tsx"
+        },
+        {
+          "path": "packages/react-wheel-picker/src/types.ts",
+          "type": "registry:file",
+          "target": "@components/react-wheel-picker/types.ts"
+        },
+        {
+          "path": "packages/react-wheel-picker/src/use-controllable-state.ts",
+          "type": "registry:hook",
+          "target": "@components/react-wheel-picker/use-controllable-state.ts"
+        },
+        {
+          "path": "packages/react-wheel-picker/src/use-typeahead-search.ts",
+          "type": "registry:hook",
+          "target": "@components/react-wheel-picker/use-typeahead-search.ts"
+        },
+        {
+          "path": "packages/react-wheel-picker/src/style.css",
+          "type": "registry:file",
+          "target": "@components/react-wheel-picker/style.css"
+        }
+      ]
+    }
+  ]
+}

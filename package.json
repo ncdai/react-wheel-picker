@@ -36,7 +36,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.29.4",
     "prettier": "3.5.3",
-    "turbo": "^2.5.5",
+    "turbo": "^2.9.18",
     "typescript": "^5.8.3"
   },
   "resolutions": {

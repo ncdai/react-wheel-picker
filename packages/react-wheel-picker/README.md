@@ -33,26 +33,44 @@ This project is proudly supported by:
     <tr>
       <td>
         <a href="https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg?v=2"
-            alt="Vercel OSS Program"
-          />
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg"
+              alt="Vercel OSS Program"
+            />
+          </picture>
         </a>
       </td>
       <td>
         <a href="https://openpanel.dev/open-source?utm_source=react-wheel-picker">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1"
-            alt="OpenPanel"
-          />
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/openpanel-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/openpanel.svg"
+              alt="OpenPanel"
+            />
+          </picture>
         </a>
       </td>
       <td>
         <a href="https://www.mintlify.com/oss-program?utm_source=react-wheel-picker">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/mintlify.svg?v=1"
-            alt="Mintlify"
-          />
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/mintlify-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/mintlify.svg"
+              alt="Mintlify"
+            />
+          </picture>
         </a>
       </td>
     </tr>
@@ -62,15 +80,30 @@ This project is proudly supported by:
     <tr>
       <td>
         <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github">
-          <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=3" alt="shadcnstudio.com" />
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shadcnstudio-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg"
+              alt="shadcnstudio.com"
+            />
+          </picture>
         </a>
       </td>
       <td>
         <a href="https://shadcnspace.com">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcnspace.svg?v=3"
-            alt="Shadcn Space"
-          />
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shadcnspace-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shadcnspace.svg"
+              alt="Shadcn Space"
+            />
+          </picture>
         </a>
       </td>
       <td></td>
@@ -81,26 +114,44 @@ This project is proudly supported by:
     <tr>
       <td>
         <a href="https://shadcncraft.com?atp=ncdai&utm_source=react-wheel-picker">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcncraft.svg?v=2"
-            alt="shadcncraft"
-          />
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shadcncraft-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shadcncraft.svg"
+              alt="shadcncraft"
+            />
+          </picture>
         </a>
       </td>
       <td>
         <a href="https://www.shadcnblocks.com?via=ncdai&utm_source=react-wheel-picker">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcnblocks.svg?v=1"
-            alt="Shadcnblocks"
-          />
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shadcnblocks-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shadcnblocks.svg"
+              alt="Shadcnblocks"
+            />
+          </picture>
         </a>
       </td>
       <td>
         <a href="https://reactbits.dev?utm_source=react-wheel-picker">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/reactbits.svg?v=1"
-            alt="React Bits"
-          />
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/reactbits-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/reactbits.svg"
+              alt="React Bits"
+            />
+          </picture>
         </a>
       </td>
     </tr>
@@ -110,18 +161,30 @@ This project is proudly supported by:
     <tr>
       <td>
         <a href="https://uirules.com?utm_source=react-wheel-picker">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/uirules.svg?v=1"
-            alt="UI Rules"
-          />
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/uirules-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/uirules.svg"
+              alt="UI Rules"
+            />
+          </picture>
         </a>
       </td>
       <td>
         <a href="https://shoogle.dev?utm_source=react-wheel-picker">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shoogle.svg?v=1"
-            alt="Shoogle"
-          />
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shoogle-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shoogle.svg"
+              alt="Shoogle"
+            />
+          </picture>
         </a>
       </td>
       <td></td>

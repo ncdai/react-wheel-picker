@@ -13,8 +13,12 @@ iOS-like wheel picker for React with smooth inertia scrolling and infinite loop 
 
 → Check out the live demo: https://react-wheel-picker.chanhdai.com
 
-[![screenshot-dark](.github/screenshot-dark.webp?v=1#gh-dark-mode-only)](https://react-wheel-picker.chanhdai.com#gh-dark-mode-only)
-[![screenshot-light](.github/screenshot-light.webp?v=1#gh-light-mode-only)](https://react-wheel-picker.chanhdai.com#gh-light-mode-only)
+<a href="https://react-wheel-picker.chanhdai.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/screenshot-dark.webp" />
+    <img src=".github/screenshot-light.webp" alt="react-wheel-picker" />
+  </picture>
+</a>
 
 ## Documentation
 
@@ -45,45 +49,45 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://vercel.com/blog/summer-2025-oss-program#gh-light-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg?v=2#gh-light-mode-only"
-            alt="Vercel OSS Program"
-          />
-        </a>
-        <a href="https://vercel.com/blog/summer-2025-oss-program#gh-dark-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025-dark.svg?v=2#gh-dark-mode-only"
-            alt="Vercel OSS Program"
-          />
-        </a>
-      </td>
-      <td>
-        <a href="https://openpanel.dev/open-source?utm_source=react-wheel-picker#gh-light-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/openpanel.svg?v=1#gh-light-mode-only"
-            alt="OpenPanel"
-          />
-        </a>
-        <a href="https://openpanel.dev/open-source?utm_source=react-wheel-picker#gh-dark-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/openpanel-dark.svg?v=1#gh-dark-mode-only"
-            alt="OpenPanel"
-          />
+        <a href="https://vercel.com/blog/summer-2025-oss-program">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/vercel-oss-program-2025.svg"
+              alt="Vercel OSS Program"
+            />
+          </picture>
         </a>
       </td>
       <td>
-        <a href="https://www.mintlify.com/oss-program?utm_source=react-wheel-picker#gh-light-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/mintlify.svg?v=1#gh-light-mode-only"
-            alt="Mintlify"
-          />
+        <a href="https://openpanel.dev/open-source?utm_source=react-wheel-picker">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/openpanel-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/openpanel.svg"
+              alt="OpenPanel"
+            />
+          </picture>
         </a>
-        <a href="https://www.mintlify.com/oss-program?utm_source=react-wheel-picker#gh-dark-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/mintlify-dark.svg?v=1#gh-dark-mode-only"
-            alt="Mintlify"
-          />
+      </td>
+      <td>
+        <a href="https://www.mintlify.com/oss-program?utm_source=react-wheel-picker">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/mintlify-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/mintlify.svg"
+              alt="Mintlify"
+            />
+          </picture>
         </a>
       </td>
     </tr>
@@ -92,25 +96,31 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github#gh-light-mode-only">
-          <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg?v=3#gh-light-mode-only" alt="shadcnstudio.com" />
-        </a>
-        <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github#gh-dark-mode-only">
-          <img src="https://assets.chanhdai.com/images/sponsors/shadcnstudio-dark.svg?v=3#gh-dark-mode-only" alt="shadcnstudio.com" />
+        <a href="https://shadcnstudio.com?utm_source=chanhdai.com&utm_medium=banner&utm_campaign=github">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shadcnstudio-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shadcnstudio.svg"
+              alt="shadcnstudio.com"
+            />
+          </picture>
         </a>
       </td>
       <td>
-        <a href="https://shadcnspace.com#gh-light-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcnspace.svg?v=3#gh-light-mode-only"
-            alt="Shadcn Space"
-          />
-        </a>
-        <a href="https://shadcnspace.com#gh-dark-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcnspace-dark.svg?v=3#gh-dark-mode-only"
-            alt="Shadcn Space"
-          />
+        <a href="https://shadcnspace.com">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shadcnspace-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shadcnspace.svg"
+              alt="Shadcn Space"
+            />
+          </picture>
         </a>
       </td>
       <td></td>
@@ -120,45 +130,45 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://shadcncraft.com?atp=ncdai&utm_source=react-wheel-picker#gh-light-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcncraft.svg?v=2#gh-light-mode-only"
-            alt="shadcncraft"
-          />
-        </a>
-        <a href="https://shadcncraft.com?atp=ncdai&utm_source=react-wheel-picker#gh-dark-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcncraft-dark.svg?v=1#gh-dark-mode-only"
-            alt="shadcncraft"
-          />
-        </a>
-      </td>
-      <td>
-        <a href="https://www.shadcnblocks.com?via=ncdai&utm_source=react-wheel-picker#gh-light-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcnblocks.svg?v=1#gh-light-mode-only"
-            alt="Shadcnblocks"
-          />
-        </a>
-        <a href="https://www.shadcnblocks.com?via=ncdai&utm_source=react-wheel-picker#gh-dark-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shadcnblocks-dark.svg?v=1#gh-dark-mode-only"
-            alt="Shadcnblocks"
-          />
+        <a href="https://shadcncraft.com?atp=ncdai&utm_source=react-wheel-picker">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shadcncraft-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shadcncraft.svg"
+              alt="shadcncraft"
+            />
+          </picture>
         </a>
       </td>
       <td>
-        <a href="https://reactbits.dev?utm_source=react-wheel-picker#gh-light-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/reactbits.svg?v=1#gh-light-mode-only"
-            alt="React Bits"
-          />
+        <a href="https://www.shadcnblocks.com?via=ncdai&utm_source=react-wheel-picker">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shadcnblocks-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shadcnblocks.svg"
+              alt="Shadcnblocks"
+            />
+          </picture>
         </a>
-        <a href="https://reactbits.dev?utm_source=react-wheel-picker#gh-dark-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/reactbits-dark.svg?v=1#gh-dark-mode-only"
-            alt="React Bits"
-          />
+      </td>
+      <td>
+        <a href="https://reactbits.dev?utm_source=react-wheel-picker">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/reactbits-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/reactbits.svg"
+              alt="React Bits"
+            />
+          </picture>
         </a>
       </td>
     </tr>
@@ -167,31 +177,31 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://uirules.com?utm_source=react-wheel-picker#gh-light-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/uirules.svg?v=1#gh-light-mode-only"
-            alt="UI Rules"
-          />
-        </a>
-        <a href="https://uirules.com?utm_source=react-wheel-picker#gh-dark-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/uirules-dark.svg?v=1#gh-dark-mode-only"
-            alt="UI Rules"
-          />
+        <a href="https://uirules.com?utm_source=react-wheel-picker">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/uirules-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/uirules.svg"
+              alt="UI Rules"
+            />
+          </picture>
         </a>
       </td>
       <td>
-        <a href="https://shoogle.dev?utm_source=react-wheel-picker#gh-light-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shoogle.svg?v=1#gh-light-mode-only"
-            alt="Shoogle"
-          />
-        </a>
-        <a href="https://shoogle.dev?utm_source=react-wheel-picker#gh-dark-mode-only">
-          <img
-            src="https://assets.chanhdai.com/images/sponsors/shoogle-dark.svg?v=1#gh-dark-mode-only"
-            alt="Shoogle"
-          />
+        <a href="https://shoogle.dev?utm_source=react-wheel-picker">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shoogle-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shoogle.svg"
+              alt="Shoogle"
+            />
+          </picture>
         </a>
       </td>
       <td></td>

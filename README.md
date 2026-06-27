@@ -220,5 +220,5 @@ This project is proudly supported by:
 ## Star history
 
 <p>
-  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/chart/github/stars/ncdai/react-wheel-picker.svg?font=geist" /><img alt="chart" src="https://shieldcn.dev/chart/github/stars/ncdai/react-wheel-picker.svg?mode=light&amp;font=geist" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/chart/github/stars/ncdai/react-wheel-picker.svg?font=geist&amp;theme=cyan" /><img alt="chart" src="https://shieldcn.dev/chart/github/stars/ncdai/react-wheel-picker.svg?mode=light&amp;font=geist&amp;theme=cyan" /></picture>
 </p>

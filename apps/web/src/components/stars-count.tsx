@@ -33,7 +33,10 @@ export async function StarsCount() {
   const stargazersCount = await getStargazerCount();
 
   return (
-    <span className="translate-y-px font-mono text-[13px] leading-none text-muted-foreground tabular-nums">
+    <span
+      className="text-[0.8125rem]/none text-muted-foreground tabular-nums"
+      style={{ textBox: "trim-end cap alphabetic" }}
+    >
       {stargazersCount.toLocaleString()}
     </span>
   );

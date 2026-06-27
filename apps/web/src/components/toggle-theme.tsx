@@ -2,7 +2,8 @@
 
 import { MoonIcon, SunMediumIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
+import { useHotkeys } from "react-hotkeys-hook";
 
 import { META_THEME_COLORS } from "@/config/site";
 import { useMetaColor } from "@/hooks/use-meta-color";
@@ -14,7 +15,7 @@ export function ToggleTheme() {
 
   const { setMetaColor } = useMetaColor();
 
-  const handleToggle = useCallback(() => {
+  const switchTheme = useCallback(() => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
     setMetaColor(
       resolvedTheme === "dark"
@@ -23,35 +24,17 @@ export function ToggleTheme() {
     );
   }, [resolvedTheme, setTheme, setMetaColor]);
 
+  useHotkeys("d", () => switchTheme());
+
   return (
     <Button
       className="size-8"
       variant="ghost"
       size="icon"
-      onClick={handleToggle}
+      onClick={switchTheme}
     >
       <MoonIcon className="hidden [html.dark_&]:block" />
       <SunMediumIcon className="hidden [html.light_&]:block" />
-
-      {/* Source: @shadcn/ui */}
-      {/* <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-        <path d="M12 3l0 18"></path>
-        <path d="M12 9l4.65 -4.65"></path>
-        <path d="M12 14.3l7.37 -7.37"></path>
-        <path d="M12 19.6l8.85 -8.85"></path>
-      </svg> */}
       <span className="sr-only">Toggle Theme</span>
     </Button>
   );

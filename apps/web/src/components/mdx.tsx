@@ -162,7 +162,7 @@ const options: MDXRemoteProps["options"] = {
         rehypePrettyCode,
         {
           theme: {
-            dark: "github-dark",
+            dark: "vesper",
             light: "github-light",
           },
           keepBackground: false,

@@ -20,7 +20,7 @@ export function BrandContextMenu() {
     <ContextMenu>
       <ContextMenuTrigger asChild>
         <Link
-          className="mr-2 flex items-center gap-1 text-base leading-none font-semibold tracking-tight lg:mr-8"
+          className="mr-2 flex items-center gap-1 text-base leading-none font-medium tracking-tight lg:mr-8"
           href="/"
         >
           <Mark className="size-8 md:size-7" />

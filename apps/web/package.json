@@ -35,6 +35,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hook-form": "7.56.3",
+    "react-hotkeys-hook": "^5.3.2",
     "remark": "^15.0.1",
     "remark-mdx": "^3.1.0",
     "shadcn": "2.4.0-canary.17",

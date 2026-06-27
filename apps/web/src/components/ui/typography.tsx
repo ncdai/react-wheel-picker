@@ -20,8 +20,8 @@ function Prose({
       data-slot="prose"
       className={cn(
         "prose max-w-none prose-zinc dark:prose-invert",
-        "prose-headings:font-heading prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-balance",
-        "prose-h1:text-3xl",
+        "prose-headings:font-heading prose-headings:font-medium prose-headings:tracking-tight prose-headings:text-balance",
+        "prose-h1:text-4xl",
         "prose-h2:relative prose-h2:pb-2 prose-h2:after:absolute prose-h2:after:bottom-0 prose-h2:after:-left-[100vw] prose-h2:after:h-px prose-h2:after:w-[200vw] prose-h2:after:bg-border",
         "prose-lead:text-base",
         "prose-a:font-medium prose-a:wrap-break-word prose-a:text-foreground prose-a:underline prose-a:underline-offset-4",

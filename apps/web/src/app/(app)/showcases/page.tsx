@@ -6,7 +6,7 @@ import { SHOWCASES } from "@/data/showcases";
 export default function ShowcasesPage() {
   return (
     <div className="relative min-h-dvh max-w-screen overflow-x-hidden">
-      <h1 className="mt-12 mb-2 text-center text-3xl font-semibold tracking-tight">
+      <h1 className="mt-12 mb-2 text-center text-4xl font-medium tracking-tight">
         Showcases
       </h1>
 
@@ -22,7 +22,7 @@ export default function ShowcasesPage() {
             rel="noopener"
           >
             <PlusIcon />
-            Suggest Yours
+            Suggest yours
           </a>
         </Button>
       </div>

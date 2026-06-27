@@ -20,13 +20,12 @@ const sponsorsByTier = SPONSORS.reduce(
 export default function SponsorsPage() {
   return (
     <div className="relative min-h-dvh max-w-screen overflow-x-hidden">
-      <h1 className="mt-12 mb-2 text-center text-3xl font-semibold tracking-tight">
-        Sponsors
+      <h1 className="mt-12 mb-2 text-center text-4xl font-medium tracking-tight">
+        Backed by the community
       </h1>
 
       <p className="mx-4 mb-6 text-center text-balance text-muted-foreground">
-        Your sponsorship means a lot to open-source projects, including React
-        Wheel Picker.
+        Grateful to the sponsors who make this open-source work possible.
       </p>
 
       <div className="mb-12 flex justify-center">
@@ -37,7 +36,7 @@ export default function SponsorsPage() {
             rel="noopener"
           >
             <HeartIcon />
-            Sponsor My Work
+            Sponsor my work
           </a>
         </Button>
       </div>

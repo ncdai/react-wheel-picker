@@ -51,7 +51,7 @@ export default function Home() {
 
       <Mark className="mx-auto mt-12 mb-6 size-14" />
 
-      <h1 className="mb-2 text-center text-3xl font-semibold tracking-tight sm:text-4xl">
+      <h1 className="mb-2 text-center text-3xl font-medium tracking-tight sm:text-4xl">
         iOS-like Wheel Picker <span className="block sm:inline" />
         for React
       </h1>
@@ -62,7 +62,7 @@ export default function Home() {
 
       <div className="mx-auto mb-6 grid grid-cols-2 gap-4 px-4 sm:w-sm">
         <Button asChild>
-          <Link href="/docs/getting-started">Get Started</Link>
+          <Link href="/docs/getting-started">Get started</Link>
         </Button>
 
         <Button
@@ -118,13 +118,12 @@ export default function Home() {
       </div>
 
       <div className="border-t px-4 py-12">
-        <h2 className="mb-2 text-3xl font-semibold tracking-tight">
-          Supported by the Best
+        <h2 className="mb-2 text-3xl font-medium tracking-tight">
+          Backed by the community
         </h2>
 
         <p className="mb-6 leading-snug text-balance text-muted-foreground">
-          Your sponsorship means a lot to open-source projects, including React
-          Wheel Picker.
+          Grateful to the sponsors who make this open-source work possible.
         </p>
 
         <div className="mb-8">
@@ -134,7 +133,7 @@ export default function Home() {
               target="_blank"
               rel="noopener"
             >
-              Sponsor My Work
+              Sponsor my work
             </a>
           </Button>
         </div>
@@ -301,7 +300,7 @@ function TestimonialCard({
     >
       <div className="flex h-full flex-col gap-4 rounded-md border p-4 shadow-xs transition-colors hover:bg-accent/30">
         <div className="grow">
-          <p className="font-serif">
+          <p className="font-serif text-base text-pretty">
             <Twemoji>{content}</Twemoji>
           </p>
         </div>

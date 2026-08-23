@@ -1,5 +1,11 @@
 # @ncdai/react-wheel-picker
 
+## 1.2.3
+
+### Patch Changes
+
+- 7010879: Update README
+
 ## 1.2.2
 
 ### Patch Changes

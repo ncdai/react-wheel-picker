@@ -107,8 +107,9 @@ function WheelPicker<T extends WheelPickerValue>({
   onValueChange,
 
   options: optionsProp,
+  display = "wheel",
   infinite: infiniteProp = false,
-  visibleCount: countProp = 20,
+  visibleCount: countProp = display === "flat" ? 5 : 20,
   dragSensitivity: dragSensitivityProp = 3,
   scrollSensitivity: scrollSensitivityProp = 5,
   optionItemHeight: optionHeightProp = 30,
@@ -146,11 +147,15 @@ function WheelPicker<T extends WheelPickerValue>({
   }, [countProp, optionsProp, infiniteProp]);
 
   const itemHeight = optionHeightProp;
+  const isFlat = display === "flat";
   const halfItemHeight = itemHeight * 0.5;
   const itemAngle = 360 / countProp;
   const radius = itemHeight / Math.tan((itemAngle * Math.PI) / 180);
-  const containerHeight = Math.round(radius * 2 + itemHeight * 0.25);
+  const containerHeight = isFlat
+    ? countProp * itemHeight
+    : Math.round(radius * 2 + itemHeight * 0.25);
   const quarterCount = countProp >> 2; // Divide by 4
+  const overscanCount = isFlat ? Math.ceil(countProp / 2) : quarterCount;
   const baseDeceleration = dragSensitivityProp * 10;
   const snapBackDeceleration = 10;
 
@@ -216,7 +221,9 @@ function WheelPicker<T extends WheelPickerValue>({
           top: -halfItemHeight,
           height: itemHeight,
           lineHeight: `${itemHeight}px`,
-          transform: `rotateX(${angle}deg) translateZ(${radius}px)`,
+          transform: isFlat
+            ? `translateY(${index * itemHeight}px)`
+            : `rotateX(${angle}deg) translateZ(${radius}px)`,
           visibility: "hidden",
         }}
       >
@@ -229,7 +236,7 @@ function WheelPicker<T extends WheelPickerValue>({
     );
 
     if (infiniteProp) {
-      for (let i = 0; i < quarterCount; ++i) {
+      for (let i = 0; i < overscanCount; ++i) {
         const prependIndex = -i - 1;
         const appendIndex = i + options.length;
 
@@ -251,9 +258,10 @@ function WheelPicker<T extends WheelPickerValue>({
     itemHeight,
     halfItemHeight,
     infiniteProp,
+    isFlat,
     itemAngle,
     options,
-    quarterCount,
+    overscanCount,
     radius,
     classNames?.optionItem,
   ]);
@@ -309,13 +317,15 @@ function WheelPicker<T extends WheelPickerValue>({
     const normalizedScroll = infiniteProp ? normalizeScroll(scroll) : scroll;
 
     if (wheelItemsRef.current) {
-      const transform = `translateZ(${-radius}px) rotateX(${itemAngle * normalizedScroll}deg)`;
+      const transform = isFlat
+        ? `translateY(${-normalizedScroll * itemHeight}px)`
+        : `translateZ(${-radius}px) rotateX(${itemAngle * normalizedScroll}deg)`;
       wheelItemsRef.current.style.transform = transform;
 
       wheelItemsRef.current.childNodes.forEach((node) => {
         const li = node as HTMLLIElement;
         const distance = Math.abs(Number(li.dataset.index) - normalizedScroll);
-        li.style.visibility = distance > quarterCount ? "hidden" : "visible";
+        li.style.visibility = distance > overscanCount ? "hidden" : "visible";
       });
     }
 
@@ -449,16 +459,24 @@ function WheelPicker<T extends WheelPickerValue>({
     const { top } = container.getBoundingClientRect();
     const clickOffsetY = clientY - top;
 
-    const clickedSegmentIndex = wheelSegmentPositions.findIndex(
-      ([start, end]) => clickOffsetY >= start && clickOffsetY <= end
-    );
+    let stepsToScroll: number;
+    if (isFlat) {
+      const targetIndex = Math.round(
+        scrollRef.current + (clickOffsetY - containerHeight / 2) / itemHeight
+      );
+      stepsToScroll = targetIndex - scrollRef.current;
+    } else {
+      const clickedSegmentIndex = wheelSegmentPositions.findIndex(
+        ([start, end]) => clickOffsetY >= start && clickOffsetY <= end
+      );
 
-    if (clickedSegmentIndex === -1) {
-      console.error("No item found for click position:", clickOffsetY);
-      return;
+      if (clickedSegmentIndex === -1) {
+        console.error("No item found for click position:", clickOffsetY);
+        return;
+      }
+
+      stepsToScroll = (quarterCount - clickedSegmentIndex - 1) * -1;
     }
-
-    const stepsToScroll = (quarterCount - clickedSegmentIndex - 1) * -1;
     const targetIndex = scrollRef.current + stepsToScroll;
     const normalizedIndex = infiniteProp
       ? normalizeScroll(targetIndex)
@@ -805,7 +823,7 @@ function WheelPicker<T extends WheelPickerValue>({
           }
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [enabledOptionsMap]
+        [enabledOptionsMap, display, countProp, itemHeight, setValue]
       ),
     }
   );
@@ -928,7 +946,16 @@ function WheelPicker<T extends WheelPickerValue>({
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [options.length, infiniteProp, navigateToPicker, handleTypeaheadSearch]
+    [
+      options.length,
+      infiniteProp,
+      navigateToPicker,
+      handleTypeaheadSearch,
+      display,
+      countProp,
+      itemHeight,
+      setValue,
+    ]
   );
 
   const handleFocus = useCallback(() => {
@@ -969,7 +996,7 @@ function WheelPicker<T extends WheelPickerValue>({
   useEffect(() => {
     selectByValue(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value, valueProp, options]); // selected value is changed when options are changed
+  }, [value, valueProp, options, display, countProp, itemHeight]);
 
   // Determine tabIndex: if in group, only active picker is focusable
   const pickerIndex = pickerIndexRef.current;
@@ -981,6 +1008,7 @@ function WheelPicker<T extends WheelPickerValue>({
     <div
       ref={containerRefCallback}
       data-rwp
+      data-rwp-display={isFlat ? "flat" : undefined}
       tabIndex={tabIndex}
       onKeyDown={handleKeyDown}
       onFocus={handleFocus}

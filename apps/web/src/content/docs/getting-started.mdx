@@ -292,6 +292,8 @@ Set `display="flat"` to render a vertical list without the wheel's 3D rotation:
 
 In flat mode, `visibleCount` is the number of visible rows and defaults to `5`. Use a positive integer; odd values show a whole selected row with the same number of whole rows above and below it. The height is `visibleCount * optionItemHeight`, so five rows at the default row height occupy 150 px.
 
+Flat mode does not apply the wheel's edge-fade mask, so the outer rows keep their normal text opacity.
+
 Dragging, mouse-wheel scrolling, keyboard navigation, disabled options, and infinite looping work in both modes. The default `display="wheel"` keeps the existing appearance and its default `visibleCount` of `20`, which describes the circular ring and must be a multiple of four. Neither mode adds containers around option labels.
 
 ## API reference

@@ -2,7 +2,7 @@
 title: Getting started
 description: iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
 createdAt: 2025-05-16
-updatedAt: 2026-01-03
+updatedAt: 2026-10-09
 ---
 
 ## Installation
@@ -280,6 +280,20 @@ export function WheelPickerDemo() {
 
 You can find usage examples in the **Examples** section at: https://chanhdai.com/components/react-wheel-picker#examples
 
+### Flat display
+
+Set `display="flat"` to render a vertical list without the wheel's 3D rotation:
+
+```tsx
+<WheelPickerWrapper>
+  <WheelPicker display="flat" options={options} visibleCount={5} infinite />
+</WheelPickerWrapper>
+```
+
+In flat mode, `visibleCount` is the number of visible rows and defaults to `5`. Use a positive integer; odd values show a whole selected row with the same number of whole rows above and below it. The height is `visibleCount * optionItemHeight`, so five rows at the default row height occupy 150 px.
+
+Dragging, mouse-wheel scrolling, keyboard navigation, disabled options, and infinite looping work in both modes. The default `display="wheel"` keeps the existing appearance and its default `visibleCount` of `20`, which describes the circular ring and must be a multiple of four. Neither mode adds containers around option labels.
+
 ## API reference
 
 ### WheelPickerWrapper
@@ -301,8 +315,9 @@ Props for the `WheelPicker` component:
 | `value`             | `T`                      | -          | Current value of the picker (controlled mode). Type matches the option values (string or number)   |
 | `defaultValue`      | `T`                      | -          | Default value of the picker (uncontrolled mode). Type matches the option values (string or number) |
 | `onValueChange`     | `(value: T) => void`     | -          | Callback fired when the selected value changes. Receives the selected option's value               |
+| `display`          | `"wheel" \| "flat"`       | `"wheel"`  | Render options on a 3D wheel or as a flat vertical list                                             |
 | `infinite`          | `boolean`                | `false`    | Enable infinite scrolling                                                                          |
-| `visibleCount`      | `number`                 | `20`       | Number of options visible on the wheel (must be multiple of 4)                                     |
+| `visibleCount`      | `number`                 | `20` / `5` | Wheel: options on the circular ring (multiple of 4). Flat: visible rows (positive integer)          |
 | `dragSensitivity`   | `number`                 | `3`        | Sensitivity of the drag interaction (higher = more sensitive)                                      |
 | `scrollSensitivity` | `number`                 | `5`        | Sensitivity of the scroll interaction (higher = more sensitive)                                    |
 | `optionItemHeight`  | `number`                 | `30`       | Height (in pixels) of each item in the picker list                                                 |
@@ -346,6 +361,7 @@ The following data attributes are available for CSS styling:
 | ------------------------------ | ----------------- | -------------------------------------------------------------------- |
 | `[data-rwp-wrapper]`           | Wrapper           | Applied to `WheelPickerWrapper`                                      |
 | `[data-rwp]`                   | Picker            | Applied to `WheelPicker` root element                                |
+| `[data-rwp-display="flat"]`    | Picker            | Present on the picker root when using the flat display               |
 | `[data-rwp-options]`           | Options container | Applied to the options list container                                |
 | `[data-rwp-option]`            | Option item       | Applied to each option item in the wheel                             |
 | `[data-rwp-highlight-wrapper]` | Highlight wrapper | Applied to the highlight area wrapper                                |

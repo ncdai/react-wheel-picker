@@ -2,7 +2,7 @@
 title: Getting started
 description: iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
 createdAt: 2025-05-16
-updatedAt: 2026-01-03
+updatedAt: 2026-10-09
 ---
 
 ## Installation
@@ -348,11 +348,38 @@ The following data attributes are available for CSS styling:
 | `[data-rwp]`                   | Picker            | Applied to `WheelPicker` root element                                |
 | `[data-rwp-options]`           | Options container | Applied to the options list container                                |
 | `[data-rwp-option]`            | Option item       | Applied to each option item in the wheel                             |
+| `[data-rwp-label]`             | Label container   | Wraps the label inside each option and highlighted item              |
 | `[data-rwp-highlight-wrapper]` | Highlight wrapper | Applied to the highlight area wrapper                                |
 | `[data-rwp-highlight-list]`    | Highlight list    | Applied to the highlight list container                              |
 | `[data-rwp-highlight-item]`    | Highlight item    | Applied to the highlighted option item                               |
 | `[data-rwp-focused]`           | Highlight wrapper | Present on `[data-rwp-highlight-wrapper]` when the picker is focused |
 | `[data-disabled]`              | Option/Highlight  | Present on option items and highlight items when disabled            |
+
+### Label layout and customization
+
+Each option item and highlighted item contains a `div[data-rwp-label]` around its label. This container constrains the label's width and applies single-line ellipsis to overflowing text and inline React content.
+
+Use `[data-rwp-label]` to style this container. The `classNames.optionItem` and `classNames.highlightItem` hooks still apply to the outer list items.
+
+If your CSS previously targeted a label as a direct child, include the new container in the selector:
+
+```css
+/* Before */
+[data-rwp-option] > span,
+[data-rwp-highlight-item] > span {
+  color: rebeccapurple;
+}
+
+/* With the label container */
+[data-rwp-option] > [data-rwp-label] > span,
+[data-rwp-highlight-item] > [data-rwp-label] > span {
+  color: rebeccapurple;
+}
+```
+
+A selector such as `.option-item > *` now selects the container rather than the label elements. Layouts that relied on the list item arranging multiple label children with flex may also need adjustment.
+
+Custom labels with block or flex layouts must handle truncation within their own content. For an icon-and-text label, keep the icon from shrinking and apply `min-width: 0`, `overflow: hidden`, `white-space: nowrap`, and `text-overflow: ellipsis` to the text's flex item. The outer label container alone cannot add an ellipsis inside arbitrary nested layouts.
 
 ### Data slots
 

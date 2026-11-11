@@ -158,7 +158,20 @@ This project is proudly supported by:
           </picture>
         </a>
       </td>
-      <td></td>
+      <td>
+        <a href="https://shadcnspace.com">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/shadcnspace-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/shadcnspace.svg"
+              alt="Shadcn Space"
+            />
+          </picture>
+        </a>
+      </td>
       <td></td>
     </tr>
     <tr>

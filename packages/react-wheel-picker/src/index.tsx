@@ -220,7 +220,7 @@ function WheelPicker<T extends WheelPickerValue>({
           visibility: "hidden",
         }}
       >
-        {item.label}
+        <div data-rwp-label>{item.label}</div>
       </li>
     );
 
@@ -268,7 +268,7 @@ function WheelPicker<T extends WheelPickerValue>({
         data-disabled={item.disabled || undefined}
         style={{ height: itemHeight }}
       >
-        {item.label}
+        <div data-rwp-label>{item.label}</div>
       </li>
     );
 

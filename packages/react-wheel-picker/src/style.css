@@ -88,6 +88,15 @@
   justify-content: center;
 }
 
+[data-rwp-label] {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 [data-rwp-option][data-disabled],
 [data-rwp-highlight-item][data-disabled] {
   pointer-events: none;

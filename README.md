@@ -206,7 +206,20 @@ This project is proudly supported by:
           </picture>
         </a>
       </td>
-      <td></td>
+      <td>
+        <a href="https://beste.dev?utm_source=react-wheel-picker">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/beste-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/beste.svg"
+              alt="Beste"
+            />
+          </picture>
+        </a>
+      </td>
     </tr>
     <tr>
       <td colspan="3"><strong>Spark Supporters</strong></td>

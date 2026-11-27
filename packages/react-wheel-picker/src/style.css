@@ -34,6 +34,10 @@
   );
 }
 
+[data-rwp][data-rwp-display="flat"] {
+  mask-image: none;
+}
+
 [data-rwp]:focus-visible {
   outline: none;
 }

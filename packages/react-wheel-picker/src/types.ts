@@ -44,9 +44,11 @@ export type WheelPickerProps<T extends WheelPickerValue = string> = {
 
   /** Array of options to display in the wheel */
   options: WheelPickerOption<T>[];
+  /** Display the options on a 3D wheel (default) or as a flat vertical list. */
+  display?: "wheel" | "flat";
   /** Whether the wheel should loop infinitely */
   infinite?: boolean;
-  /** The number of options visible on the circular ring, must be a multiple of 4 */
+  /** Wheel: options on the circular ring, a multiple of 4 (default 20). Flat: visible rows, a positive integer (default 5). */
   visibleCount?: number;
   /** Sensitivity of the drag interaction (higher = more sensitive) */
   dragSensitivity?: number;

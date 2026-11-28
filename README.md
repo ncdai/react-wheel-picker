@@ -188,6 +188,24 @@ This project is proudly supported by:
       </td>
     </tr>
     <tr>
+      <td>
+        <a href="https://reui.io?utm_source=react-wheel-picker">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/reui-dark.svg?v=1"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/reui.svg?v=1"
+              alt="ReUI"
+            />
+          </picture>
+        </a>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
       <td colspan="3"><strong>Silver Sponsors</strong></td>
     </tr>
     <tr>
